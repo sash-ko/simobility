@@ -52,8 +52,9 @@ As a result, each step of a simulation can be visualized and various metrics can
 }
 ```
 
-Animated visualization in Jupyter notebook with [folium](https://github.com/python-visualization/folium):
-<img src="./img/example.png" width="50%">
+Animated visualization in Jupyter notebook with [folium](https://github.com/python-visualization/folium)
+
+<img src="./img/example.png" width="75%">
 
 ## Pseudocode:
 

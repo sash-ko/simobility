@@ -10,7 +10,49 @@ Some example of such algorithms:
 * [Autonomous Vehicle Fleet Sizes Required to Serve Different Levels of Demand](https://www.research-collection.ethz.ch/handle/20.500.11850/104743) - fleet sizing problem
 * [On-demand high-capacity ride-sharing via dynamic trip-vehicle assignment](https://www.pnas.org/content/114/3/462)
 
-Ride sharing pseudocode:
+## Framework
+
+**simobility** provides a set of building blocks for designing simulations:
+- clock
+- dispatcher
+- demand model
+- vehicles
+- routers
+- ...
+
+## Simulation logs
+
+Simulator logs detailed information about each state change. For example:
+
+```bash
+2020-01-22 19:44:48,082;0;vehicle;a2f7647a952e1b8b356f8bd11711eb57;None;offline;idling;{'vehicle_id': 'a2f7647a952e1b8b356f8bd11711eb57', 'position': {'lat': 40.71983, 'lon': -74.00852}}
+2020-01-22 19:44:48,897;0;booking;cae48e22e92e198905e27f81f0e520eb;None;created;pending;{'pickup': {'lat': 40.72739, 'lon': -73.98882}, 'dropoff': {'lat': 40.73417, 'lon': -73.98341}, 'position': {'lat': 40.72739, 'lon': -73.98882}}
+2020-01-22 19:44:48,905;0;vehicle;601e5b45785116080d650372e90794df;2eefab1a61764d7da438d564285c2630;idling;moving_to;{'vehicle_id': '601e5b45785116080d650372e90794df', 'itinerary_id': '2eefab1a61764d7da438d564285c2630', 'itinerary_created_at': 0, 'eta': 7, 'pickup': 'cae48e22e92e198905e27f81f0e520eb', 'position': {'lat': 40.72439, 'lon': -73.98746}, 'destination': {'lat': 40.72739, 'lon': -73.98882}, 'route_duration': 7, 'route_distance': 0.35272271051930876, 'actual_duration': 0, 'actual_distance': 0.0}
+2020-01-22 19:44:48,906;0;booking;cae48e22e92e198905e27f81f0e520eb;2eefab1a61764d7da438d564285c2630;pending;matched;{'vehicle_id': '601e5b45785116080d650372e90794df', 'itinerary_id': '2eefab1a61764d7da438d564285c2630', 'itinerary_created_at': 0, 'position': {'lat': 40.72739, 'lon': -73.98882}}
+2020-01-22 19:44:48,907;0;booking;c0d2f3a2f7d558cf865bd310d142c31c;9d3c04896a2940068d37edf44bd00a53;pending;matched;{'vehicle_id': 'd48dd9f354366c219c3ecb54c5cefdd8', 'itinerary_id': '9d3c04896a2940068d37edf44bd00a53', 'itinerary_created_at': 0, 'position': {'lat': 40.75455, 'lon': -73.96867}}
+```
+
+As a result, each step of a simulation can be visualized and various metrics can be calculated. For example:
+
+```json
+{
+    "avg_paid_utilization": 63.98,
+    "avg_utilization": 96.87,
+    "avg_waiting_time": 292.92,
+    "created": 3998,
+    "dropoffs": 589,
+    "empty_distance": 640.37,
+    "empty_distance_pcnt": 33.67,
+    "fleet_paid_utilization": 63.98,
+    "fleet_utilization": 96.87,
+    "num_vehicles": 50,
+    "pickup_rate": 15.48,
+    "pickups": 619,
+    "total_distance": 1902.04,
+}
+```
+
+## Pseudocode:
 
 ```python
 dispatcher = Dispatcher()

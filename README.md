@@ -52,6 +52,8 @@ As a result, each step of a simulation can be visualized and various metrics can
 }
 ```
 
+<img src="./img/example.png" width="50%">
+
 ## Pseudocode:
 
 ```python

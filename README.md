@@ -115,7 +115,25 @@ dispatcher.dispatch(itinerary)
 ## Read simulation output
 
 ```python
-data = pd.read_csv('simulation_output.csv', sep=';', header=None, names=['datetime', 'clock_time', 'object_type', 'uuid', 'itinerary_id', 'from_state', 'to_state', 'details'], parse_dates=['datetime'], converters={'details': lambda v: eval(v)})
+columns = [
+    "datetime",
+    "clock_time",
+    "object_type",
+    "uuid",
+    "itinerary_id",
+    "from_state",
+    "to_state",
+    "details",
+]
+
+data = pd.read_csv(
+    "simulation_output.csv",
+    sep=";",
+    header=None,
+    names=columns,
+    parse_dates=["datetime"],
+    converters={"details": lambda v: eval(v)},
+)
 
 details = data.details.apply(pd.Series)
 # or

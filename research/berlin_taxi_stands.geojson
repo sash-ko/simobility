@@ -1,0 +1,6243 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2018-03-01T15:49:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/254863531",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Neukölln",
+        "amenity": "taxi",
+        "name": "Dammweg",
+        "phone": "+49 (30) 6848118"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4648009,
+          52.4705214
+        ]
+      },
+      "id": "node/254863531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/258080188",
+        "amenity": "taxi",
+        "name": "Cautius",
+        "phone": "+49 30 3354343"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2081628,
+          52.5619629
+        ]
+      },
+      "id": "node/258080188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/259714808",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:street": "Neuendorfer Straße",
+        "amenity": "taxi",
+        "name": "Hafenplatz",
+        "phone": "+49 (30) 3337943"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2058989,
+          52.5415849
+        ]
+      },
+      "id": "node/259714808"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/261083386",
+        "amenity": "taxi",
+        "name": "Charlottenstraße ( 9-21 Uhr )",
+        "phone": "+49 30 3333770"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2023249,
+          52.5371198
+        ]
+      },
+      "id": "node/261083386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/276904165",
+        "amenity": "taxi",
+        "name": "Dorint Novotel Berlin am Tiergarten"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3348623,
+          52.5137529
+        ]
+      },
+      "id": "node/276904165"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/278887998",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10247",
+        "addr:street": "Weserstraße",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Wismarplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4636841,
+          52.5112841
+        ]
+      },
+      "id": "node/278887998"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/281389206",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Rummelsburg",
+        "amenity": "taxi",
+        "name": "Bhf. Lichtenberg",
+        "phone": "+49 (30) 5224740"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4975567,
+          52.5093436
+        ]
+      },
+      "id": "node/281389206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/283183321",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "U-Bahnhof Blaschko / Buschkrug",
+        "phone": "+49 (30) 6019228"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4491876,
+          52.4525663
+        ]
+      },
+      "id": "node/283183321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/285985509",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Lichtenberg",
+        "amenity": "taxi",
+        "name": "Freiaplatz",
+        "phone": "+49 (30) 55009006"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4984153,
+          52.5164092
+        ]
+      },
+      "id": "node/285985509"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/298150128",
+        "amenity": "taxi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2442919,
+          52.3972548
+        ]
+      },
+      "id": "node/298150128"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/299210248",
+        "amenity": "taxi",
+        "name": "Lankwitz Kirche",
+        "phone": "+49 (30) 7742828"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3451257,
+          52.4358021
+        ]
+      },
+      "id": "node/299210248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/300500689",
+        "amenity": "taxi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2752175,
+          52.3970175
+        ]
+      },
+      "id": "node/300500689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/301144030",
+        "amenity": "taxi",
+        "name": "Lichterfelde Ost",
+        "phone": "+49 (30) 7721059"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3290274,
+          52.4290067
+        ]
+      },
+      "id": "node/301144030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/302588490",
+        "amenity": "taxi",
+        "name": "Bornholmer / Schönhauser",
+        "phone": "+49 (30) 4469248"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4136302,
+          52.5536036
+        ]
+      },
+      "id": "node/302588490"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/302588687",
+        "amenity": "taxi",
+        "name": "Campus Virchow Krankenhaus (Seestraße)",
+        "phone": "+49 (30) 45073348"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3386795,
+          52.5431526
+        ]
+      },
+      "id": "node/302588687"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/308003237",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Scholzplatz",
+        "phone": "+49 (30) 3044849"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2283916,
+          52.5063031
+        ]
+      },
+      "id": "node/308003237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/308815066",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10439",
+        "addr:street": "Dänenstraße",
+        "addr:suburb": "Prenzlauer Berg",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Dänen / Schönhauser Allee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4132197,
+          52.549646
+        ]
+      },
+      "id": "node/308815066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/310355911",
+        "amenity": "taxi",
+        "name": "Leibniz / Ku-damm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3125489,
+          52.5005442
+        ]
+      },
+      "id": "node/310355911"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/310356047",
+        "amenity": "taxi",
+        "name": "Schlüterstraße / Kurfürstendamm",
+        "phone": "+49 30 8811546"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3167222,
+          52.5014094
+        ]
+      },
+      "id": "node/310356047"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/310666832",
+        "amenity": "taxi",
+        "name": "Café Kranzler"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.331236,
+          52.5041208
+        ]
+      },
+      "id": "node/310666832"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/312192655",
+        "amenity": "taxi",
+        "name": "Adenauer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3067334,
+          52.5001737
+        ]
+      },
+      "id": "node/312192655"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/313583861",
+        "amenity": "taxi",
+        "name": "Dahlem Dorf",
+        "phone": "+49 (30) 8324183"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2904694,
+          52.4576677
+        ]
+      },
+      "id": "node/313583861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/313818481",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Meineke / Ku-damm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3292725,
+          52.5031261
+        ]
+      },
+      "id": "node/313818481"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/315347284",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Lichterfelde",
+        "amenity": "taxi",
+        "name": "Wiesenbaude",
+        "phone": "+49 30 8338066"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3099363,
+          52.4318056
+        ]
+      },
+      "id": "node/315347284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/315796988",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Uhland / Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3239263,
+          52.4970246
+        ]
+      },
+      "id": "node/315796988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/316533823",
+        "amenity": "taxi",
+        "name": "Taxi Johann-Georg",
+        "phone": "+49 (30) 8916832"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2964072,
+          52.4976294
+        ]
+      },
+      "id": "node/316533823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/317190476",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Fasan / Ku-damm",
+        "phone": "+49 (30) 8815220"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3274378,
+          52.503181
+        ]
+      },
+      "id": "node/317190476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/317193126",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Grolman / Uhland"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3248937,
+          52.5028535
+        ]
+      },
+      "id": "node/317193126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/320856611",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Holzhauser",
+        "phone": "+49 (30) 4322055"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2951245,
+          52.5759427
+        ]
+      },
+      "id": "node/320856611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/321662948",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Kurt-Schumacher",
+        "phone": "+49 (30) 4963998"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3269954,
+          52.5629673
+        ]
+      },
+      "id": "node/321662948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/323231141",
+        "amenity": "taxi",
+        "name": "U-Bahnhof Schilling",
+        "phone": "+49 (30) 2424464"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4233496,
+          52.5203622
+        ]
+      },
+      "id": "node/323231141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/323800936",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10551",
+        "addr:street": "Turmstraße",
+        "addr:suburb": "Moabit",
+        "amenity": "taxi",
+        "name": "Wald / Turm",
+        "phone": "+49 (30) 3964267"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3304339,
+          52.5274164
+        ]
+      },
+      "id": "node/323800936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/330263977",
+        "amenity": "taxi",
+        "name": "Rosenthaler",
+        "phone": "+49 (30) 28384770"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4007589,
+          52.5295039
+        ]
+      },
+      "id": "node/330263977"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/340126126",
+        "amenity": "taxi",
+        "name": "Savigny",
+        "phone": "+49 (30) 3121161"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3217157,
+          52.5060779
+        ]
+      },
+      "id": "node/340126126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/344664039",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Schäfersee",
+        "phone": "+49 (30) 4554044"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3639136,
+          52.5640324
+        ]
+      },
+      "id": "node/344664039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/345806446",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:housenumber": "1",
+        "addr:postcode": "12205",
+        "addr:street": "Baseler Straße",
+        "addr:suburb": "Lichterfelde",
+        "amenity": "taxi",
+        "motorcar": "yes",
+        "name": "Lichterfelde West",
+        "opening_hours": "24/7",
+        "phone": "+49 30 8332000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2952337,
+          52.4430134
+        ]
+      },
+      "id": "node/345806446"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/348052908",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Zehlendorf",
+        "amenity": "taxi",
+        "name": "Mexikoplatz",
+        "phone": "+49 (30) 8018829"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2328689,
+          52.4375682
+        ]
+      },
+      "id": "node/348052908"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/349012153",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Kant / Wilmersdorf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3071387,
+          52.5067338
+        ]
+      },
+      "id": "node/349012153"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/354060604",
+        "amenity": "taxi",
+        "name": "Platz der Luftbrücke",
+        "phone": "+49 (30) 7856025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3849554,
+          52.4844961
+        ]
+      },
+      "id": "node/354060604"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/355618401",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Schweden / Oslo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3734267,
+          52.5571642
+        ]
+      },
+      "id": "node/355618401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/361001237",
+        "addr:country": "DE",
+        "addr:suburb": "Wilhelmstadt",
+        "amenity": "taxi",
+        "name": "Alt-Pichelsdorf",
+        "phone": "+49 30 3612121"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1971951,
+          52.5127289
+        ]
+      },
+      "id": "node/361001237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/361001238",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Theodor-Heuss / Heuss Säule",
+        "phone": "+49 (30) 3023292"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.274612,
+          52.509671
+        ]
+      },
+      "id": "node/361001238"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/361267254",
+        "amenity": "taxi",
+        "name": "Treptower Park",
+        "phone": "+49-30-5333821"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4586188,
+          52.4927825
+        ]
+      },
+      "id": "node/361267254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/364664924",
+        "addr:housenumber": "8",
+        "addr:postcode": "12157",
+        "addr:street": "Canovastraße",
+        "amenity": "taxi",
+        "name": "Canova / AVK",
+        "phone": "030 7963163"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3444433,
+          52.4631565
+        ]
+      },
+      "id": "node/364664924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/369601773",
+        "amenity": "taxi",
+        "name": "Grand Hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3889194,
+          52.5159981
+        ]
+      },
+      "id": "node/369601773"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/369602118",
+        "amenity": "taxi",
+        "name": "Sophie-Charlotte",
+        "phone": "+49 (30) 3236422"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2975767,
+          52.5105948
+        ]
+      },
+      "id": "node/369602118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/391307325",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Hohenschönhauser Tor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4724649,
+          52.535937
+        ]
+      },
+      "id": "node/391307325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/391307444",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Alt-Hohenschönhausen",
+        "amenity": "taxi",
+        "name": "Degner",
+        "phone": "+49 (30) 98697524"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4941399,
+          52.5452845
+        ]
+      },
+      "id": "node/391307444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/391307782",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Neu-Hohenschönhausen",
+        "amenity": "taxi",
+        "name": "Prerower Platz",
+        "phone": "+49 (30) 9284066"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5041612,
+          52.5638954
+        ]
+      },
+      "id": "node/391307782"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/391307944",
+        "amenity": "taxi",
+        "name": "FEZ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5425661,
+          52.4579599
+        ]
+      },
+      "id": "node/391307944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/394607285",
+        "amenity": "taxi",
+        "name": "Innsbrucker Platz",
+        "phone": "+49 (30) 8535002"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3427444,
+          52.4784248
+        ]
+      },
+      "id": "node/394607285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/410229306",
+        "amenity": "taxi",
+        "name": "Nollendorfplatz",
+        "phone": "+49 30 216 27 45"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.35214,
+          52.4996163
+        ]
+      },
+      "id": "node/410229306"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/412413979",
+        "amenity": "taxi",
+        "name": "Kaiser-Wilhelm",
+        "phone": "+49 (30) 7815337"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3575913,
+          52.4875136
+        ]
+      },
+      "id": "node/412413979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/419216791",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Siemensstadt",
+        "amenity": "taxi",
+        "name": "Siemensstadt",
+        "phone": "+49 30 3822023"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2721925,
+          52.5366641
+        ]
+      },
+      "id": "node/419216791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/441569633",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Weißenseer Weg",
+        "phone": "+49 (30) 9754162"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4762385,
+          52.5325684
+        ]
+      },
+      "id": "node/441569633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/443250655",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Weißensee",
+        "amenity": "taxi",
+        "name": "Antonplatz",
+        "phone": "+49 (30) 9651196"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4510073,
+          52.5488791
+        ]
+      },
+      "id": "node/443250655"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/448296245",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Adam Betcke"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1981526,
+          52.5211356
+        ]
+      },
+      "id": "node/448296245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/450310349",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Karlshorst",
+        "amenity": "taxi",
+        "name": "Bhf. Karlshorst",
+        "phone": "+49305088171"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5260017,
+          52.4814649
+        ]
+      },
+      "id": "node/450310349"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/451822776",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Niederschönhausen",
+        "amenity": "taxi",
+        "name": "Pastor-Niemöller",
+        "phone": "+49 (30) 4867007"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3980606,
+          52.5792704
+        ]
+      },
+      "id": "node/451822776"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/452645286",
+        "amenity": "taxi",
+        "name": "Saargemünder",
+        "phone": "+49 (30) 8326811"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2714441,
+          52.4507772
+        ]
+      },
+      "id": "node/452645286"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/457506476",
+        "amenity": "taxi",
+        "name": "Petersburger / Landsberger",
+        "phone": "+49 (30) 4267001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4477623,
+          52.5256916
+        ]
+      },
+      "id": "node/457506476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/466489849",
+        "amenity": "taxi",
+        "name": "Siegfried / Hermann",
+        "phone": "+49 (30) 6259029"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4315057,
+          52.4678594
+        ]
+      },
+      "id": "node/466489849"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/469200595",
+        "amenity": "taxi",
+        "name": "Pankow-Kirche"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4111819,
+          52.5712282
+        ]
+      },
+      "id": "node/469200595"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/469752800",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10365",
+        "addr:street": "Möllendorffstraße",
+        "addr:suburb": "Lichtenberg",
+        "amenity": "taxi",
+        "contact:phone": "+49 (30) 5589879",
+        "name": "Möllendorff"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4772589,
+          52.5139093
+        ]
+      },
+      "id": "node/469752800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/469876949",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Charlottenburg",
+        "amenity": "taxi",
+        "name": "Richard-Wagner",
+        "phone": "+49 (30) 3416908"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3063396,
+          52.5178077
+        ]
+      },
+      "id": "node/469876949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/472583760",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Bhf. Lichtenrade",
+        "phone": "+49 (30) 7446343"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.398771,
+          52.3863801
+        ]
+      },
+      "id": "node/472583760"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/477767580",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Olivaer Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3131173,
+          52.4992298
+        ]
+      },
+      "id": "node/477767580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/492366425",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Steglitz",
+        "amenity": "taxi",
+        "capacity": "9",
+        "name": "Albrecht / Halske",
+        "phone": "+49 (30) 7961954"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3428002,
+          52.4467815
+        ]
+      },
+      "id": "node/492366425"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/492366460",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Steglitz / Bismarck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3379798,
+          52.4513859
+        ]
+      },
+      "id": "node/492366460"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/505730734",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Oberschöneweide",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Rathenau",
+        "phone": "+49 (30) 53013209"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.526803,
+          52.4585359
+        ]
+      },
+      "id": "node/505730734"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/505958286",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10961",
+        "addr:street": "Mehringdamm",
+        "amenity": "taxi",
+        "name": "Yorck / Mehring",
+        "phone": "+49 (30) 2510606"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3878682,
+          52.4934453
+        ]
+      },
+      "id": "node/505958286"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/525499133",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Tegel",
+        "amenity": "taxi",
+        "name": "Karolinen",
+        "phone": "+49 (30) 4339994"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2821447,
+          52.5907207
+        ]
+      },
+      "id": "node/525499133"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/526681506",
+        "amenity": "taxi",
+        "contact:phone": "+49 30 3911344",
+        "name": "Hansaplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3426353,
+          52.5177959
+        ]
+      },
+      "id": "node/526681506"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/527504909",
+        "amenity": "taxi",
+        "name": "Heidelberger",
+        "phone": "+49 (0)30 8214182"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3117267,
+          52.4794642
+        ]
+      },
+      "id": "node/527504909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/528635055",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Altglienicke",
+        "amenity": "taxi",
+        "name": "Besenbinder / Altglienicke Kirche",
+        "phone": "+49 (30) 67898044"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5395256,
+          52.4215742
+        ]
+      },
+      "id": "node/528635055"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/539491905",
+        "amenity": "taxi",
+        "name": "Bhf. Baumschulenweg",
+        "phone": "+49 30 5328971"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4900975,
+          52.4677002
+        ]
+      },
+      "id": "node/539491905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/540332347",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Fehrbelliner",
+        "phone": "+49 (30) 8619188"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3143701,
+          52.4907213
+        ]
+      },
+      "id": "node/540332347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/554166358",
+        "amenity": "taxi",
+        "name": "Augustenburger Platz",
+        "phone": "+49 (30) 4537400"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3482169,
+          52.542464
+        ]
+      },
+      "id": "node/554166358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/554166362",
+        "amenity": "taxi",
+        "name": "Weddingplatz",
+        "phone": "+49 (30) 4659900"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3683047,
+          52.5413583
+        ]
+      },
+      "id": "node/554166362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/561295379",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "call_box": "yes",
+        "capacity": "9",
+        "name": "Grimm / Urban",
+        "phone": "+49 (30) 6918156"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4126973,
+          52.4922336
+        ]
+      },
+      "id": "node/561295379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/567897622",
+        "amenity": "taxi",
+        "name": "Waldsassen",
+        "phone": "+49 (30) 7216060"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3508082,
+          52.4143052
+        ]
+      },
+      "id": "node/567897622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/576171158",
+        "amenity": "taxi",
+        "name": "Motz / Luther"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3457159,
+          52.4969173
+        ]
+      },
+      "id": "node/576171158"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/617980601",
+        "amenity": "taxi",
+        "name": "Gesundbrunnen",
+        "phone": "+49 30 4935335"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3884657,
+          52.5487276
+        ]
+      },
+      "id": "node/617980601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/621584925",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Britz-Süd / Gutschmidt",
+        "phone": "+49 (30) 6012637"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4474624,
+          52.4373132
+        ]
+      },
+      "id": "node/621584925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/636005019",
+        "amenity": "taxi",
+        "name": "Elsterplatz",
+        "phone": "+49 (30) 8264147"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2856735,
+          52.4795438
+        ]
+      },
+      "id": "node/636005019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/638322748",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Adlershof",
+        "amenity": "taxi",
+        "name": "Bhf. Adlershof"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.542602,
+          52.4345714
+        ]
+      },
+      "id": "node/638322748"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/650031166",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Alt-Buckow",
+        "phone": "+49 (30) 6041001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4352994,
+          52.4233115
+        ]
+      },
+      "id": "node/650031166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/656757397",
+        "amenity": "taxi",
+        "name": "Trautenau",
+        "phone": "+49 (30) 2112125"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.331059,
+          52.4927546
+        ]
+      },
+      "id": "node/656757397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/665619975",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:street": "Zimmerstraße",
+        "amenity": "taxi",
+        "name": "Axel Springer Hochhaus",
+        "phone": "+49 (30) 2513939"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3974249,
+          52.5080721
+        ]
+      },
+      "id": "node/665619975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/667211369",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Westend",
+        "amenity": "taxi",
+        "name": "Steuben",
+        "phone": "+49 (30) 32679799"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2602291,
+          52.5160246
+        ]
+      },
+      "id": "node/667211369"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/673850806",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "13189",
+        "addr:street": "Elsa-Brändström-Straße",
+        "addr:suburb": "Pankow",
+        "amenity": "taxi",
+        "name": "Bhf. Vineta"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4137798,
+          52.5598283
+        ]
+      },
+      "id": "node/673850806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/678435452",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Rudow",
+        "amenity": "taxi",
+        "name": "U-Bahnhof Rudow / Rudower Spinne",
+        "phone": "+49 (30) 6631026"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4971038,
+          52.4155674
+        ]
+      },
+      "id": "node/678435452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/691484485",
+        "amenity": "taxi",
+        "name": "Händelplatz",
+        "phone": "+49 30 834 4077"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3158835,
+          52.4497823
+        ]
+      },
+      "id": "node/691484485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/697297138",
+        "amenity": "taxi",
+        "name": "Naugarder",
+        "phone": "+49 (30) 4244160"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4390769,
+          52.5417805
+        ]
+      },
+      "id": "node/697297138"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/702451429",
+        "amenity": "taxi",
+        "name": "Flughafen Schönefeld ( SXF )"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5188703,
+          52.3889782
+        ]
+      },
+      "id": "node/702451429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/703607125",
+        "amenity": "taxi",
+        "name": "Bad / Pank",
+        "phone": "+49 30 4657303"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3809606,
+          52.5518334
+        ]
+      },
+      "id": "node/703607125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/718143920",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Wundt / Neue Kant",
+        "phone": "+49 (30) 3217566"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.283777,
+          52.5066432
+        ]
+      },
+      "id": "node/718143920"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/722967280",
+        "amenity": "taxi",
+        "call_box": "yes",
+        "name": "Bhf. Prenzlauer",
+        "phone": "+49 (30) 44739559"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4270619,
+          52.544917
+        ]
+      },
+      "id": "node/722967280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/725633336",
+        "amenity": "taxi",
+        "contact:phone": "+49 (30) 4429732",
+        "name": "Danziger / Prenzlauer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4251398,
+          52.5386668
+        ]
+      },
+      "id": "node/725633336"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/725633574",
+        "amenity": "taxi",
+        "contact:phone": "+49 (30) 4254367",
+        "name": "Danziger / Greifswalder"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4338897,
+          52.5355599
+        ]
+      },
+      "id": "node/725633574"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/750097018",
+        "amenity": "taxi",
+        "name": "Bayerischer Platz",
+        "phone": "+49 (30) 7813332"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3395436,
+          52.4886018
+        ]
+      },
+      "id": "node/750097018"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/760481870",
+        "amenity": "taxi",
+        "name": "Eberswalder",
+        "phone": "+49 (30) 4484352"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4107452,
+          52.5410816
+        ]
+      },
+      "id": "node/760481870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/765031752",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Storkower / Landsberger",
+        "phone": "+49 (30) 97106145"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.458453,
+          52.5280037
+        ]
+      },
+      "id": "node/765031752"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/765928652",
+        "amenity": "taxi",
+        "name": "Rathaus Schöneberg",
+        "phone": "+49 30 7811407"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3445052,
+          52.4841788
+        ]
+      },
+      "id": "node/765928652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/769336303",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Hermannplatz",
+        "phone": "+49 (30) 6949400"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4247412,
+          52.4884723
+        ]
+      },
+      "id": "node/769336303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/775813575",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "call_box": "yes",
+        "name": "Paracelsiusbad / Roedernallee",
+        "phone": "+49 (30) 4963000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3476672,
+          52.5748568
+        ]
+      },
+      "id": "node/775813575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/791866264",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Marzahn",
+        "amenity": "taxi",
+        "name": "Bhf. Ahrensfelde"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5652993,
+          52.5706527
+        ]
+      },
+      "id": "node/791866264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/798908751",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Lynar Krankenhaus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2067948,
+          52.5502917
+        ]
+      },
+      "id": "node/798908751"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/802901645",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Radisson"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4032935,
+          52.5193514
+        ]
+      },
+      "id": "node/802901645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/808390974",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Neu-Hohenschönhausen",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Prendener"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5186836,
+          52.5685402
+        ]
+      },
+      "id": "node/808390974"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/810702642",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Bhf. Alexanderplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4106361,
+          52.5223924
+        ]
+      },
+      "id": "node/810702642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/822868980",
+        "amenity": "taxi",
+        "capacity": "3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2305638,
+          52.5256627
+        ]
+      },
+      "id": "node/822868980"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/832925392",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Kreuzberg",
+        "amenity": "taxi",
+        "name": "Schlesisches Tor",
+        "phone": "+49 (30) 6127535"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4422239,
+          52.501468
+        ]
+      },
+      "id": "node/832925392"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/916873742",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:street": "Marchlewskistraße",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Taxi Helsingforser Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4497446,
+          52.5075259
+        ]
+      },
+      "id": "node/916873742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/918358021",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Charlottenburg",
+        "amenity": "taxi",
+        "name": "Bhf. Westend",
+        "phone": "+49 (30) 3214276"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2868669,
+          52.5184774
+        ]
+      },
+      "id": "node/918358021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/931752744",
+        "amenity": "taxi",
+        "name": "Salzufer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.330877,
+          52.5142069
+        ]
+      },
+      "id": "node/931752744"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/941394260",
+        "amenity": "taxi",
+        "name": "Hagenplatz",
+        "phone": "+49 (30) 8261302"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2670684,
+          52.4839969
+        ]
+      },
+      "id": "node/941394260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/942863093",
+        "amenity": "taxi",
+        "name": "Bahnhof Flughafen Berlin-Schönefeld"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5143297,
+          52.3908601
+        ]
+      },
+      "id": "node/942863093"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/945141593",
+        "amenity": "taxi",
+        "name": "Rudower Chaussee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5341209,
+          52.431744
+        ]
+      },
+      "id": "node/945141593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/946513276",
+        "amenity": "taxi",
+        "name": "Bismarckplatz",
+        "phone": "+49 (30) 8927768"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2843351,
+          52.4914072
+        ]
+      },
+      "id": "node/946513276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/946947939",
+        "amenity": "taxi",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "S Mahlow",
+        "public_transport": "stop_position"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.40875,
+          52.360162
+        ]
+      },
+      "id": "node/946947939"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/960550612",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "12439",
+        "amenity": "taxi",
+        "name": "Bhf. Schöneweide",
+        "phone": "+49 30 6369647"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5096593,
+          52.4562309
+        ]
+      },
+      "id": "node/960550612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/983272582",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Hauptbahnhof Washingtonplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3697527,
+          52.5242078
+        ]
+      },
+      "id": "node/983272582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/983272586",
+        "amenity": "taxi",
+        "name": "Hauptbahnhof-Europaplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3689311,
+          52.5258151
+        ]
+      },
+      "id": "node/983272586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1027937528",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "Frankfurter Tor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4540261,
+          52.5165465
+        ]
+      },
+      "id": "node/1027937528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1035334157",
+        "amenity": "taxi",
+        "name": "Martin-Luther-Krankenhaus",
+        "name:de": "Martin-Luther-Krankenhaus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2914817,
+          52.4914437
+        ]
+      },
+      "id": "node/1035334157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1051176243",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Ladius"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2632127,
+          52.4110989
+        ]
+      },
+      "id": "node/1051176243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1130112176",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Mariendorf",
+        "amenity": "taxi",
+        "name": "Alt-Mariendorf",
+        "phone": "+49 (30) 7063177"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.387885,
+          52.4403414
+        ]
+      },
+      "id": "node/1130112176"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1132417414",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Bhf. Pankow",
+        "phone": "+49 (30) 4825721"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4113381,
+          52.5671772
+        ]
+      },
+      "id": "node/1132417414"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1177834577",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:housenumber": "1",
+        "addr:postcode": "13597",
+        "addr:street": "Seegefelder Straße",
+        "addr:suburb": "Spandau",
+        "amenity": "taxi",
+        "capacity": "15",
+        "name": "Bhf. Spandau",
+        "phone": "+49 30 3332288"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1974125,
+          52.5349287
+        ]
+      },
+      "id": "node/1177834577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1216551970",
+        "addr:street": "Masurenallee",
+        "amenity": "taxi",
+        "name": "Busbahnhof ( ZOB )"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2791692,
+          52.5069472
+        ]
+      },
+      "id": "node/1216551970"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1242814953",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10117",
+        "addr:street": "Leipziger Straße",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "Spittelmarkt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4000957,
+          52.5109841
+        ]
+      },
+      "id": "node/1242814953"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1285251499",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Kreuzberg",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Moritzplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4109918,
+          52.5042722
+        ]
+      },
+      "id": "node/1285251499"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1289033198",
+        "amenity": "taxi",
+        "name": "Plan-B Taxi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.431182,
+          52.5134919
+        ]
+      },
+      "id": "node/1289033198"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1300410927",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Bhf. Südkreuz Ost"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3663327,
+          52.4751707
+        ]
+      },
+      "id": "node/1300410927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107975",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Charlottenburg",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Sömmering / Mierendorffplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3062459,
+          52.525274
+        ]
+      },
+      "id": "node/1315107975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107976",
+        "amenity": "taxi",
+        "name": "Breitenbach",
+        "phone": "+49 30 8225266"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3101228,
+          52.4668628
+        ]
+      },
+      "id": "node/1315107976"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107977",
+        "amenity": "taxi",
+        "name": "Roseneck",
+        "phone": "+49 (30) 8238213"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.281307,
+          52.4767241
+        ]
+      },
+      "id": "node/1315107977"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107978",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "13627",
+        "addr:suburb": "Charlottenburg-Nord",
+        "amenity": "taxi",
+        "name": "Jakob-Kaiser",
+        "phone": "+49 (30) 3822211"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2938569,
+          52.5361781
+        ]
+      },
+      "id": "node/1315107978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107979",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Charlottenburg",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Tegeler Weg / Landgericht"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2979647,
+          52.5263872
+        ]
+      },
+      "id": "node/1315107979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107980",
+        "amenity": "taxi",
+        "name": "Schiller / Hardenberg",
+        "phone": "+49 30 3136019"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3226097,
+          52.5112313
+        ]
+      },
+      "id": "node/1315107980"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107981",
+        "amenity": "taxi",
+        "name": "Durlacher",
+        "phone": "+49 (30) 8531360"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3297603,
+          52.4815386
+        ]
+      },
+      "id": "node/1315107981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107982",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Hotel Kempinski"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3275347,
+          52.5039202
+        ]
+      },
+      "id": "node/1315107982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315107983",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "S-Bahnhof Heer",
+        "phone": "+49 (30) 3027160"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2585693,
+          52.5081209
+        ]
+      },
+      "id": "node/1315107983"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315141478",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Kreuzberg",
+        "amenity": "taxi",
+        "name": "Kotbusser Tor",
+        "phone": "+49 (30) 6127434"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4197136,
+          52.4987344
+        ]
+      },
+      "id": "node/1315141478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315141479",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Friedrichshain",
+        "amenity": "taxi",
+        "capacity": "34",
+        "name": "Ostbahnhof",
+        "phone": "+49 (30) 29779776"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4348045,
+          52.5093926
+        ]
+      },
+      "id": "node/1315141479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315141488",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Friedrichshain",
+        "amenity": "taxi",
+        "name": "Kino Kosmos",
+        "phone": "+49 (30) 5894385"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4493363,
+          52.5164477
+        ]
+      },
+      "id": "node/1315141488"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315161562",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Marzahn",
+        "amenity": "taxi",
+        "name": "Mehrower Allee",
+        "phone": "+49 (30) 9322043"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.559977,
+          52.5557704
+        ]
+      },
+      "id": "node/1315161562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315190527",
+        "amenity": "taxi",
+        "name": "See / Müller",
+        "phone": "+49 (30) 4514858"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3525164,
+          52.5509712
+        ]
+      },
+      "id": "node/1315190527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315190528",
+        "amenity": "taxi",
+        "name": "Potsdam / Lützow",
+        "phone": "+49 (30) 2614024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3651902,
+          52.5026914
+        ]
+      },
+      "id": "node/1315190528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315190530",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10117",
+        "addr:street": "Luisenstraße",
+        "amenity": "taxi",
+        "name": "Charité",
+        "opening_hours": "Mo-Su 00:00-00:00",
+        "phone": "+49 (30) 28028888"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.378778,
+          52.527318
+        ]
+      },
+      "id": "node/1315190530"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315198481",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Herzbergplatz",
+        "phone": "+49 (30) 6248020"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4480699,
+          52.4781117
+        ]
+      },
+      "id": "node/1315198481"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315198482",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Schönstedt",
+        "phone": "+49 30 6234896"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.434777,
+          52.4815843
+        ]
+      },
+      "id": "node/1315198482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315198483",
+        "amenity": "taxi",
+        "name": "Wutzky"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4733929,
+          52.4258764
+        ]
+      },
+      "id": "node/1315198483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315243896",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Haupt / Goethe",
+        "phone": "+49 (30) 91745747"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3681624,
+          52.5872369
+        ]
+      },
+      "id": "node/1315243896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315255766",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Wittenau",
+        "amenity": "taxi",
+        "name": "Rathaus Reinickendorf",
+        "phone": "+49 (30) 4112556"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3256757,
+          52.5892637
+        ]
+      },
+      "id": "node/1315255766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315381746",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Haselhorst",
+        "amenity": "taxi",
+        "name": "Haselhorst",
+        "phone": "+49 (30) 3347500"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2394562,
+          52.5430448
+        ]
+      },
+      "id": "node/1315381746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315414656",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:street": "Klingsorstraße",
+        "amenity": "taxi",
+        "name": "Campus Benjamin Franklin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.320614,
+          52.4437768
+        ]
+      },
+      "id": "node/1315414656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315414662",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:street": "Lindenstraße",
+        "addr:suburb": "Lichterfelde",
+        "amenity": "taxi",
+        "name": "Lindenstraße / Lichterfelde Süd",
+        "phone": "+49 (30) 7123022"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3070353,
+          52.4174804
+        ]
+      },
+      "id": "node/1315414662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315438813",
+        "amenity": "taxi",
+        "name": "KaDeWe",
+        "phone": "+49 (30) 2187424"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3409904,
+          52.5023223
+        ]
+      },
+      "id": "node/1315438813"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315438819",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Alt-Lichtenrade",
+        "phone": "+49 (30) 7453491"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4066979,
+          52.4046278
+        ]
+      },
+      "id": "node/1315438819"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315438824",
+        "amenity": "taxi",
+        "name": "Bhf. Tempelhof",
+        "note": "Seit Jahren steht hier nie ein Taxi um auf Kunden zu warten. Wenn hier ein Taxi steht, dann am Wochenende verbotener Weise parkend.",
+        "phone": "+49 30 786 6055"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3852203,
+          52.4719088
+        ]
+      },
+      "id": "node/1315438824"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315438828",
+        "amenity": "taxi",
+        "name": "Berlinicke",
+        "phone": "+49 (30) 7523446"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3785351,
+          52.4659132
+        ]
+      },
+      "id": "node/1315438828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315438832",
+        "amenity": "taxi",
+        "name": "Friedrich-Wilhelm",
+        "phone": "+49 (30) 8528000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3279224,
+          52.4732144
+        ]
+      },
+      "id": "node/1315438832"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772365",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Bundesplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3287311,
+          52.478364
+        ]
+      },
+      "id": "node/1317772365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772366",
+        "amenity": "taxi",
+        "name": "Bhf. Zoo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3327982,
+          52.506976
+        ]
+      },
+      "id": "node/1317772366"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772371",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:housenumber": "1",
+        "addr:postcode": "10117",
+        "addr:street": "Krausenstraße",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "name": "Krausen / Friedrich",
+        "phone": "+49 (30) 22334455"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3899057,
+          52.509393
+        ]
+      },
+      "id": "node/1317772371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772377",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Tegel",
+        "amenity": "taxi",
+        "name": "Flughafen TXL Terminal E (Flugsteig 16)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2921319,
+          52.5531861
+        ]
+      },
+      "id": "node/1317772377"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772378",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Tegel",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Borsigturm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2873253,
+          52.5855253
+        ]
+      },
+      "id": "node/1317772378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772379",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Plänterwald",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Bhf. Plänterwald"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4757288,
+          52.4792743
+        ]
+      },
+      "id": "node/1317772379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772388",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Berliner / Bundes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.330501,
+          52.4871283
+        ]
+      },
+      "id": "node/1317772388"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772390",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Urban-Krankenhaus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4087877,
+          52.4947587
+        ]
+      },
+      "id": "node/1317772390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772391",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "13089",
+        "addr:suburb": "Heinersdorf",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Malchow / Blankenburger"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4415713,
+          52.5684569
+        ]
+      },
+      "id": "node/1317772391"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772399",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Borsigwalde",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Humboldt Krankenhaus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3091174,
+          52.5899907
+        ]
+      },
+      "id": "node/1317772399"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772403",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Zeppelin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1846212,
+          52.5479394
+        ]
+      },
+      "id": "node/1317772403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772406",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Neukölln",
+        "amenity": "taxi",
+        "name": "Karl-Marx / Ringbahn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4416906,
+          52.4687801
+        ]
+      },
+      "id": "node/1317772406"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772412",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Marzahn",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Alt-Marzahn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5629412,
+          52.5416174
+        ]
+      },
+      "id": "node/1317772412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772415",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Altglienicke",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Altglienicke / Venus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5257176,
+          52.4065409
+        ]
+      },
+      "id": "node/1317772415"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772417",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Hotel Esplanade"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3540861,
+          52.5056641
+        ]
+      },
+      "id": "node/1317772417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772432",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Knaack"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4205689,
+          52.5337203
+        ]
+      },
+      "id": "node/1317772432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772433",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "Friedrichstadtpalast"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3874551,
+          52.5244269
+        ]
+      },
+      "id": "node/1317772433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772438",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Blankenburg",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Alt-Blankenburg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4532577,
+          52.5927153
+        ]
+      },
+      "id": "node/1317772438"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772442",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Danziger / Kniprode"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4409168,
+          52.5322156
+        ]
+      },
+      "id": "node/1317772442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772463",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Grunewald / Martin-Luther"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3454267,
+          52.4892123
+        ]
+      },
+      "id": "node/1317772463"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772467",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Westend",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "Klinikum Westend"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2798507,
+          52.5203722
+        ]
+      },
+      "id": "node/1317772467"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772471",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Amtsgericht Charlottenburg ( 7-18 Uhr )",
+        "presence": "Mo-Fr: 7-18h"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2954126,
+          52.5061307
+        ]
+      },
+      "id": "node/1317772471"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772482",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Hotel Berlin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.352515,
+          52.5040512
+        ]
+      },
+      "id": "node/1317772482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772485",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Bösebrücke"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4002937,
+          52.5543889
+        ]
+      },
+      "id": "node/1317772485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772489",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Bismarck / Wilmersdorf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3050563,
+          52.5113434
+        ]
+      },
+      "id": "node/1317772489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772497",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Britzer Damm / Blaschkoallee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4392107,
+          52.4525716
+        ]
+      },
+      "id": "node/1317772497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772507",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "12459",
+        "addr:street": "Griechische Allee",
+        "addr:suburb": "Oberschöneweide",
+        "amenity": "taxi",
+        "name": "Edisonstraße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5144523,
+          52.4645404
+        ]
+      },
+      "id": "node/1317772507"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772510",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Sterndamm / Johannisthal Kirche"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5042517,
+          52.4448113
+        ]
+      },
+      "id": "node/1317772510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772515",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "Hackescher Markt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4030766,
+          52.5244534
+        ]
+      },
+      "id": "node/1317772515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772524",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10117",
+        "addr:street": "Charlottenstraße",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "name": "Behren / Charlotten"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3910677,
+          52.5157844
+        ]
+      },
+      "id": "node/1317772524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772527",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "Krankenhaus Neukölln"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4592445,
+          52.4397926
+        ]
+      },
+      "id": "node/1317772527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772534",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Alt-Hohenschönhausen",
+        "amenity": "taxi",
+        "name": "Allee Center",
+        "presence": "Mo-Fr: 7-23h; Sa: 7-18h"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4971981,
+          52.5348685
+        ]
+      },
+      "id": "node/1317772534"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772544",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Hamburger Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4400428,
+          52.5560051
+        ]
+      },
+      "id": "node/1317772544"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772547",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Hotel Ritz Carton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3751402,
+          52.5099814
+        ]
+      },
+      "id": "node/1317772547"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772550",
+        "amenity": "taxi",
+        "name": "Hotel Adlon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3801355,
+          52.5162753
+        ]
+      },
+      "id": "node/1317772550"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772570",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Biesdorf",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Garzauer Straße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5713374,
+          52.5282129
+        ]
+      },
+      "id": "node/1317772570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772584",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Hotel Savoy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3280095,
+          52.5064333
+        ]
+      },
+      "id": "node/1317772584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772588",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Hotel Steigenberger"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3353907,
+          52.5024135
+        ]
+      },
+      "id": "node/1317772588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772594",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Hotel Palace",
+        "survey:date": "2014-04-19"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3384559,
+          52.5050659
+        ]
+      },
+      "id": "node/1317772594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772605",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Leibniz / Bismarck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3147483,
+          52.5126414
+        ]
+      },
+      "id": "node/1317772605"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772609",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Bhf. Friedrichsfelde Ost"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.520581,
+          52.5135227
+        ]
+      },
+      "id": "node/1317772609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772617",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10409",
+        "addr:street": "Krügerstraße",
+        "addr:suburb": "Prenzlauer Berg",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Krüger"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4295662,
+          52.5503652
+        ]
+      },
+      "id": "node/1317772617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772625",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Marienfelde",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Bhf. Mariendorf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.374538,
+          52.4229842
+        ]
+      },
+      "id": "node/1317772625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772629",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10117",
+        "addr:street": "Friedrichstraße",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "name": "Jägerstr./ Friedrichstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3895318,
+          52.5139216
+        ]
+      },
+      "id": "node/1317772629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772639",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Kulturforum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.367509,
+          52.5085578
+        ]
+      },
+      "id": "node/1317772639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772651",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Heiligensee",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Elchdamm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2460087,
+          52.6011367
+        ]
+      },
+      "id": "node/1317772651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772657",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Hotel Ambassador"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3444162,
+          52.5034322
+        ]
+      },
+      "id": "node/1317772657"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772668",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Karlshorst",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Blockdammweg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5025186,
+          52.4835994
+        ]
+      },
+      "id": "node/1317772668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772674",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Neukölln",
+        "amenity": "taxi",
+        "name": "Hotel Estrel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4587013,
+          52.4737027
+        ]
+      },
+      "id": "node/1317772674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772680",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Marzahn",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "Bhf. Marzahn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5427415,
+          52.5433842
+        ]
+      },
+      "id": "node/1317772680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772693",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Bhf. Wollank",
+        "phone": "+49 (30) 4932012"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3929361,
+          52.5645405
+        ]
+      },
+      "id": "node/1317772693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772694",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Hotel Crown-Plaza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3406385,
+          52.50427
+        ]
+      },
+      "id": "node/1317772694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772711",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Krankenhaus Weißensee",
+        "presence": "7-19h"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4526974,
+          52.5546462
+        ]
+      },
+      "id": "node/1317772711"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772715",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Debis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3732554,
+          52.5057163
+        ]
+      },
+      "id": "node/1317772715"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772717",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Lichtenberg",
+        "amenity": "taxi",
+        "name": "Krankenhaus Oskar-Ziethen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.495017,
+          52.5143361
+        ]
+      },
+      "id": "node/1317772717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772733",
+        "amenity": "taxi",
+        "name": "Bhf. Zoo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3328376,
+          52.5068492
+        ]
+      },
+      "id": "node/1317772733"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772736",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Königstor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4254963,
+          52.5299356
+        ]
+      },
+      "id": "node/1317772736"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772738",
+        "amenity": "taxi",
+        "name": "Europa Center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3382465,
+          52.5037134
+        ]
+      },
+      "id": "node/1317772738"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772751",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "12683",
+        "addr:street": "Elsterwerdaer Platz",
+        "addr:suburb": "Biesdorf",
+        "amenity": "taxi",
+        "name": "Elsterwerder Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5607978,
+          52.5060292
+        ]
+      },
+      "id": "node/1317772751"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772753",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:housenumber": "30",
+        "addr:postcode": "10117",
+        "addr:street": "Mohrenstraße",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "capacity": "11",
+        "name": "Hilton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3921715,
+          52.5121959
+        ]
+      },
+      "id": "node/1317772753"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772756",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Alt-Hohenschönhausen",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "BCA Wilhelmsberg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4778031,
+          52.5333981
+        ]
+      },
+      "id": "node/1317772756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772759",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10117",
+        "addr:street": "Charlottenstraße",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Gendarmenmarkt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3912049,
+          52.5146262
+        ]
+      },
+      "id": "node/1317772759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772772",
+        "amenity": "taxi",
+        "capacity": "14",
+        "name": "Park Inn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.413426,
+          52.5232755
+        ]
+      },
+      "id": "node/1317772772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772780",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Marzahn",
+        "amenity": "taxi",
+        "name": "A.d.K. / Poelchau"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5514533,
+          52.5340085
+        ]
+      },
+      "id": "node/1317772780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772785",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Spandau",
+        "amenity": "taxi",
+        "name": "Bhf. Stresow / Freiheit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2094556,
+          52.5322782
+        ]
+      },
+      "id": "node/1317772785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772790",
+        "amenity": "taxi",
+        "ref": "Hotel Mercure Neukölln"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4275035,
+          52.4783923
+        ]
+      },
+      "id": "node/1317772790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772797",
+        "amenity": "taxi",
+        "capacity": "13",
+        "name": "Hotel Interconti"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3460849,
+          52.5067826
+        ]
+      },
+      "id": "node/1317772797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772801",
+        "addr:housenumber": "55",
+        "addr:postcode": "12159",
+        "addr:street": "Rheinstraße",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Kaisereiche"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3330609,
+          52.4692288
+        ]
+      },
+      "id": "node/1317772801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772804",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Goerzallee / Wupperstraße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2742495,
+          52.4101262
+        ]
+      },
+      "id": "node/1317772804"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317772809",
+        "amenity": "taxi",
+        "name": "Blisse / Berliner"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3214763,
+          52.4863514
+        ]
+      },
+      "id": "node/1317772809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317838943",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Leopoldplatz / Karstadt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.359835,
+          52.5461505
+        ]
+      },
+      "id": "node/1317838943"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317838949",
+        "amenity": "taxi",
+        "name": "Landgrafen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3481057,
+          52.5037047
+        ]
+      },
+      "id": "node/1317838949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317838954",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Charlottenburg",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Luisenplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2989082,
+          52.5194787
+        ]
+      },
+      "id": "node/1317838954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1317838955",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Weißensee",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Rathaus Weißensee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4667892,
+          52.5595657
+        ]
+      },
+      "id": "node/1317838955"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189931",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Hotel Schweizerhof"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3437507,
+          52.5061292
+        ]
+      },
+      "id": "node/1318189931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189935",
+        "amenity": "taxi",
+        "name": "Swissotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3321991,
+          52.5027889
+        ]
+      },
+      "id": "node/1318189935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189936",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Messe Tor 9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2751146,
+          52.501549
+        ]
+      },
+      "id": "node/1318189936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189937",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Platz der Vereinten Nationen ( Landsberger / Frieden )"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4330768,
+          52.523606
+        ]
+      },
+      "id": "node/1318189937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189943",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "U-Bahnhof Tierpark / Otto-Schmirgal-Straße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5229277,
+          52.4974893
+        ]
+      },
+      "id": "node/1318189943"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189948",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Lichtenberg",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Landsberger / Rhin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5175374,
+          52.534845
+        ]
+      },
+      "id": "node/1318189948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189960",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Grand Hyatt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3721737,
+          52.5082478
+        ]
+      },
+      "id": "node/1318189960"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189965",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Wittenau",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Bhf. Wittenau"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3360023,
+          52.5955992
+        ]
+      },
+      "id": "node/1318189965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189966",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Potsdam / Goeben"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3613921,
+          52.4941659
+        ]
+      },
+      "id": "node/1318189966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189967",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Rohrdamm / Holiday Inn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2626765,
+          52.5405002
+        ]
+      },
+      "id": "node/1318189967"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189975",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Alt-Hohenschönhausen",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Marzahner Straße",
+        "name:de": "Marzahner Straße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5148933,
+          52.5462433
+        ]
+      },
+      "id": "node/1318189975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189979",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Am Kupfergraben"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3949679,
+          52.52059
+        ]
+      },
+      "id": "node/1318189979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189981",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Charlottenburg",
+        "amenity": "taxi",
+        "name": "Schloß Charlottenburg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.296549,
+          52.5195897
+        ]
+      },
+      "id": "node/1318189981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189982",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Tauernallee / Säntis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3957886,
+          52.4239698
+        ]
+      },
+      "id": "node/1318189982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189984",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Straße der Pariser Kommune"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4410514,
+          52.5179121
+        ]
+      },
+      "id": "node/1318189984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189986",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Krankenhaus Joseph"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3745289,
+          52.4788117
+        ]
+      },
+      "id": "node/1318189986"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189989",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Bierpinsel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3251757,
+          52.4616075
+        ]
+      },
+      "id": "node/1318189989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189996",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10117",
+        "addr:street": "Leipziger Straße",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "NH Hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3888793,
+          52.5102922
+        ]
+      },
+      "id": "node/1318189996"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318189997",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Köpenick",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Ottomar-Geschke-Straße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5628953,
+          52.4463963
+        ]
+      },
+      "id": "node/1318189997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190000",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Rathaus Wedding"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3573928,
+          52.5472417
+        ]
+      },
+      "id": "node/1318190000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190003",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Nauener"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3677838,
+          52.5519667
+        ]
+      },
+      "id": "node/1318190003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190007",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Sigismundstraße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3639943,
+          52.5082719
+        ]
+      },
+      "id": "node/1318190007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190011",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Rummelsburg",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Nöldner Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4846451,
+          52.5034146
+        ]
+      },
+      "id": "node/1318190011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190023",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "12207",
+        "addr:street": "Osdorfer Straße",
+        "addr:suburb": "Lichterfelde",
+        "amenity": "taxi",
+        "name": "Bhf. Osdorfer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3150787,
+          52.4171971
+        ]
+      },
+      "id": "node/1318190023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190026",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Reichstag"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3740257,
+          52.5178005
+        ]
+      },
+      "id": "node/1318190026"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190042",
+        "amenity": "taxi",
+        "name": "Nordbahnhof"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3867059,
+          52.5315417
+        ]
+      },
+      "id": "node/1318190042"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190043",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Sperlingsgasse"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3227282,
+          52.4999445
+        ]
+      },
+      "id": "node/1318190043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190050",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:housenumber": "2",
+        "addr:postcode": "10179",
+        "addr:street": "Am Köllnischen Park",
+        "addr:suburb": "Mitte",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Am Köllnischen Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4155619,
+          52.5127311
+        ]
+      },
+      "id": "node/1318190050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190061",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Messe Halle ( Halle 14 / 15 )"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2793323,
+          52.5048614
+        ]
+      },
+      "id": "node/1318190061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190064",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "name": "Stuttgarter Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3026034,
+          52.5053849
+        ]
+      },
+      "id": "node/1318190064"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190066",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10117",
+        "addr:street": "Dorotheenstraße",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Maritim Pro Arte"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3868912,
+          52.5185256
+        ]
+      },
+      "id": "node/1318190066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190068",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Prinzen / Oslo",
+        "presence": "7-23h"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3832183,
+          52.5561545
+        ]
+      },
+      "id": "node/1318190068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318190070",
+        "amenity": "taxi",
+        "capacity": "8",
+        "name": "Potsdamer Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3756144,
+          52.5089727
+        ]
+      },
+      "id": "node/1318190070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772871",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Wilhelmshöher"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3211219,
+          52.4725749
+        ]
+      },
+      "id": "node/1318772871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772872",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "7",
+        "name": "U-Bahnhof Johannisthaler"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4544541,
+          52.429986
+        ]
+      },
+      "id": "node/1318772872"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772873",
+        "amenity": "taxi",
+        "capacity": "6",
+        "name": "Georgenstraße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3875295,
+          52.5197676
+        ]
+      },
+      "id": "node/1318772873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772874",
+        "amenity": "taxi",
+        "name": "Bhf. Friedrichstraße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3875398,
+          52.5204833
+        ]
+      },
+      "id": "node/1318772874"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772875",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Tempelhof",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Te-damm / Kaiserin-Augusta ( Karstadt )"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3846964,
+          52.4595403
+        ]
+      },
+      "id": "node/1318772875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772876",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:housenumber": "89",
+        "addr:postcode": "14163",
+        "addr:street": "Fischerhüttenstraße",
+        "addr:suburb": "Zehlendorf",
+        "amenity": "taxi",
+        "name": "Krumme Lanke"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2400485,
+          52.44247
+        ]
+      },
+      "id": "node/1318772876"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772877",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Steglitz",
+        "amenity": "taxi",
+        "name": "Walter-Schreiber"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.327619,
+          52.4638249
+        ]
+      },
+      "id": "node/1318772877"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772878",
+        "amenity": "taxi",
+        "capacity": "3",
+        "name": "Güntzel / Uhland"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3226533,
+          52.4915556
+        ]
+      },
+      "id": "node/1318772878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318772879",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "Lindenallee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2720184,
+          52.5100672
+        ]
+      },
+      "id": "node/1318772879"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318779445",
+        "amenity": "taxi",
+        "capacity": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2591847,
+          52.4318184
+        ]
+      },
+      "id": "node/1318779445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1324974612",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:suburb": "Westend",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "U-Bahnhof Ruhleben"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2410501,
+          52.5254801
+        ]
+      },
+      "id": "node/1324974612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1764709853",
+        "amenity": "taxi",
+        "name": "SpeedCab Taxizentrale",
+        "phone": "+4930 414040"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.401988,
+          52.498568
+        ]
+      },
+      "id": "node/1764709853"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1852613229",
+        "amenity": "taxi",
+        "name": "Goltzstr. / Grunewaldstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3535888,
+          52.4899637
+        ]
+      },
+      "id": "node/1852613229"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1874617246",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:postcode": "10785",
+        "addr:street": "Hans-von-Bülow-Straße",
+        "amenity": "taxi",
+        "name": "Hotel Marriot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3759845,
+          52.5107251
+        ]
+      },
+      "id": "node/1874617246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1937657651",
+        "amenity": "taxi",
+        "name": "Zossenstr. / Gneisenaustr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.394135,
+          52.4914467
+        ]
+      },
+      "id": "node/1937657651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1991661548",
+        "amenity": "taxi",
+        "name": "Anhalter Bahnhof",
+        "phone": "+49 (30) 2623147"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3816479,
+          52.5039958
+        ]
+      },
+      "id": "node/1991661548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2136081020",
+        "amenity": "taxi",
+        "name": "Stahnsdorf Waldschänke",
+        "name:de": "Stahnsdorf Waldschänke"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2106733,
+          52.393498
+        ]
+      },
+      "id": "node/2136081020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210505275",
+        "amenity": "taxi",
+        "name": "Cora-Berliner-Str."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3797279,
+          52.5145689
+        ]
+      },
+      "id": "node/2210505275"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210516861",
+        "amenity": "taxi",
+        "name": "Staatsoper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3945929,
+          52.5172847
+        ]
+      },
+      "id": "node/2210516861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210522797",
+        "amenity": "taxi",
+        "name": "Dircksenstr. / Grunerstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4135212,
+          52.5202249
+        ]
+      },
+      "id": "node/2210522797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210530421",
+        "amenity": "taxi",
+        "name": "Hotel de Rome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3926769,
+          52.5158141
+        ]
+      },
+      "id": "node/2210530421"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210535648",
+        "amenity": "taxi",
+        "capacity": "4",
+        "name": "Alex Kaufhof"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4160852,
+          52.5202274
+        ]
+      },
+      "id": "node/2210535648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210539100",
+        "amenity": "taxi",
+        "old_name": "Hotel Ramada",
+        "traffic_sign": "DE:229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4143067,
+          52.5255726
+        ]
+      },
+      "id": "node/2210539100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210550432",
+        "amenity": "taxi",
+        "name": "Checkpoint Charlie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3903731,
+          52.507153
+        ]
+      },
+      "id": "node/2210550432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210553448",
+        "amenity": "taxi",
+        "name": "Technikmuseum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3770784,
+          52.4988812
+        ]
+      },
+      "id": "node/2210553448"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211265322",
+        "amenity": "taxi",
+        "name": "Turmstr. / Stromstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3411857,
+          52.5256558
+        ]
+      },
+      "id": "node/2211265322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211288783",
+        "amenity": "taxi",
+        "name": "Philharmonie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.368492,
+          52.509799
+        ]
+      },
+      "id": "node/2211288783"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211295269",
+        "amenity": "taxi",
+        "name": "Kriminalgericht ( Von 6:00 bis 22:00 Uhr )"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3534157,
+          52.5266265
+        ]
+      },
+      "id": "node/2211295269"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211379643",
+        "amenity": "taxi",
+        "name": "Senefelder Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4121526,
+          52.5317969
+        ]
+      },
+      "id": "node/2211379643"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211387353",
+        "amenity": "taxi",
+        "name": "Krankenhaus Friedrichshain"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.439114,
+          52.5243093
+        ]
+      },
+      "id": "node/2211387353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211525266",
+        "amenity": "taxi",
+        "name": "Nachrückhalteplatz SXF"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5160942,
+          52.3908112
+        ]
+      },
+      "id": "node/2211525266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211595028",
+        "amenity": "taxi",
+        "name": "Ordensmeisterstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3850433,
+          52.4560407
+        ]
+      },
+      "id": "node/2211595028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211602067",
+        "amenity": "taxi",
+        "name": "Friedenstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3866509,
+          52.4388868
+        ]
+      },
+      "id": "node/2211602067"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211608276",
+        "amenity": "taxi",
+        "name": "Alt-Tempelhof"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3854716,
+          52.4652344
+        ]
+      },
+      "id": "node/2211608276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211673321",
+        "amenity": "taxi",
+        "name": "Zehlendorf Mitte"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2599256,
+          52.4349053
+        ]
+      },
+      "id": "node/2211673321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211792179",
+        "amenity": "taxi",
+        "name": "Rathaus Spandau"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2004268,
+          52.5362564
+        ]
+      },
+      "id": "node/2211792179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211951818",
+        "amenity": "taxi",
+        "name": "Märkisches Zentrum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3547678,
+          52.596687
+        ]
+      },
+      "id": "node/2211951818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2211975309",
+        "amenity": "taxi",
+        "name": "Karl-Bonhoeffer-Nervenklinik"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3332569,
+          52.5788366
+        ]
+      },
+      "id": "node/2211975309"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212109237",
+        "amenity": "taxi",
+        "name": "Unfallkrankenhaus Marzahn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.566283,
+          52.5190149
+        ]
+      },
+      "id": "node/2212109237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212133295",
+        "amenity": "taxi",
+        "name": "Volkradstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5080951,
+          52.4991349
+        ]
+      },
+      "id": "node/2212133295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212165976",
+        "amenity": "taxi",
+        "name": "Hotel Andel´s"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4569779,
+          52.5285
+        ]
+      },
+      "id": "node/2212165976"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212214464",
+        "amenity": "taxi",
+        "name": "Bahnhofstr. / Lindenstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5722701,
+          52.4513788
+        ]
+      },
+      "id": "node/2212214464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212248996",
+        "amenity": "taxi",
+        "name": "Paradiesstr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5581664,
+          52.4061611
+        ]
+      },
+      "id": "node/2212248996"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212273534",
+        "amenity": "taxi",
+        "name": "Columbia-Halle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3921168,
+          52.4843761
+        ]
+      },
+      "id": "node/2212273534"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212283250",
+        "amenity": "taxi",
+        "name": "Volksbühne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4117472,
+          52.5265993
+        ]
+      },
+      "id": "node/2212283250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212294028",
+        "amenity": "taxi",
+        "name": "Speicher",
+        "opening_hours": "19:00-06:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4458441,
+          52.5028378
+        ]
+      },
+      "id": "node/2212294028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212305598",
+        "amenity": "taxi",
+        "name": "Hotel Scandic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3748342,
+          52.5050235
+        ]
+      },
+      "id": "node/2212305598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212308719",
+        "amenity": "taxi",
+        "name": "Theater des Westens ( Von 19:00 bis 23:00 Uhr )"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3291329,
+          52.5055238
+        ]
+      },
+      "id": "node/2212308719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212311139",
+        "amenity": "taxi",
+        "name": "Café Keese",
+        "opening_hours": "20:00-06:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3164089,
+          52.5121015
+        ]
+      },
+      "id": "node/2212311139"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212313888",
+        "amenity": "taxi",
+        "name": "Deutsche Oper",
+        "opening_hours": "19:00-01:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3089052,
+          52.5119116
+        ]
+      },
+      "id": "node/2212313888"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212317117",
+        "amenity": "taxi",
+        "name": "Abacus Tierpark Hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5205525,
+          52.500626
+        ]
+      },
+      "id": "node/2212317117"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212330340",
+        "amenity": "taxi",
+        "name": "Velodrom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4500576,
+          52.5291297
+        ]
+      },
+      "id": "node/2212330340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212337675",
+        "amenity": "taxi",
+        "name": "Flughafen Tegel (Haupthalle)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2926632,
+          52.5542516
+        ]
+      },
+      "id": "node/2212337675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212343772",
+        "amenity": "taxi",
+        "name": "Trabbrennbahn Mariendorf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3870877,
+          52.4306748
+        ]
+      },
+      "id": "node/2212343772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2212349813",
+        "amenity": "taxi",
+        "name": "Zingster Straße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4967422,
+          52.5702935
+        ]
+      },
+      "id": "node/2212349813"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2756793122",
+        "amenity": "taxi",
+        "name": "Messe Süd",
+        "name:de": "Messe Süd",
+        "presence": "During exibition hours"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2693927,
+          52.5006481
+        ]
+      },
+      "id": "node/2756793122"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3496882379",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Rathaus Steglitz",
+        "opening_hours": "24/7",
+        "phone": "+49 (30) 7915889"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3220477,
+          52.456686
+        ]
+      },
+      "id": "node/3496882379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3776466993",
+        "amenity": "taxi",
+        "name": "Amtsgericht Tiergarten"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3490252,
+          52.5234461
+        ]
+      },
+      "id": "node/3776466993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3789285913",
+        "amenity": "taxi",
+        "name": "City Cube",
+        "name:de": "City Cube",
+        "presence": "during exhibition hours"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2726192,
+          52.5000594
+        ]
+      },
+      "id": "node/3789285913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3837177557",
+        "amenity": "taxi",
+        "capacity": "2",
+        "name": "SEZ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4453992,
+          52.5259204
+        ]
+      },
+      "id": "node/3837177557"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3866173538",
+        "amenity": "taxi",
+        "name": "Mercedes-Benz Arena",
+        "note": "Nur bei Veranstaltungen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4416478,
+          52.5060386
+        ]
+      },
+      "id": "node/3866173538"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3919457775",
+        "amenity": "taxi",
+        "name": "Brandenburger Tor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3762959,
+          52.5163327
+        ]
+      },
+      "id": "node/3919457775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3950765351",
+        "amenity": "taxi",
+        "name": "nhow Hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4508624,
+          52.5013021
+        ]
+      },
+      "id": "node/3950765351"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3962375460",
+        "amenity": "taxi",
+        "name": "Am Flutgraben",
+        "name:de": "Am Flutgraben"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4499243,
+          52.4966498
+        ]
+      },
+      "id": "node/3962375460"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4073423724",
+        "amenity": "taxi",
+        "name": "Am Festplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3041501,
+          52.5517668
+        ]
+      },
+      "id": "node/4073423724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4174670481",
+        "amenity": "taxi",
+        "name": "Rathaus Marzahn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5435022,
+          52.526073
+        ]
+      },
+      "id": "node/4174670481"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4221641990",
+        "amenity": "taxi",
+        "name": "Acker / Bernauer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3903553,
+          52.5352979
+        ]
+      },
+      "id": "node/4221641990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4306025976",
+        "addr:city": "Berlin",
+        "addr:country": "DE",
+        "addr:housenumber": "11",
+        "addr:postcode": "13355",
+        "addr:street": "Grenzstraße",
+        "addr:suburb": "Gesundbrunnen",
+        "amenity": "taxi",
+        "name": "Taxi Center Berlin Wedding"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3783036,
+          52.5422151
+        ]
+      },
+      "id": "node/4306025976"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4530641638",
+        "amenity": "taxi",
+        "capacity": "5",
+        "name": "Nachrückhalteplatz Washingtonplatz",
+        "name:de": "Nachrückhalteplatz Washingtonplatz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3685794,
+          52.5241791
+        ]
+      },
+      "id": "node/4530641638"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4606545260",
+        "amenity": "taxi",
+        "name": "Flughafen TXL Terminal C (Flugsteige 40 bis 67)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2958541,
+          52.5552199
+        ]
+      },
+      "id": "node/4606545260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4673721895",
+        "amenity": "taxi",
+        "capacity": "3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4146535,
+          52.5404693
+        ]
+      },
+      "id": "node/4673721895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5195042016",
+        "amenity": "taxi",
+        "capacity": "10",
+        "name": "Wartebereich für vorbestellte Taxen",
+        "name:en": "Waiting area for booked taxis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2906417,
+          52.5545435
+        ]
+      },
+      "id": "node/5195042016"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5195042017",
+        "amenity": "taxi",
+        "capacity": "30",
+        "name": "Flughafen TXL Terminal A (Flugsteige 6 bis 9)",
+        "name:en": "Airport TXL Terminal A (Gate 6 to 9)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2893799,
+          52.5543638
+        ]
+      },
+      "id": "node/5195042017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5195042018",
+        "amenity": "taxi",
+        "capacity": "5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4079191,
+          52.5416639
+        ]
+      },
+      "id": "node/5195042018"
+    }
+  ]
+}

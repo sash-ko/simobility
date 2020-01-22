@@ -1,0 +1,12 @@
+.DS_Store
+.vscode/
+__pycache__/
+.pytest_cache
+simobility.egg-info/
+build/
+dist/
+.mypy_cache/
+.ipynb_checkpoints/
+*.csv
+*.zip
+*.feather

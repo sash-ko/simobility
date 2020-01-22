@@ -1,0 +1,27 @@
+
+geofence: '../data/nyc_geofence.geojson'
+
+demand:
+  data_file: '../data/rides.feather'
+
+fleet:
+  stations: '../data/nyc_bus_stops.geojson'
+  vehicles: 50
+
+bookings:
+  # in minutes
+  max_pending_time: 2
+  bookings_per_hour: 2000
+
+simulation:
+  # in minutes
+  duration: 120
+  starting_time: '2015-02-01 12:00:00'
+  resolution: 7
+
+  demand_seed: 123123
+  fleet_seed: 11
+  # in seconds
+  clock_step: 10
+
+  output: 'simulation_output.csv'

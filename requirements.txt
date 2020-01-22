@@ -1,0 +1,10 @@
+pandas
+transitions
+haversine
+pytest
+geopandas
+shapely
+scipy
+requests
+geopandas
+pyarrow

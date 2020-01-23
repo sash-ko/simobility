@@ -115,11 +115,39 @@ dispatcher.dispatch(itinerary)
 ## Read simulation output
 
 ```python
-data = pd.read_csv('simulation_output.csv', sep=';', header=None, names=['datetime', 'clock_time', 'object_type', 'uuid', 'itinerary_id', 'from_state', 'to_state', 'details'], parse_dates=['datetime'], converters={'details': lambda v: eval(v)})
+columns = [
+    "datetime",
+    "clock_time",
+    "object_type",
+    "uuid",
+    "itinerary_id",
+    "from_state",
+    "to_state",
+    "details",
+]
+
+data = pd.read_csv(
+    "simulation_output.csv",
+    sep=";",
+    header=None,
+    names=columns,
+    parse_dates=["datetime"],
+    converters={"details": lambda v: eval(v)},
+)
 
 details = data.details.apply(pd.Series)
 # or
 
 from pandas.io.json import json_normalize
 details = json_normalize(data.details)
+```
+
+## Run OSRM
+
+```bash
+wget http://download.geofabrik.de/north-america/us/new-york-latest.osm.pbf
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-extract -p /opt/car.lua /data/new-york-latest.osm.pbf
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-partition /data/new-york-latest.osrm
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-customize /data/new-york-latest.osrm
+docker run -d -t -i -p 5010:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --algorithm mld /data/new-york-latest.osrm
 ```

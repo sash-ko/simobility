@@ -7,10 +7,20 @@ from uuid import uuid4
 import logging
 from .clock import Clock
 
-logger = logging.getLogger("state_changes")
+# WARNING: do not change is line otherwise simulation logs can disappear
+simulation_logs = logging.getLogger("state_changes")
 
 
 class StateMachine:
+
+    """ Basic class for all classes with multiple states, e.g. Booking, Vehicle.
+
+    The main responcibility of this class is to log all state transitions.
+    When state is changes `_state_machine` calls method `on_state_changed`.
+
+    All chagnes are loged by `logger`
+    """
+
     def __init__(
         self,
         clock: Clock,
@@ -33,10 +43,15 @@ class StateMachine:
         )
 
     def on_state_changed(self, event: EventData) -> Dict:
+        """Called on each state transition"""
+
         state_info = self.process_state_change(event)
+
+        # Check Booking.on_state_changed and Vehicle.on_state_changed for details
         msg = self.format_message(state_info)
 
-        logger.debug(msg)
+        # Log state changes - results of simulations
+        simulation_logs.debug(msg)
 
         return state_info
 
@@ -45,8 +60,11 @@ class StateMachine:
         return msg
 
     def process_state_change(self, event: EventData) -> OrderedDict:
+        # Arguments specific to each class and state change
+        # They defined in derived classes
         arguments = event.kwargs
 
+        # each message should contain itinerary id
         tid = arguments.get("itinerary_id")
 
         class_ = self.__class__.__name__.lower()
@@ -57,8 +75,11 @@ class StateMachine:
         state_info["clock"] = self.clock.now
         state_info["class"] = class_
         state_info["id"] = self.id
+        # itinerary id
         state_info["tid"] = tid
+        # from state
         state_info["source"] = source
+        # to state
         state_info["dest"] = dest
         state_info["arguments"] = arguments
 

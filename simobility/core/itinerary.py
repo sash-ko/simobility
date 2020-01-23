@@ -24,13 +24,17 @@ class Itinerary:
         self.id: str = uuid4().hex
         self.vehicle = vehicle
 
+        # [next_jobs] -> current_job -> [completed_jobs]
+        self.current_job: Optional[BaseJob] = None
         self.next_jobs: List[BaseJob] = []
         self.completed_jobs: List[BaseJob] = []
-        self.current_job: Optional[BaseJob] = None
+
         self.created_at: int = created_at
 
-    # Methods that create new jobs and add them to the Itinerary
     def move_to(self, destination: Position, eta: int = None) -> BaseJob:
+        """Create a move job - move vehicle to a specific position defined by 
+        `destination`. `eta` is just an estimate used only for logging
+        """
         return self.add_job(MoveTo(self.id, destination, eta))
 
     def pickup(self, booking: Booking, eta: int = None) -> BaseJob:
@@ -48,6 +52,7 @@ class Itinerary:
             raise Exception(f"Job {job} is not derived from Base")
 
         job.itinerary_id = self.id
+
         if self.current_job is None:
             self.current_job = job
         else:
@@ -79,6 +84,7 @@ class Itinerary:
         return []
 
     def is_completed(self) -> bool:
-        """Are all jobs from the itinerary already complete"""
+        """Returns true if there are no jobs to execute
+        """
 
-        return self.jobs_to_complete == [] and self.completed_jobs != []
+        return self.jobs_to_complete == []

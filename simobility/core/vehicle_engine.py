@@ -7,6 +7,14 @@ from ..routers.base_router import BaseRouter
 
 
 class VehicleEngine:
+    """ Moves vehicles. Every time `start_move` is called, VehicleEngine calculates
+    a route and `is_moving` will be true until the end of the route.
+
+    The route is the one that is used to move vehicles, the ground truth. It not necessary 
+    the same as the one used by matcher/dispatcher. This route can be calculated
+    from historical data or include real time traffic information.
+    """
+
     def __init__(self, position: Position, router: Type[BaseRouter], clock: Clock):
         self.router = router
         self.clock = clock

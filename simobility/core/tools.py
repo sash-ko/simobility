@@ -4,13 +4,15 @@ from .booking import Booking
 
 
 def basic_booking_itinerary(
-    current_time,
+    current_time: int,
     vehicle: Vehicle,
     booking: Booking,
     pickup_eta: int = None,
     dropoff_eta: int = None,
 ) -> Itinerary:
     """
+    Create a simple Itinerary: one vehicle picks up and drops off
+    one customer
     """
 
     itinerary = Itinerary(current_time, vehicle)

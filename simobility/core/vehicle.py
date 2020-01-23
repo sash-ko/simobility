@@ -141,6 +141,8 @@ class Vehicle(StateMachine):
         self.set_idling(**self.context)
 
     def on_state_changed(self, event: EventData):
+        """Called on each state change"""
+
         # TODO: check if kwargs already have keys
         event.kwargs["position"] = self.position.to_dict()
 

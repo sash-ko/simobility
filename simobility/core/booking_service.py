@@ -4,11 +4,13 @@ from .clock import Clock
 
 
 class BookingService:
+    """
+    Stores pending bookings. Bookings will be expired after `max_pending_time`
+    """
 
     def __init__(self, clock: Clock, max_pending_time: int):
         self._bookings: List[Booking] = []
         self._pending_bookings: Dict[str, Booking] = {}
-        self._booking_added: Dict[str, int] = {}
         self._max_pending_time = max_pending_time
         self.clock = clock
 
@@ -18,7 +20,6 @@ class BookingService:
 
         self._bookings.append(booking)
         self._pending_bookings[booking.id] = booking
-        self._booking_added[booking.id] = self.clock.clock_time
 
     def add_bookings(self, bookings: List[Booking]):
         for booking in bookings:
@@ -37,9 +38,9 @@ class BookingService:
                 non_pending.append(booking.id)
 
             else:
-                added = self._booking_added.get(booking.id)
+                created = booking.created_at
 
-                if (added is not None and (added + self._max_pending_time) < now):
+                if (created is not None and (created + self._max_pending_time) < now):
                     booking.set_expired()
                     non_pending.append(booking.id)
 

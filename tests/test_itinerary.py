@@ -13,7 +13,8 @@ def test_create():
     assert itinerary.next_jobs == []
     assert itinerary.current_job is None
     assert itinerary.jobs_to_complete == []
-    assert not itinerary.is_completed()
+    # itinerary without jobs
+    assert itinerary.is_completed()
     assert itinerary.vehicle == vehicle
 
 

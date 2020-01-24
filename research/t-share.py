@@ -187,7 +187,7 @@ class Matcher:
 
 if __name__ == "__main__":
 
-    with open("config.yaml") as cfg:
+    with open("nyc_config.yaml") as cfg:
         config = yaml.load(cfg, Loader=yaml.FullLoader)
 
     config_state_changes(config["simulation"]["output"])

@@ -11,6 +11,7 @@ setup(
         "simobility.metrics",
         "simobility.models",
         "simobility.routers",
+        "simobility.simulator",
     ],
     python_requires=">=3.7.*",
     install_requires=[
@@ -18,7 +19,11 @@ setup(
         "scipy>=1.2.1",
         "haversine",
         "geojson",
-        "transitions"
+        "transitions",
+        "geopandas",
+        "shapely",
+        "requests",
+        "pyarrow"
     ],
     extras_require={
         "dev": [

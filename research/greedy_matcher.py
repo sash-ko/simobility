@@ -1,13 +1,8 @@
-# import sys
-# import os
-
-# sys.path.insert(0, os.path.abspath("../../simobility"))
-
-
 from typing import List, Tuple, Dict
 import numpy as np
 import logging
 import yaml
+import argparse
 
 import simobility.routers as routers
 from simobility.core.tools import basic_booking_itinerary
@@ -35,7 +30,7 @@ class GreedyMatcher:
     Each booking is matched with closest vehicle
     """
 
-    def __init__(self, context: Context, router:BaseRouter, config: Dict):
+    def __init__(self, context: Context, router: BaseRouter, config: Dict):
         self.clock = context.clock
         self.fleet = context.fleet
         self.booking_service = context.booking_service
@@ -45,7 +40,7 @@ class GreedyMatcher:
         self.router = router
 
         # Search time radius in minutes (max ETA)
-        search_radius = config['solvers']['greedy_matcher']['search_radius']
+        search_radius = config["solvers"]["greedy_matcher"]["search_radius"]
         self.search_radius = self.clock.time_to_clock_time(search_radius, "m")
 
         logging.info(f"Search radius: {self.search_radius}")
@@ -93,20 +88,27 @@ class GreedyMatcher:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Preprocess data")
+    parser.add_argument("--config", help="YAML config")
+    args = parser.parse_args()
 
-    with open("nyc_config.yaml") as cfg:
+    with open(args.config) as cfg:
         config = yaml.load(cfg, Loader=yaml.FullLoader)
 
     config_state_changes(config["simulation"]["output"])
 
     context, demand = create_scenario(config)
 
-    if config['solvers']['greedy_matcher']['router'] == 'linear':
-        router = routers.LinearRouter(context.clock, config['routers']['linear']['speed'])
-    elif config['solvers']['greedy_matcher']['router'] == 'osrm':
-        router = routers.OSRMRouter(context.clock, server=config['routers']['osrm']['server'])
+    if config["solvers"]["greedy_matcher"]["router"] == "linear":
+        router = routers.LinearRouter(
+            context.clock, config["routers"]["linear"]["speed"]
+        )
+    elif config["solvers"]["greedy_matcher"]["router"] == "osrm":
+        router = routers.OSRMRouter(
+            context.clock, server=config["routers"]["osrm"]["server"]
+        )
     else:
-        raise Exception('Unknown router')
+        raise Exception("Unknown router")
 
     logging.info(f"Matcher router {router}")
 

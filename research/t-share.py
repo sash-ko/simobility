@@ -1,3 +1,9 @@
+"""
+Implementation of research paper:
+
+Shuo Ma, Yu Zheng, Ouri Wolfson: "T-Share: A Large-Scale Dynamic Taxi Ridesharing Service"
+"""
+
 import yaml
 import numpy as np
 from h3 import h3
@@ -153,7 +159,9 @@ class Matcher:
 
         return itineraries
 
-    def find_candidate_vehicles(self, pickup: Position, max_pickup_time: int, ignore_vehicles: Set[Vehicle]):
+    def find_candidate_vehicles(
+        self, pickup: Position, max_pickup_time: int, ignore_vehicles: Set[Vehicle]
+    ):
         candidates = []
 
         hexagon = self.city_grid.find_hex(pickup)
@@ -188,12 +196,16 @@ if __name__ == "__main__":
 
     context, demand = create_scenario(config)
 
-    if config['solvers']['greedy_matcher']['router'] == 'linear':
-        router = routers.LinearRouter(context.clock, config['routers']['linear']['speed'])
-    elif config['solvers']['greedy_matcher']['router'] == 'osrm':
-        router = routers.OSRMRouter(context.clock, server=config['routers']['osrm']['server'])
+    if config["solvers"]["greedy_matcher"]["router"] == "linear":
+        router = routers.LinearRouter(
+            context.clock, config["routers"]["linear"]["speed"]
+        )
+    elif config["solvers"]["greedy_matcher"]["router"] == "osrm":
+        router = routers.OSRMRouter(
+            context.clock, server=config["routers"]["osrm"]["server"]
+        )
     else:
-        raise Exception('Unknown router')
+        raise Exception("Unknown router")
 
     logging.info(f"Matcher router {router}")
 
@@ -201,9 +213,9 @@ if __name__ == "__main__":
     geofence = mapping(geofence)
     grid = CityGrid(geofence, router, config["simulation"]["resolution"])
 
-    max_time_radius = config['solvers']['tshare_matcher']['max_time_radius']
+    max_time_radius = config["solvers"]["tshare_matcher"]["max_time_radius"]
     max_time_radius = context.clock.time_to_clock_time(max_time_radius, "m")
-    max_dist_radius = config['solvers']['tshare_matcher']['max_dist_radius']
+    max_dist_radius = config["solvers"]["tshare_matcher"]["max_dist_radius"]
 
     grid.create_index(max_time_radius, max_dist_radius)
 

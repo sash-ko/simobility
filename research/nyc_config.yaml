@@ -7,6 +7,9 @@ demand:
 fleet:
   stations: '../data/nyc_bus_stops.geojson'
   vehicles: 50
+  router: 'linear'
+  # router: 'osrm'
+
 
 bookings:
   # in minutes
@@ -30,3 +33,10 @@ solvers:
   greedy_matcher:
     # radius in minutes
     search_radius: 5
+    router: 'linear'
+
+routers:
+  osrm:
+    server: 'localhost:5010'
+  linear:
+    speed: 20

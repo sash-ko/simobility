@@ -16,7 +16,6 @@ from simobility.core import Clock
 from simobility.core import Itinerary
 from simobility.core import Booking
 from simobility.core import Vehicle
-import simobility.models as models
 from simobility.core.loggers import configure_root, config_state_changes
 from simobility.core.metrics import calculate_metrics
 from scenario import create_scenario

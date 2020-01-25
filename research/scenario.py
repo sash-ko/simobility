@@ -55,9 +55,18 @@ def create_scenario(config):
         starting_time=config["simulation"]["starting_time"],
     )
 
-    fleet_router = routers.LinearRouter(clock=clock)
-    # fleet_router = routers.OSRMRouter(clock=clock, server=OSRM_SERVER)
+    if config['fleet']['router'] == 'linear':
+        fleet_router = routers.LinearRouter(clock=clock, speed=config['routers']['linear']['speed'])
+
+    elif config['fleet']['router'] == 'osrm':
+        fleet_router = routers.OSRMRouter(clock=clock, server=config['routers']['osrm']['server'])
+
+    else:
+        logging.warning('Unknown router. Fallback to linear')
+        fleet_router = routers.LinearRouter(clock=clock, speed=config['routers']['linear']['speed'])
+
     logging.info(f"Fleet router {fleet_router}")
+
     fleet_router = routers.CachingRouter(fleet_router)
 
     fleet = Fleet(clock, fleet_router)

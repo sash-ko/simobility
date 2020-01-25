@@ -14,7 +14,7 @@ def config_state_changes(file_name):
 
     ch = logging.FileHandler(file_name, "w")
     ch.setLevel(logging.DEBUG)
-    formatter = logging.Formatter("%(asctime)s;%(message)s")
+    formatter = logging.Formatter("%(asctime)s;%(message)s", datefmt='%Y-%m-%d %H:%M:%S')
     ch.setFormatter(formatter)
 
     logger.addHandler(ch)

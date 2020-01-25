@@ -10,23 +10,25 @@ import simobility.routers as routers
 from simobility.core import Fleet
 from simobility.core import BookingService
 from simobility.core import Dispatcher
+
 # import simobility.models as models
 from simobility.core.tools import ReplayDemand
 from simobility.simulator.simulator import Simulator, Context
 
 
-def create_demand_model(
-    config,
-    clock,
-    map_matcher
-):
+def create_demand_model(config, clock, map_matcher):
 
     from_datetime = clock.to_datetime()
     duration_mins = config["simulation"]["duration"]
 
     to_datetime = from_datetime + timedelta(minutes=duration_mins)
 
-    num_bookings = math.ceil(duration_mins / 60) * config["bookings"]["bookings_per_hour"]
+    num_bookings = (
+        math.ceil(duration_mins / 60) * config["bookings"]["bookings_per_hour"]
+    )
+
+    if not config["simulation"]["map_match"]:
+        map_matcher = None
 
     round_to = clock.to_pandas_units()
     demand = ReplayDemand(
@@ -37,7 +39,7 @@ def create_demand_model(
         round_to,
         num_bookings,
         map_matcher=map_matcher,
-        seed=config["simulation"].get("demand_seed")
+        seed=config["simulation"].get("demand_seed"),
     )
     return demand
 
@@ -55,15 +57,21 @@ def create_scenario(config):
         starting_time=config["simulation"]["starting_time"],
     )
 
-    if config['fleet']['router'] == 'linear':
-        fleet_router = routers.LinearRouter(clock=clock, speed=config['routers']['linear']['speed'])
+    if config["fleet"]["router"] == "linear":
+        fleet_router = routers.LinearRouter(
+            clock=clock, speed=config["routers"]["linear"]["speed"]
+        )
 
-    elif config['fleet']['router'] == 'osrm':
-        fleet_router = routers.OSRMRouter(clock=clock, server=config['routers']['osrm']['server'])
+    elif config["fleet"]["router"] == "osrm":
+        fleet_router = routers.OSRMRouter(
+            clock=clock, server=config["routers"]["osrm"]["server"]
+        )
 
     else:
-        logging.warning('Unknown router. Fallback to linear')
-        fleet_router = routers.LinearRouter(clock=clock, speed=config['routers']['linear']['speed'])
+        logging.warning("Unknown router. Fallback to linear")
+        fleet_router = routers.LinearRouter(
+            clock=clock, speed=config["routers"]["linear"]["speed"]
+        )
 
     logging.info(f"Fleet router {fleet_router}")
 
@@ -74,7 +82,7 @@ def create_scenario(config):
         config["fleet"]["vehicles"],
         config["fleet"]["stations"],
         geofence_file=config.get("geofence"),
-        seed=config["simulation"].get("fleet_seed")
+        seed=config["simulation"].get("fleet_seed"),
     )
 
     max_pending_time = clock.time_to_clock_time(
@@ -82,11 +90,7 @@ def create_scenario(config):
     )
     booking_service = BookingService(clock, max_pending_time)
 
-    demand = create_demand_model(
-        config,
-        clock=clock,
-        map_matcher=fleet_router
-    )
+    demand = create_demand_model(config, clock=clock, map_matcher=fleet_router)
 
     dispatcher = Dispatcher()
 

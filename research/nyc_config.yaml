@@ -7,20 +7,22 @@ demand:
 fleet:
   stations: '../data/nyc_bus_stops.geojson'
   vehicles: 50
-  router: 'linear'
-  # router: 'osrm'
-
+  # router: 'linear'
+  router: 'osrm'
 
 bookings:
   # in minutes
   max_pending_time: 2
-  bookings_per_hour: 100
+  bookings_per_hour: 500
 
 simulation:
   # in minutes
   duration: 360
   starting_time: '2015-02-01 12:00:00'
   resolution: 7
+  # map match pickups and dropoffs
+  # map_match: True
+  map_match: False
 
   demand_seed: 123123
   fleet_seed: 11
@@ -34,6 +36,7 @@ solvers:
     # radius in minutes
     search_radius: 5
     router: 'linear'
+    # router: 'osrm'
   tshare_matcher:
     # minutes
     max_time_radius: 10
@@ -42,6 +45,6 @@ solvers:
 
 routers:
   osrm:
-    server: 'localhost:5010'
+    server: 'http://localhost:5010'
   linear:
     speed: 20

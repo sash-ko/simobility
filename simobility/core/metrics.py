@@ -18,7 +18,7 @@ def calculate_metrics(data, clock):
     created = data[booking_idx & (data.to_state == "pending")].shape[0]
     pickups = data[booking_idx & (data.to_state == "pickup")].shape[0]
     dropoffs = data[booking_idx & (data.to_state == "dropoff")].shape[0]
-    # expired = data[booking_idx & (data.to_state == "expired")].shape[0]
+    expired = data[booking_idx & (data.to_state == "expired")].shape[0]
     pickup_rate = pickups / created * 100
 
     num_steps = clock.clock_time
@@ -38,6 +38,7 @@ def calculate_metrics(data, clock):
     return {
         "num_vehicles": num_vehicles,
         "created": created,
+        "expired": expired,
         "pickups": pickups,
         "dropoffs": dropoffs,
         "pickup_rate": pickup_rate,

@@ -211,7 +211,9 @@ if __name__ == "__main__":
 
     geofence = read_polygon(config.get("geofence"))
     geofence = mapping(geofence)
-    grid = CityGrid(geofence, router, config["simulation"]["resolution"])
+
+    resolution = config["simulation"]["solvers"]["tshare_matcher"]["hex_resolution"]
+    grid = CityGrid(geofence, router, resolution)
 
     max_time_radius = config["solvers"]["tshare_matcher"]["max_time_radius"]
     max_time_radius = context.clock.time_to_clock_time(max_time_radius, "m")

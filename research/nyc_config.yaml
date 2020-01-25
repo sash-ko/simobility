@@ -19,7 +19,6 @@ simulation:
   # in minutes
   duration: 360
   starting_time: '2015-02-01 12:00:00'
-  resolution: 7
   # map match pickups and dropoffs
   # map_match: True
   map_match: False
@@ -42,6 +41,7 @@ solvers:
     max_time_radius: 10
     # meters
     max_dist_radius: 5000
+    hex_resolution: 7
 
 routers:
   osrm:

@@ -10,7 +10,8 @@ import simobility.routers as routers
 from simobility.core import Fleet
 from simobility.core import BookingService
 from simobility.core import Dispatcher
-import simobility.models as models
+# import simobility.models as models
+from simobility.core.tools import ReplayDemand
 from simobility.simulator.simulator import Simulator, Context
 
 
@@ -28,7 +29,7 @@ def create_demand_model(
     num_bookings = math.ceil(duration_mins / 60) * config["bookings"]["bookings_per_hour"]
 
     round_to = clock.to_pandas_units()
-    demand = models.DemandFileReplay(
+    demand = ReplayDemand(
         clock,
         config["demand"]["data_file"],
         from_datetime,

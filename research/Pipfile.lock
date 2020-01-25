@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "49484de97aa31a09231fb504b92a285499320d5c0f7ca78fb28c3f167a668b6d"
+            "sha256": "e13f5bc4fc1bfe80908eeebdba51c1ea6c5f4344ee157e983d52686bbb643c93"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,7 +18,7 @@
     "default": {
         "master": {
             "git": "https://github.com/sash-ko/simobility.git",
-            "ref": "d9b8358b1360de696101bd85d045920b9243a4c8"
+            "ref": "88653246bd49fe95c4f8a9d945b1341c5ba027a2"
         }
     },
     "develop": {}

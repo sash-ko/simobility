@@ -1,10 +1,9 @@
 from setuptools import setup
 from simobility import __version__
 
-
 setup(
     name="simobility",
-    description="Lightweight mobility simulation for quick " "algorithm prototyping",
+    description="Lightweight mobility simulation for quick algorithm prototyping",
     author="Oleksandr Lysenko",
     author_email="sashkolysenko@gmail.com",
     version=__version__,

@@ -9,7 +9,6 @@ setup(
         "simobility",
         "simobility.core",
         "simobility.metrics",
-        "simobility.models",
         "simobility.routers",
         "simobility.simulator",
     ],

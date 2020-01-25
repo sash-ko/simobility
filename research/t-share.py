@@ -24,6 +24,7 @@ from simobility.core import Fleet
 from simobility.simulator.simulator import Simulator, Context
 from simobility.core import BookingService, Dispatcher
 from simobility.core.loggers import configure_root, config_state_changes
+from simobility.utils import read_polygon
 
 from scenario import create_scenario
 from metrics import print_metrics
@@ -196,7 +197,8 @@ if __name__ == "__main__":
 
     router = routers.LinearRouter(context.clock)
 
-    geofence = mapping(context.geofence)
+    geofence = read_polygon(config.get("geofence"))
+    geofence = mapping(geofence)
     grid = CityGrid(geofence, router, config["simulation"]["resolution"])
 
     # TODO: move to config, correlated by search radius
@@ -209,6 +211,6 @@ if __name__ == "__main__":
     matcher = Matcher(grid, context)
 
     simulator = Simulator(matcher, context)
-    simulator.simulate(demand, context.duration)
+    simulator.simulate(demand, config["simulation"]["duration"])
 
     print_metrics(config["simulation"]["output"], context.clock)

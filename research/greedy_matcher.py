@@ -113,6 +113,6 @@ if __name__ == "__main__":
     matcher = GreedyMatcher(context)
 
     simulator = Simulator(matcher, context)
-    simulator.simulate(demand, context.duration)
+    simulator.simulate(demand, config["simulation"]["duration"])
 
     print_metrics(config["simulation"]["output"], context.clock)

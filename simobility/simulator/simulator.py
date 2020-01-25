@@ -1,3 +1,4 @@
+import logging
 from dataclasses import dataclass
 from simobility.core import Fleet
 from simobility.core import BookingService
@@ -21,7 +22,10 @@ class Simulator:
         self.booking_service = context.booking_service
         self.dispatcher = context.dispatcher
 
-    def simulate(self, demand, num_steps):
+    def simulate(self, demand, duration_mins):
+        num_steps = self.clock.time_to_clock_time(duration_mins, "m")
+        logging.info(f"Number of simulation steps: {num_steps}")
+
         for i in range(num_steps):
 
             bookings = demand.next()

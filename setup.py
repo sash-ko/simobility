@@ -24,7 +24,8 @@ setup(
         "shapely",
         "requests",
         "pyarrow",
-        "pyyaml"
+        "pyyaml",
+        "h3"
     ],
     extras_require={
         "dev": [

@@ -1,8 +1,3 @@
-import sys
-import os
-
-sys.path.insert(0, os.path.abspath("../../simobility"))
-
 import yaml
 import numpy as np
 from h3 import h3

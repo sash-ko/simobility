@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "49484de97aa31a09231fb504b92a285499320d5c0f7ca78fb28c3f167a668b6d"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "master": {
+            "git": "https://github.com/sash-ko/simobility.git",
+            "ref": "d9b8358b1360de696101bd85d045920b9243a4c8"
+        }
+    },
+    "develop": {}
+}

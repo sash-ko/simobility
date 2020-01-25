@@ -1,7 +1,7 @@
-import sys
-import os
+# import sys
+# import os
 
-sys.path.insert(0, os.path.abspath("../../simobility"))
+# sys.path.insert(0, os.path.abspath("../../simobility"))
 
 
 from typing import List, Tuple, Dict

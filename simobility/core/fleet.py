@@ -1,9 +1,15 @@
 from typing import List, Type, Dict
+import random
+import uuid
+import numpy as np
+import json
+from shapely.geometry import shape
 from .vehicle_engine import VehicleEngine
 from .vehicle import StopReasons, Vehicle
 from .clock import Clock
 from .position import Position
 from ..routers.base_router import BaseRouter
+from ..utils import read_polygon
 
 
 class Fleet:
@@ -33,6 +39,35 @@ class Fleet:
         for v in self._vehicles.values():
             if not v.is_idling():
                 v.stop(StopReasons.stop)
+
+    def infleet_from_geojson(
+        self, fleet_size: int, stations_file: str, geofence_file=None, seed=None
+    ):
+        """
+        """
+
+        # np.random.seed(seed)
+        state = np.random.RandomState(seed)
+
+        # reproduce vehicle ids
+        rd = random.Random()
+        rd.seed(seed)
+
+        with open(stations_file) as f:
+            stations = json.load(f)
+
+        stations = [s["geometry"] for s in stations["features"]]
+
+        if geofence_file:
+            geofence = read_polygon(geofence_file)
+            stations = [s for s in stations if shape(s).within(geofence)]
+
+        for item in state.choice(stations, fleet_size):
+            lon, lat = item["coordinates"]
+
+            id_ = uuid.UUID(int=rd.getrandbits(128)).hex
+            vehicle = Vehicle(self.clock, vehicle_id=id_)
+            self.infleet(vehicle, Position(lon, lat))
 
 
 def create_engine(pos: Position, router: Type[BaseRouter], clock: Clock):

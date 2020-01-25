@@ -104,11 +104,13 @@ if __name__ == "__main__":
     if config['solvers']['greedy_matcher']['router'] == 'linear':
         router = routers.LinearRouter(context.clock, config['routers']['linear']['speed'])
     elif config['solvers']['greedy_matcher']['router'] == 'osrm':
-        router = routers.OSRMRouter(clock=clock, server=config['routers']['osrm']['server'])
+        router = routers.OSRMRouter(context.clock, server=config['routers']['osrm']['server'])
     else:
         raise Exception('Unknown router')
 
     logging.info(f"Matcher router {router}")
+
+    router = routers.CachingRouter(router)
 
     matcher = GreedyMatcher(context, router, config)
 

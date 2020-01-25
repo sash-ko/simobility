@@ -23,7 +23,8 @@ setup(
         "geopandas",
         "shapely",
         "requests",
-        "pyarrow"
+        "pyarrow",
+        "pyyaml"
     ],
     extras_require={
         "dev": [

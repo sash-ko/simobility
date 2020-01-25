@@ -12,6 +12,7 @@ import logging
 from math import ceil
 from typing import Dict, List, Set
 from collections import defaultdict
+import argparse
 
 from simobility.core.tools import basic_booking_itinerary
 import simobility.routers as routers
@@ -188,8 +189,11 @@ class Matcher:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Preprocess data")
+    parser.add_argument("--config", help="YAML config")
+    args = parser.parse_args()
 
-    with open("nyc_config.yaml") as cfg:
+    with open(args.config) as cfg:
         config = yaml.load(cfg, Loader=yaml.FullLoader)
 
     config_state_changes(config["simulation"]["output"])
@@ -212,7 +216,7 @@ if __name__ == "__main__":
     geofence = read_polygon(config.get("geofence"))
     geofence = mapping(geofence)
 
-    resolution = config["simulation"]["solvers"]["tshare_matcher"]["hex_resolution"]
+    resolution = config["solvers"]["tshare_matcher"]["hex_resolution"]
     grid = CityGrid(geofence, router, resolution)
 
     max_time_radius = config["solvers"]["tshare_matcher"]["max_time_radius"]

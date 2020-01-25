@@ -34,6 +34,11 @@ solvers:
     # radius in minutes
     search_radius: 5
     router: 'linear'
+  tshare_matcher:
+    # minutes
+    max_time_radius: 10
+    # meters
+    max_dist_radius: 5000
 
 routers:
   osrm:

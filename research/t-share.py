@@ -18,7 +18,6 @@ from simobility.core import Clock
 from simobility.core import Position
 from simobility.core import Itinerary
 from simobility.core import Vehicle
-import simobility.models as models
 from simobility.routers.base_router import BaseRouter
 from simobility.core import Fleet
 from simobility.simulator.simulator import Simulator, Context
@@ -96,12 +95,13 @@ class CityGrid:
 
 # TODO: use "area" or something like this instead of hexagon
 class Matcher:
-    def __init__(self, city_grid: CityGrid, context: Context):
+    def __init__(self, city_grid: CityGrid, router, context: Context):
         self.city_grid = city_grid
         self.clock = context.clock
         self.fleet = context.fleet
         self.booking_service = context.booking_service
         self.dispatcher = context.dispatcher
+        self.router = router
 
         # max travel time in minutes
         # self.search_radius = 5
@@ -195,20 +195,27 @@ if __name__ == "__main__":
 
     context, demand = create_scenario(config)
 
-    router = routers.LinearRouter(context.clock)
+    if config['solvers']['greedy_matcher']['router'] == 'linear':
+        router = routers.LinearRouter(context.clock, config['routers']['linear']['speed'])
+    elif config['solvers']['greedy_matcher']['router'] == 'osrm':
+        router = routers.OSRMRouter(clock=clock, server=config['routers']['osrm']['server'])
+    else:
+        raise Exception('Unknown router')
+
+    logging.info(f"Matcher router {router}")
 
     geofence = read_polygon(config.get("geofence"))
     geofence = mapping(geofence)
     grid = CityGrid(geofence, router, config["simulation"]["resolution"])
 
-    # TODO: move to config, correlated by search radius
-    max_time_radius = 10
+    max_time_radius = config['solvers']['tshare_matcher']['max_time_radius']
     max_time_radius = context.clock.time_to_clock_time(max_time_radius, "m")
-    max_dist_radius = 5000
+    max_dist_radius = config['solvers']['tshare_matcher']['max_dist_radius']
+
     grid.create_index(max_time_radius, max_dist_radius)
 
     np.random.seed(3424)
-    matcher = Matcher(grid, context)
+    matcher = Matcher(grid, router, context)
 
     simulator = Simulator(matcher, context)
     simulator.simulate(demand, config["simulation"]["duration"])

@@ -38,21 +38,20 @@ class GreedyMatcher:
     Each booking is matched with closest vehicle
     """
 
-    def __init__(self, context: Context):
+    def __init__(self, context: Context, config):
         self.clock = context.clock
         self.fleet = context.fleet
         self.booking_service = context.booking_service
         self.dispatcher = context.dispatcher
 
         # router = routers.OSRMRouter(clock=self.clock, server=OSRM_SERVER)
-        # self.router = routers.CachingRouter(router)
-
-        self.router = routers.LinearRouter(clock=self.clock)
-
-        logging.info(f"Matcher router {self.router}")
+        router = routers.LinearRouter(clock=self.clock)
+        logging.info(f"Matcher router {router}")
+        router = routers.CachingRouter(router)
+        self.router = router
 
         # Search time radius in minutes (max ETA)
-        search_radius = 5
+        search_radius = config['solvers']['greedy_matcher']['search_radius']
         self.search_radius = self.clock.time_to_clock_time(search_radius, "m")
 
         logging.info(f"Search radius: {self.search_radius}")
@@ -110,7 +109,7 @@ if __name__ == "__main__":
 
     router = routers.LinearRouter(context.clock)
 
-    matcher = GreedyMatcher(context)
+    matcher = GreedyMatcher(context, config)
 
     simulator = Simulator(matcher, context)
     simulator.simulate(demand, config["simulation"]["duration"])

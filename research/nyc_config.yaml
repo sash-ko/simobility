@@ -11,11 +11,11 @@ fleet:
 bookings:
   # in minutes
   max_pending_time: 2
-  bookings_per_hour: 2000
+  bookings_per_hour: 100
 
 simulation:
   # in minutes
-  duration: 120
+  duration: 360
   starting_time: '2015-02-01 12:00:00'
   resolution: 7
 
@@ -25,3 +25,8 @@ simulation:
   clock_step: 10
 
   output: 'simulation_output.csv'
+
+solvers:
+  greedy_matcher:
+    # radius in minutes
+    search_radius: 5

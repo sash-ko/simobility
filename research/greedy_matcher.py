@@ -4,7 +4,7 @@ import os
 sys.path.insert(0, os.path.abspath("../../simobility"))
 
 
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 import numpy as np
 import logging
 import yaml
@@ -16,6 +16,7 @@ from simobility.core import Clock
 from simobility.core import Itinerary
 from simobility.core import Booking
 from simobility.core import Vehicle
+from simobility.routers.base_router import BaseRouter
 from simobility.core.loggers import configure_root, config_state_changes
 from simobility.core.metrics import calculate_metrics
 from scenario import create_scenario
@@ -34,7 +35,7 @@ class GreedyMatcher:
     Each booking is matched with closest vehicle
     """
 
-    def __init__(self, context: Context, router, config):
+    def __init__(self, context: Context, router:BaseRouter, config: Dict):
         self.clock = context.clock
         self.fleet = context.fleet
         self.booking_service = context.booking_service

@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath("../../simobility"))
 import yaml
 import numpy as np
 from h3 import h3
-from shapely.geometry import shape, mapping
+from shapely.geometry import mapping
 import logging
 from math import ceil
 from typing import Dict, List, Set
@@ -19,9 +19,7 @@ from simobility.core import Position
 from simobility.core import Itinerary
 from simobility.core import Vehicle
 from simobility.routers.base_router import BaseRouter
-from simobility.core import Fleet
 from simobility.simulator.simulator import Simulator, Context
-from simobility.core import BookingService, Dispatcher
 from simobility.core.loggers import configure_root, config_state_changes
 from simobility.utils import read_polygon
 
@@ -95,7 +93,7 @@ class CityGrid:
 
 # TODO: use "area" or something like this instead of hexagon
 class Matcher:
-    def __init__(self, city_grid: CityGrid, router, context: Context):
+    def __init__(self, city_grid: CityGrid, router: BaseRouter, context: Context):
         self.city_grid = city_grid
         self.clock = context.clock
         self.fleet = context.fleet

@@ -46,12 +46,12 @@ class Fleet:
         """
         """
 
-        # np.random.seed(seed)
-        state = np.random.RandomState(seed)
+        np.random.seed(seed)
+        # state = np.random.RandomState(seed)
 
         # reproduce vehicle ids
-        rd = random.Random()
-        rd.seed(seed)
+        # rd = random.Random()
+        # rd.seed(seed)
 
         with open(stations_file) as f:
             stations = json.load(f)
@@ -65,7 +65,9 @@ class Fleet:
         for item in state.choice(stations, fleet_size):
             lon, lat = item["coordinates"]
 
-            id_ = uuid.UUID(int=rd.getrandbits(128)).hex
+            # id_ = uuid.UUID(int=rd.getrandbits(128)).hex
+
+            id_ = len(self._vehicles) + 1
             vehicle = Vehicle(self.clock, vehicle_id=id_)
             self.infleet(vehicle, Position(lon, lat))
 

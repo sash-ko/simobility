@@ -28,24 +28,18 @@ log = logging.getLogger("urllib3.connectionpool")
 log.setLevel(logging.CRITICAL)
 
 
-OSRM_SERVER = "http://127.0.0.1:5000"
-
-
 class GreedyMatcher:
     """
     Match bookings in FIFO order -  the oldest booking is processed first.
     Each booking is matched with closest vehicle
     """
 
-    def __init__(self, context: Context, config):
+    def __init__(self, context: Context, router, config):
         self.clock = context.clock
         self.fleet = context.fleet
         self.booking_service = context.booking_service
         self.dispatcher = context.dispatcher
 
-        # router = routers.OSRMRouter(clock=self.clock, server=OSRM_SERVER)
-        router = routers.LinearRouter(clock=self.clock)
-        logging.info(f"Matcher router {router}")
         router = routers.CachingRouter(router)
         self.router = router
 
@@ -106,9 +100,16 @@ if __name__ == "__main__":
 
     context, demand = create_scenario(config)
 
-    router = routers.LinearRouter(context.clock)
+    if config['solvers']['greedy_matcher']['router'] == 'linear':
+        router = routers.LinearRouter(context.clock, config['routers']['linear']['speed'])
+    elif config['solvers']['greedy_matcher']['router'] == 'osrm':
+        router = routers.OSRMRouter(clock=clock, server=config['routers']['osrm']['server'])
+    else:
+        raise Exception('Unknown router')
 
-    matcher = GreedyMatcher(context, config)
+    logging.info(f"Matcher router {router}")
+
+    matcher = GreedyMatcher(context, router, config)
 
     simulator = Simulator(matcher, context)
     simulator.simulate(demand, config["simulation"]["duration"])

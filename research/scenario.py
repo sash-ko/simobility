@@ -91,6 +91,5 @@ def create_scenario(config):
     dispatcher = Dispatcher()
 
     context = Context(clock, fleet, booking_service, dispatcher)
-    # context.geofence = geofence
 
     return context, demand

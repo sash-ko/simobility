@@ -15,7 +15,7 @@ filter:
 	grep "^\d,2015-02-0[1-7] " yellow_tripdata.csv >> $(TRIP_DATA)
 
 preprocess:
-	python3 preprocess_data.py --data-file=$(TRIP_DATA) --geofence-file=nyc_geofence.json --output-file=rides.feather
+	python3 preprocess_data.py --data-file=$(TRIP_DATA) --geofence-file=nyc_geofence.geojson --output-file=rides.feather
 
 clean:
 	rm yellow_*

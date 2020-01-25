@@ -11,7 +11,6 @@ setup(
     packages=[
         "simobility",
         "simobility.core",
-        "simobility.metrics",
         "simobility.routers",
         "simobility.simulator",
     ],

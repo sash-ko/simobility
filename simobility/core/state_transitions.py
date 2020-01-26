@@ -47,7 +47,8 @@ def move_vehicle(vehicle: Vehicle, itinerary: Itinerary) -> bool:
         raise Exception("Current job cant be None")
 
     context = itinerary_info(itinerary)
-    context["eta"] = current_job.eta
+    if current_job.eta is not None:
+        context["eta"] = current_job.eta
 
     if itinerary.next_jobs:
         job = itinerary.next_jobs[0]
@@ -133,7 +134,7 @@ def update_next_bookings(itinerary: Itinerary) -> None:
 
 def itinerary_info(itinerary: Itinerary) -> Dict:
     return {
-        "vehicle_id": itinerary.vehicle.id,
-        "itinerary_id": itinerary.id,
-        "itinerary_created_at": itinerary.created_at,
+        "vid": itinerary.vehicle.id,
+        "it_id": itinerary.id,
+        # "it_time": itinerary.created_at,
     }

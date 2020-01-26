@@ -4,9 +4,9 @@ from pandas.io.json import json_normalize
 def calculate_metrics(data, clock):
     details = json_normalize(data.details)
 
-    idx = ~details.stop_reason.isna()
-    total_distance = details[idx].actual_distance.sum()
-    empty_distance = details[idx & (~details.pickup.isna())].actual_distance.sum()
+    idx = ~details.stop.isna()
+    total_distance = details[idx].trip_distance.sum()
+    empty_distance = details[idx & (~details.pickup.isna())].trip_distance.sum()
 
     booking_idx = data.object_type == "booking"
     vehicle_idx = data.object_type == "vehicle"
@@ -24,14 +24,14 @@ def calculate_metrics(data, clock):
     num_steps = clock.clock_time
     num_vehicles = data[vehicle_idx].uuid.unique().shape[0]
 
-    idx = vehicle_idx & (~details.stop_reason.isna())
+    idx = vehicle_idx & (~details.stop.isna())
 
-    total_duration = details[idx].groupby("vehicle_id")["actual_duration"].sum()
+    total_duration = details[idx].groupby(data[idx].uuid)["trip_duration"].sum()
     avg_utilization = (total_duration / num_steps * 100).mean()
     fleet_utilization = total_duration.sum() / (num_steps * num_vehicles) * 100
 
     idx = idx & (~details.dropoff.isna())
-    total_duration = details[idx].groupby("vehicle_id")["actual_duration"].sum()
+    total_duration = details[idx].groupby(data[idx].uuid)["trip_duration"].sum()
     paid_utilization = (total_duration / num_steps * 100).mean()
     paid_fleet_utilization = total_duration.sum() / (num_steps * num_vehicles) * 100
 
@@ -59,4 +59,3 @@ def _calc_waiting_time(item):
     if "pickup" not in vals:
         return None
     return vals["pickup"] - vals["pending"]
-

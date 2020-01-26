@@ -1,6 +1,4 @@
 from typing import List, Type, Dict
-import random
-import uuid
 import numpy as np
 import json
 from shapely.geometry import shape
@@ -14,10 +12,13 @@ from ..utils import read_polygon
 
 class Fleet:
     def __init__(self, clock: Clock, router: Type[BaseRouter]):
-        # vehicle_id -> Vehicle
+        # {vehicle_id: Vehicle}
         self._vehicles: Dict[str, Vehicle] = {}
         self._router = router
         self.clock = clock
+
+        # sequential ids instead of uuid
+        self._seq_id = 0
 
     def get_online_vehicles(self) -> List[Vehicle]:
         return [v for v in self._vehicles.values() if not v.is_offline()]
@@ -45,14 +46,6 @@ class Fleet:
     ):
         """
         """
-
-        np.random.seed(seed)
-        # state = np.random.RandomState(seed)
-
-        # reproduce vehicle ids
-        # rd = random.Random()
-        # rd.seed(seed)
-
         with open(stations_file) as f:
             stations = json.load(f)
 
@@ -62,14 +55,17 @@ class Fleet:
             geofence = read_polygon(geofence_file)
             stations = [s for s in stations if shape(s).within(geofence)]
 
+        # Use local seed - infleet vehicles independenlty from other parts
+        # of the system
+        state = np.random.RandomState(seed)
+
         for item in state.choice(stations, fleet_size):
             lon, lat = item["coordinates"]
 
-            # id_ = uuid.UUID(int=rd.getrandbits(128)).hex
-
-            id_ = len(self._vehicles) + 1
-            vehicle = Vehicle(self.clock, vehicle_id=id_)
+            vehicle = Vehicle(self.clock, vehicle_id=self._seq_id)
             self.infleet(vehicle, Position(lon, lat))
+
+            self._seq_id += 1
 
 
 def create_engine(pos: Position, router: Type[BaseRouter], clock: Clock):

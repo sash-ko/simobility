@@ -54,13 +54,6 @@ class ReplayDemand:
         - dropoff_lat
         """
 
-        # "local" randomizer, independent from the "global", simulation level
-        state = np.random.RandomState(seed)
-
-        # seed UUIDs
-        self.rd = random.Random()
-        self.rd.seed(seed)
-
         self.clock = clock
         self.data = pd.read_feather(file_name)
 
@@ -78,6 +71,9 @@ class ReplayDemand:
 
         logging.debug(f"Time filtered number of trips: {self.data.shape[0]}")
 
+        # "local" randomizer, independent from the "global", simulation level
+        state = np.random.RandomState(seed)
+        
         if sample_size is not None:
             replace = self.data.index.shape[0] < sample_size
             index = state.choice(self.data.index, sample_size, replace=replace)
@@ -89,6 +85,8 @@ class ReplayDemand:
 
         self.demand = {g: item for g, item in self.data.groupby(self.data.pickup_datetime)}
         self.map_matcher = map_matcher
+
+        self._seq_id = 0
 
     def next(self, key=None):
         if key is None:
@@ -107,7 +105,9 @@ class ReplayDemand:
                     pu = self.map_matcher.map_match(pu)
                     do = self.map_matcher.map_match(do)
 
-                id_ = uuid.UUID(int=self.rd.getrandbits(128)).hex
+                id_ = self._seq_id
                 bookings.append(Booking(self.clock, pu, do, seats, booking_id=id_))
+
+                self._seq_id += 1
 
         return bookings

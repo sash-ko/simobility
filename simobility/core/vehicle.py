@@ -28,8 +28,8 @@ state_transitions = [
 class StopReasons(Enum):
     """Reasons why vehicle stops"""
 
-    arrived = "arrived_at_destination"
-    change = "change_destination"
+    arrived = "arrived"
+    change = "change_dest"
     unknown = "unknown"
     stop = "stop"
 
@@ -60,7 +60,7 @@ class Vehicle(StateMachine):
 
         self.engine: Optional[VehicleEngine] = None
 
-        self.context: Dict = {"vehicle_id": self.id}
+        self.context: Dict = {"vid": self.id}
 
     @property
     def position(self) -> Optional[Position]:
@@ -111,8 +111,8 @@ class Vehicle(StateMachine):
                 stop_reason = StopReasons.unknown
 
             context = context or self.context
-            self.set_idling(stop_reason=stop_reason.value, **context)
-            self.context = {"vehicle_id": self.id}
+            self.set_idling(stop=stop_reason.value, **context)
+            self.context = {"vid": self.id}
 
             self.engine.end_move()
 
@@ -148,13 +148,15 @@ class Vehicle(StateMachine):
 
         route = self.engine.route
         if route:
-            event.kwargs["destination"] = route.destination.to_dict()
+            event.kwargs["dst"] = route.destination.to_dict()
             # duration and distance planned by engine, "real" trip parameters
             event.kwargs["route_duration"] = route.duration
-            event.kwargs["route_distance"] = route.distance
+            event.kwargs["route_distance"] = round(route.distance, 3)
 
             # actual traveled distance and trip duration
-            event.kwargs["actual_duration"] = route.traveled_time(self.engine.now)
-            event.kwargs["actual_distance"] = route.traveled_distance(self.engine.now)
+            event.kwargs["trip_duration"] = route.traveled_time(self.engine.now)
+            event.kwargs["trip_distance"] = round(
+                route.traveled_distance(self.engine.now), 3
+            )
 
         super().on_state_changed(event)

@@ -1,4 +1,5 @@
 from enum import Enum
+import json
 from typing import List, Dict
 from collections import OrderedDict
 from transitions import Machine
@@ -29,7 +30,9 @@ class StateMachine:
         initial_state: Enum,
         object_id: str = None,
     ):
-        self.id = object_id or uuid4().hex
+        self.id = object_id
+        if self.id is None:
+            self.id = uuid4().hex
         self.clock = clock
         self.created_at = clock.now
 
@@ -56,7 +59,17 @@ class StateMachine:
         return state_info
 
     def format_message(self, state_info: OrderedDict) -> str:
-        msg = ";".join([str(i) for i in state_info.values()])
+        strings = []
+        for item in state_info.values():
+            if item is None:
+                item = ""
+            elif isinstance(item, dict):
+                item = json.dumps(item, separators=(",", ":"))
+            else:
+                item = str(item)
+            strings.append(item)
+
+        msg = ";".join(strings)
         return msg
 
     def process_state_change(self, event: EventData) -> OrderedDict:
@@ -65,9 +78,18 @@ class StateMachine:
         arguments = event.kwargs
 
         # each message should contain itinerary id
-        tid = arguments.get("itinerary_id")
+        tid = arguments.get("it_id")
+        if tid:
+            del arguments["it_id"]
+
+        # every change should have position
+        position = arguments["position"]
+        del arguments["position"]
 
         class_ = self.__class__.__name__.lower()
+        if class_ == "vehicle" and arguments.get("vid"):
+            del arguments["vid"]
+
         source = event.transition.source
         dest = event.transition.dest
 
@@ -81,6 +103,8 @@ class StateMachine:
         state_info["source"] = source
         # to state
         state_info["dest"] = dest
+        state_info["lon"] = position["lon"]
+        state_info["lat"] = position["lat"]
         state_info["arguments"] = arguments
 
         return state_info

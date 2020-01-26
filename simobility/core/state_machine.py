@@ -92,7 +92,7 @@ class StateMachine:
         del arguments["position"]
 
         class_ = self.__class__.__name__.lower()
-        if class_ == "vehicle" and arguments.get("vid"):
+        if class_ == "vehicle" and arguments.get("vid") is not None:
             del arguments["vid"]
 
         source = event.transition.source

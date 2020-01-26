@@ -57,9 +57,8 @@ def test_move_vehicle_moving():
     move_vehicle(vehicle, itinerary)
 
     details = {
-        'vehicle_id': itinerary.vehicle.id,
-        'itinerary_id': itinerary.id,
-        'itinerary_created_at': itinerary.created_at,
+        'vid': itinerary.vehicle.id,
+        'it_id': itinerary.id,
         'eta': 11
     }
     vehicle.move_to.assert_called_once_with(
@@ -82,9 +81,8 @@ def test_vehicle_not_moving():
     move_vehicle(vehicle, itinerary)
 
     details = {
-        'vehicle_id': itinerary.vehicle.id,
-        'itinerary_id': itinerary.id,
-        'itinerary_created_at': itinerary.created_at,
+        'vid': itinerary.vehicle.id,
+        'it_id': itinerary.id,
         'eta': itinerary.current_job.eta
     }
     
@@ -104,9 +102,8 @@ def test_move_vehicle_moving_pickup():
     move_vehicle(vehicle, itinerary)
 
     details = {
-        'vehicle_id': itinerary.vehicle.id,
-        'itinerary_id': itinerary.id,
-        'itinerary_created_at': itinerary.created_at,
+        'vid': itinerary.vehicle.id,
+        'it_id': itinerary.id,
         'eta': itinerary.current_job.eta,
         'pickup': pickup.booking.id
     }
@@ -121,7 +118,7 @@ def test_move_vehicle_moving2dropoff():
     vehicle = create_vehicle()
     vehicle.destination = itinerary.current_job.destination
 
-    ### move to pickup
+    # move to pickup
     dropoff = create_pickup_dropoff(False)
     itinerary.next_jobs = [dropoff]
 
@@ -129,9 +126,8 @@ def test_move_vehicle_moving2dropoff():
     move_vehicle(vehicle, itinerary)
     
     details = {
-        'vehicle_id': itinerary.vehicle.id,
-        'itinerary_id': itinerary.id,
-        'itinerary_created_at': itinerary.created_at,
+        'vid': itinerary.vehicle.id,
+        'it_id': itinerary.id,
         'eta': itinerary.current_job.eta,
         'dropoff': dropoff.booking.id
     }
@@ -258,9 +254,8 @@ def test_do_job():
     do_job(itinerary)
 
     booking.set_waiting_pickup.assert_called_once_with(
-        vehicle_id=vehicle.id,
-        itinerary_id=itinerary.id,
-        itinerary_created_at=itinerary.created_at)
+        vid=vehicle.id,
+        it_id=itinerary.id)
     vehicle.move_to.assert_not_called()
 
     job.is_pickup = MagicMock(return_value=False)
@@ -270,9 +265,8 @@ def test_do_job():
     booking.is_waiting_dropoff = MagicMock(return_value=True)
     do_job(itinerary)
     booking.set_dropoff.assert_called_once_with(
-        vehicle_id=vehicle.id,
-        itinerary_id=itinerary.id,
-        itinerary_created_at=itinerary.created_at)
+        vid=vehicle.id,
+        it_id=itinerary.id)
     vehicle.move_to.assert_not_called()
 
     job.is_pickup = MagicMock(return_value=False)
@@ -289,9 +283,8 @@ def test_do_job():
     vehicle.move_to.assert_called_once_with(
         job.destination, {
             'eta': job.eta,
-            'vehicle_id': vehicle.id,
-            'itinerary_id': itinerary.id,
-            'itinerary_created_at': itinerary.created_at
+            'vid': vehicle.id,
+            'it_id': itinerary.id,
         })
 
 
@@ -330,9 +323,8 @@ def test_do_current_job_3():
     with patch('simobility.core.state_transitions.pickup_booking') as fn:
         do_job(itinerary)
         fn.assert_called_once_with(booking, {
-            'vehicle_id': v.id,
-            'itinerary_id': itinerary.id,
-            'itinerary_created_at': itinerary.created_at
+            'vid': v.id,
+            'it_id': itinerary.id,
         })
 
     itinerary = Itinerary(4545, v)
@@ -341,9 +333,8 @@ def test_do_current_job_3():
     with patch('simobility.core.state_transitions.dropoff_booking') as fn:
         do_job(itinerary)
         fn.assert_called_once_with(booking, {
-            'vehicle_id': v.id,
-            'itinerary_id': itinerary.id,
-            'itinerary_created_at': itinerary.created_at
+            'vid': v.id,
+            'it_id': itinerary.id,
         })
 
 

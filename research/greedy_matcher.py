@@ -7,13 +7,11 @@ import argparse
 import simobility.routers as routers
 from simobility.core.tools import basic_booking_itinerary
 from simobility.simulator.simulator import Simulator, Context
-from simobility.core import Clock
 from simobility.core import Itinerary
 from simobility.core import Booking
 from simobility.core import Vehicle
 from simobility.routers.base_router import BaseRouter
 from simobility.core.loggers import configure_root, config_state_changes
-from simobility.core.metrics import calculate_metrics
 from scenario import create_scenario
 from metrics import print_metrics
 

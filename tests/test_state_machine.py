@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import MagicMock
 from enum import Enum
+import json
 from collections import OrderedDict
 from transitions.core import EventData
 from transitions import MachineError
@@ -30,6 +31,7 @@ def create_state_machine():
 
 def test_basic():
     machine = create_state_machine()
+    machine.process_state_change = MagicMock()
 
     assert machine.state == TstStates.STATE1
 
@@ -82,17 +84,20 @@ def test_process_state_change():
     machine.set_state2(val='123')
 
     event_data = machine.on_state_changed.call_args[0][0]
+    event_data.kwargs['position'] = {'lat': 1, 'lon': 2}
     state_info = machine.process_state_change(event_data)
     
     assert isinstance(state_info, OrderedDict)
-    assert len(state_info) == 7
+    assert len(state_info) == 9
     assert state_info['clock'] == 0
     assert state_info['class'] == machine.__class__.__name__.lower()
     assert state_info['id'] == machine.id
-    assert state_info['tid'] is None
+    assert state_info['it_id'] is None
     assert state_info['source'] == TstStates.STATE1.name
     assert state_info['dest'] == TstStates.STATE2.name
     assert state_info['arguments'] == {'val': '123'}
+    assert state_info['lat'] == 1
+    assert state_info['lon'] == 2
 
 
 def test_itinerary_id():
@@ -100,12 +105,18 @@ def test_itinerary_id():
     machine.on_state_changed = MagicMock()
 
     itinerary_id = 1234
-    machine.set_state2(itinerary_id=itinerary_id)
+    machine.set_state2(it_id=itinerary_id, val=23)
 
     event_data = machine.on_state_changed.call_args[0][0]
+    event_data.kwargs['position'] = {'lat': 1, 'lon': 2}
+    event_data.kwargs['it_id'] = 34
+
     state_info = machine.process_state_change(event_data)
-    assert state_info['tid'] == itinerary_id
-    assert state_info['arguments'] == {'itinerary_id': itinerary_id}
+
+    assert state_info['it_id'] == event_data.kwargs['it_id']
+    assert 'it_id' not in state_info['arguments']
+
+    assert state_info['arguments'] == {'val': 23}
     
     
 def test_format_message():
@@ -125,10 +136,20 @@ def test_format_message_2():
     itinerary_id = 1234
     machine.set_state2(itinerary_id=itinerary_id)
     event_data = machine.on_state_changed.call_args[0][0]
+    event_data.kwargs['position'] = {'lat': 1, 'lon': 2}
     state_info = machine.process_state_change(event_data)
     
     msg = machine.format_message(state_info)
     
     assert len(msg.split(';')) == len(state_info)
-    assert msg.split(';') == [str(v) for v in state_info.values()]
+    assert msg.split(';') == [convert(v) for v in state_info.values()]
     
+
+def convert(v):
+    if v is None:
+        v = ""
+    elif isinstance(v, dict):
+        v = json.dumps(v, separators=(",", ":"))
+    else:
+        v = str(v)
+    return v

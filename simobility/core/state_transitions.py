@@ -132,6 +132,7 @@ def update_next_bookings(itinerary: Itinerary) -> None:
                 booking.set_waiting_dropoff(**context)
 
 
+
 def itinerary_info(itinerary: Itinerary) -> Dict:
     return {
         "vid": itinerary.vehicle.id,

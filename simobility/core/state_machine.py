@@ -103,7 +103,7 @@ class StateMachine:
         state_info["class"] = class_
         state_info["id"] = self.id
         # itinerary id
-        state_info["tid"] = tid
+        state_info["it_id"] = tid
         # from state
         state_info["source"] = source
         # to state

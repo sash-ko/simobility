@@ -61,12 +61,17 @@ class StateMachine:
     def format_message(self, state_info: OrderedDict) -> str:
         strings = []
         for item in state_info.values():
-            if item is None:
-                item = ""
-            elif isinstance(item, dict):
-                item = json.dumps(item, separators=(",", ":"))
-            else:
+            try:
+                if item is None:
+                    item = ""
+                elif isinstance(item, dict):
+                    item = json.dumps(item, separators=(",", ":"))
+                else:
+                    item = str(item)
+            # catche error json.encoder.JSONEncoder
+            except TypeError:
                 item = str(item)
+
             strings.append(item)
 
         msg = ";".join(strings)
@@ -75,7 +80,7 @@ class StateMachine:
     def process_state_change(self, event: EventData) -> OrderedDict:
         # Arguments specific to each class and state change
         # They defined in derived classes
-        arguments = event.kwargs
+        arguments = event.kwargs.copy()
 
         # each message should contain itinerary id
         tid = arguments.get("it_id")

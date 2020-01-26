@@ -20,8 +20,8 @@ class States(Enum):
     complete = "complete"
 
     # by dispatcher
-    dispatcher_canceled = "dispatcher_canceled"
-    customer_canceled = "customer_canceled"
+    # dispatcher_canceled = "dispatcher_canceled"
+    # customer_canceled = "customer_canceled"
 
     expired = "expired"
 
@@ -37,16 +37,16 @@ state_transitions = [
     ["set_dropoff", [States.waiting_dropoff, States.pickup], States.dropoff],
     ["set_complete", States.dropoff, States.complete],
     # booking can't be canceled after pickup
-    [
-        "set_dispatcher_canceled",
-        [States.pending, States.matched, States.waiting_pickup],
-        States.dispatcher_canceled,
-    ],
-    [
-        "set_customer_canceled",
-        [States.pending, States.matched, States.waiting_pickup],
-        States.customer_canceled,
-    ],
+    # [
+    #     "set_dispatcher_canceled",
+    #     [States.pending, States.matched, States.waiting_pickup],
+    #     States.dispatcher_canceled,
+    # ],
+    # [
+    #     "set_customer_canceled",
+    #     [States.pending, States.matched, States.waiting_pickup],
+    #     States.customer_canceled,
+    # ],
     ["set_expired", States.pending, States.expired],
 ]
 
@@ -92,7 +92,7 @@ class Booking(StateMachine):
     def on_state_changed(self, event: EventData):
         if event.transition.dest == States.pending.value:
             # TODO: check if kwargs already have keys
-            event.kwargs["pickup"] = self.pickup.to_dict()
+            event.kwargs["position"] = self.pickup.to_dict()
             event.kwargs["dropoff"] = self.dropoff.to_dict()
 
         if event.transition.dest in (

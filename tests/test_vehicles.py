@@ -24,8 +24,14 @@ def test_create_vehicle():
         v.step()
 
     engine = MagicMock()
+    engine.route = MagicMock()
+    engine.route.duration = 23
+    engine.route.distance = 2.34
+    engine.route.traveled_distance = MagicMock(return_value=43)
+
     engine.position = MagicMock()
     engine.position.to_dict = MagicMock(return_value={111: 22})
+    
     v.install_engine(engine)
     assert v.state == States.idling
 

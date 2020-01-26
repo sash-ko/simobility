@@ -69,32 +69,32 @@ def test_expire():
         booking.set_matched()
 
 
-def test_dispatcher_cancel():
-    clock = Clock()
-    booking = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053), 3)
+# def test_dispatcher_cancel():
+#     clock = Clock()
+#     booking = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053), 3)
 
-    booking.set_dispatcher_canceled()
-    assert booking.is_dispatcher_canceled() is True
+#     booking.set_dispatcher_canceled()
+#     assert booking.is_dispatcher_canceled() is True
 
-    with pytest.raises(Exception):
-        booking.set_matched()
+#     with pytest.raises(Exception):
+#         booking.set_matched()
 
-    with pytest.raises(Exception):
-        booking.set_customer_canceled()
+#     with pytest.raises(Exception):
+#         booking.set_customer_canceled()
 
 
-def test_customer_cancel():
-    clock = Clock()
-    booking = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053), 3)
+# def test_customer_cancel():
+#     clock = Clock()
+#     booking = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053), 3)
 
-    booking.set_customer_canceled()
-    assert booking.is_customer_canceled() is True
+#     booking.set_customer_canceled()
+#     assert booking.is_customer_canceled() is True
 
-    with pytest.raises(Exception):
-        booking.set_matched()
+#     with pytest.raises(Exception):
+#         booking.set_matched()
 
-    with pytest.raises(Exception):
-        booking.set_dispatcher_canceled()
+#     with pytest.raises(Exception):
+#         booking.set_dispatcher_canceled()
 
 
 def test_on_state_changed_pending():
@@ -112,7 +112,7 @@ def test_on_state_changed_pending():
     event_data.kwargs = {}
     
     booking.on_state_changed(event_data)
-    assert event_data.kwargs['pickup'] == pickup.to_dict()
+    assert event_data.kwargs['position'] == pickup.to_dict()
     assert event_data.kwargs['dropoff'] == dropoff.to_dict()
     
     
@@ -155,4 +155,5 @@ def test_on_state_changed_pickup_position():
         event_data.transition.dest = state
         event_data.kwargs = {}
         booking.on_state_changed(event_data)
+
         assert event_data.kwargs['position'] == dropoff.to_dict()

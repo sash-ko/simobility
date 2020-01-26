@@ -1,3 +1,4 @@
+import logging
 import json
 import pandas as pd
 from pprint import pprint
@@ -5,7 +6,7 @@ from simobility.core.metrics import calculate_metrics
 
 
 def print_metrics(file_name, clock):
-    print(file_name)
+    logging.info(f'Reading file {file_name}...')
 
     columns = [
         "datetime",
@@ -15,6 +16,8 @@ def print_metrics(file_name, clock):
         "itinerary_id",
         "from_state",
         "to_state",
+        "lon",
+        "lat",
         "details",
     ]
 
@@ -27,7 +30,6 @@ def print_metrics(file_name, clock):
         converters={"details": lambda v: eval(v)},
     )
     print()
-    # pprint(calculate_metrics(data, clock), indent=2)
     metrics = calculate_metrics(data, clock)
 
     metrics = json.loads(

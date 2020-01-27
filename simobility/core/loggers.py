@@ -14,10 +14,16 @@ def config_state_changes(file_name):
 
     ch = logging.FileHandler(file_name, "w")
     ch.setLevel(logging.DEBUG)
-    formatter = logging.Formatter("%(asctime)s;%(message)s", datefmt='%Y-%m-%d %H:%M:%S')
+    # formatter = logging.Formatter("%(asctime)s;%(message)s", datefmt='%Y-%m-%d %H:%M:%S')
+    formatter = logging.Formatter("%(message)s")
     ch.setFormatter(formatter)
 
     logger.addHandler(ch)
+
+    logs_schema = 'clock_time;object_type;uuid;itinerary_id;from_state;to_state;lon;lat;details'
+    logger.info(logs_schema)
+
+    logging.info(f'Logs schema: {logs_schema.split(";")}')
 
 
 def configure_root(

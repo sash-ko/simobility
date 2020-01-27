@@ -29,7 +29,7 @@ simulation:
   # in seconds
   clock_step: 10
 
-  output: 'benchmarks/greedy_250_vehicles_100_bookings_linear.csv'
+  output: 'results/greedy_250_vehicles_100_bookings_linear.csv'
 
 solvers:
   greedy_matcher:

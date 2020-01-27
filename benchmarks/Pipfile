@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-master = {git = "https://github.com/sash-ko/simobility.git", ref = "v0.2.1"}
+master = {git = "https://github.com/sash-ko/simobility.git", ref = "v0.2.2"}
 
 [requires]
 python_version = "3.7"

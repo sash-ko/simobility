@@ -25,11 +25,21 @@ Some example of such algorithms:
 Simulator logs detailed information about each state change. For example:
 
 ```bash
-2020-01-22 19:44:48,082;0;vehicle;a2f7647a952e1b8b356f8bd11711eb57;None;offline;idling;{'vehicle_id': 'a2f7647a952e1b8b356f8bd11711eb57', 'position': {'lat': 40.71983, 'lon': -74.00852}}
-2020-01-22 19:44:48,897;0;booking;cae48e22e92e198905e27f81f0e520eb;None;created;pending;{'pickup': {'lat': 40.72739, 'lon': -73.98882}, 'dropoff': {'lat': 40.73417, 'lon': -73.98341}, 'position': {'lat': 40.72739, 'lon': -73.98882}}
-2020-01-22 19:44:48,905;0;vehicle;601e5b45785116080d650372e90794df;2eefab1a61764d7da438d564285c2630;idling;moving_to;{'vehicle_id': '601e5b45785116080d650372e90794df', 'itinerary_id': '2eefab1a61764d7da438d564285c2630', 'itinerary_created_at': 0, 'eta': 7, 'pickup': 'cae48e22e92e198905e27f81f0e520eb', 'position': {'lat': 40.72439, 'lon': -73.98746}, 'destination': {'lat': 40.72739, 'lon': -73.98882}, 'route_duration': 7, 'route_distance': 0.35272271051930876, 'actual_duration': 0, 'actual_distance': 0.0}
-2020-01-22 19:44:48,906;0;booking;cae48e22e92e198905e27f81f0e520eb;2eefab1a61764d7da438d564285c2630;pending;matched;{'vehicle_id': '601e5b45785116080d650372e90794df', 'itinerary_id': '2eefab1a61764d7da438d564285c2630', 'itinerary_created_at': 0, 'position': {'lat': 40.72739, 'lon': -73.98882}}
-2020-01-22 19:44:48,907;0;booking;c0d2f3a2f7d558cf865bd310d142c31c;9d3c04896a2940068d37edf44bd00a53;pending;matched;{'vehicle_id': 'd48dd9f354366c219c3ecb54c5cefdd8', 'itinerary_id': '9d3c04896a2940068d37edf44bd00a53', 'itinerary_created_at': 0, 'position': {'lat': 40.75455, 'lon': -73.96867}}
+clock_time;object_type;uuid;itinerary_id;from_state;to_state;lon;lat;details
+0;vehicle;0;;offline;idling;-73.99715;40.71196;{}
+0;vehicle;1;;offline;idling;-73.98232;40.76953;{}
+0;vehicle;2;;offline;idling;-73.98243;40.785;{}
+0;vehicle;3;;offline;idling;-74.00742;40.72601;{}
+...
+11;booking;1;;created;pending;-73.97634;40.75146;{"dropoff":{"lat":40.76076,"lon":-73.99792}}
+11;booking;2;;created;pending;-73.98123;40.78109;{"dropoff":{"lat":40.80811,"lon":-73.9665}}
+...
+23;vehicle;29;00e6fa3da6044dc09d0ee85eb81ce703;idling;moving_to;-73.97634;40.75146;{"dropoff":1,"dst":{"lat":40.76076,"lon":-73.99792},"route_duration":38,"route_distance":2.091,"trip_duration":0,"trip_distance":0.0}
+23;booking;1;00e6fa3da6044dc09d0ee85eb81ce703;pickup;waiting_dropoff;-73.97634;40.75146;{"vid":29}
+26;booking;3;;created;pending;-73.94856;40.78247;{"dropoff":{"lat":40.72625,"lon":-73.98937}}
+26;vehicle;14;50f1382193a749d2a46f240f6bb75abd;idling;moving_to;-73.95228;40.77206;{"eta":22,"pickup":3,"dst":{"lat":40.78247,"lon":-73.94856},"route_duration":22,"route_distance":1.199,"trip_duration":0,"trip_distance":0.0}
+26;booking;3;50f1382193a749d2a46f240f6bb75abd;pending;matched;-73.94856;40.78247;{"vid":14}
+26;booking;3;50f1382193a749d2a46f240f6bb75abd;matched;waiting_pickup;-73.94856;40.78247;{"vid":14}
 ```
 
 As a result, each step of a simulation can be visualized and various metrics can be calculated. For example:

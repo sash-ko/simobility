@@ -28,7 +28,7 @@ simulation:
   # in seconds
   clock_step: 10
 
-  output: 'simulation_output.csv'
+  output: 'simulation_output_example.csv'
 
 solvers:
   greedy_matcher:

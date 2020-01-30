@@ -10,6 +10,15 @@ Some example of such algorithms:
 * [Autonomous Vehicle Fleet Sizes Required to Serve Different Levels of Demand](https://www.research-collection.ethz.ch/handle/20.500.11850/104743) - fleet sizing problem
 * [On-demand high-capacity ride-sharing via dynamic trip-vehicle assignment](https://www.pnas.org/content/114/3/462)
 
+### Contributions and Thanks
+
+Thanks to all who contributed to the concept/code:
+
+* [Steffen Häußler](https://www.linkedin.com/in/steffenhaeussler/) - https://github.com/SteffenHaeussler
+* [Stephen Privitera](https://www.linkedin.com/in/stephen-privitera/) - https://github.com/sprivite
+* [Sultan Imanhodjaev](https://www.linkedin.com/in/imanhodjaev/) - https://github.com/imanhodjaev
+* [Yábir Benchakhtir](https://www.linkedin.com/in/yabirgb/) - https://github.com/yabirgb
+
 ## Framework
 
 **simobility** provides a set of building blocks for designing simulations:
@@ -151,12 +160,3 @@ docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-partition /data/new-york-
 docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-customize /data/new-york-latest.osrm
 docker run -d -t -i -p 5010:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --algorithm mld /data/new-york-latest.osrm
 ```
-
-## Contributions and Thanks
-
-Thanks to all people who have contributed to the concept/code:
-
-* [Steffen Häußler](https://www.linkedin.com/in/steffenhaeussler/) - https://github.com/SteffenHaeussler
-* [Stephen Privitera](https://www.linkedin.com/in/stephen-privitera/) - https://github.com/sprivite
-* [Sultan Imanhodjaev](https://www.linkedin.com/in/imanhodjaev/) - https://github.com/imanhodjaev
-* [Yábir Benchakhtir](https://www.linkedin.com/in/yabirgb/) - https://github.com/yabirgb

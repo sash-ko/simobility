@@ -9,7 +9,6 @@ def do_job(itinerary: Itinerary):
 
     current_job = itinerary.current_job
     if not current_job:
-        # logging.warning('Not doing any job')
         return
 
     if current_job.is_pickup():

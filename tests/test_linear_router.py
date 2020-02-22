@@ -80,3 +80,12 @@ def test_map_match():
         assert pos == pos_m
         assert pos.id != pos_m.id
 
+
+def test_route_destination():
+    origin = Position(-73.99780, 40.71205)
+    destination = Position(-73.99567, 40.71689)
+
+    clock = Clock(time_step=10, time_unit="s")
+    router = LinearRouter(clock=clock)
+
+    assert router.calculate_route(origin, destination).destination == destination

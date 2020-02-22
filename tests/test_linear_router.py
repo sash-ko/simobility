@@ -13,41 +13,39 @@ def test_router2d():
     clock = Clock(time_step=1, time_unit="m")
     router = LinearRouter(speed=speed_kmph, clock=clock)
 
-    assert (router.estimate_duration(nyc_pos, nyc_pos) == 0)
+    assert router.estimate_duration(nyc_pos, nyc_pos) == 0
 
     route = router.calculate_route(nyc_pos, nyc_pos)
-    assert (route.duration == 0)
-    assert (route.distance == 0)
-    assert (len(route.coordinates) == 1)
+    assert route.duration == 0
+    assert route.distance == 0
+    assert len(route.coordinates) == 1
 
-    assert (route.approximate_position(clock.clock_time) == nyc_pos)
-    assert (route.approximate_position(clock.clock_time + 1) == nyc_pos)
+    assert route.approximate_position(clock.clock_time) == nyc_pos
+    assert route.approximate_position(clock.clock_time + 1) == nyc_pos
 
-    assert (router.estimate_duration(nyc_pos, nyc_pos_shift) == 1)
+    assert router.estimate_duration(nyc_pos, nyc_pos_shift) == 1
 
     for i in range(10):
         clock.tick()
 
-    assert (router.estimate_duration(nyc_pos, nyc_pos) == 0)
+    assert router.estimate_duration(nyc_pos, nyc_pos) == 0
 
     # seconds
     clock = Clock(time_step=1, time_unit="s")
     router = LinearRouter(speed=speed_kmph, clock=clock)
-    assert (router.estimate_duration(nyc_pos, nyc_pos_shift) == 3)
+    assert router.estimate_duration(nyc_pos, nyc_pos_shift) == 3
 
     route = router.calculate_route(nyc_pos, nyc_pos_shift)
     assert route.duration == 3
-    assert (pytest.approx(route.distance, 3) == 0.02)
+    assert pytest.approx(route.distance, 3) == 0.02
     assert len(route.coordinates) == 4
 
     assert route.approximate_position(clock.clock_time) == nyc_pos
     assert route.approximate_position(clock.clock_time + 1) != nyc_pos
-    assert (route.approximate_position(clock.clock_time + 1) == route.coordinates[1])
+    assert route.approximate_position(clock.clock_time + 1) == route.coordinates[1]
 
-    assert (route.approximate_position(clock.clock_time + 3) == nyc_pos_shift)
-    assert (
-        route.approximate_position(clock.clock_time + 3) == route.coordinates[-1]
-    )
+    assert route.approximate_position(clock.clock_time + 3) == nyc_pos_shift
+    assert route.approximate_position(clock.clock_time + 3) == route.coordinates[-1]
 
 
 def test_router2d_2():
@@ -59,13 +57,13 @@ def test_router2d_2():
     clock = Clock(time_step=1, time_unit="s")
     router = LinearRouter(speed=speed_kmph, clock=clock)
 
-    assert (router.estimate_duration(nyc_pos, nyc_pos_shift) == 5)
+    assert router.estimate_duration(nyc_pos, nyc_pos_shift) == 5
 
     route = router.calculate_route(nyc_pos, nyc_pos_shift)
-    assert (len(route.coordinates) == 6)
+    assert len(route.coordinates) == 6
 
     for p in route.coordinates:
-        assert (p.lat == nyc_pos.lat)
+        assert p.lat == nyc_pos.lat
 
 
 def test_map_match():

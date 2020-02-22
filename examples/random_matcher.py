@@ -10,6 +10,12 @@ from simobility.core.tools import basic_booking_itinerary
 class RandomMatcher:
     """
     Match bookings in FIFO order with random vehicles
+
+    simobility requires matchers to implement only one function:
+
+    def step(self) -> List[Itinerary]:
+        pass
+    
     """
 
     def __init__(self, context: Context):
@@ -40,7 +46,6 @@ class RandomMatcher:
             itineraries.append(itinerary)
 
         return itineraries
-
 
     def get_idling_vehicles(self) -> List[Vehicle]:
         """Idling vehicle is a vehicle without an itinerary"""

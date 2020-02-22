@@ -82,13 +82,12 @@ class Vehicle(StateMachine):
     def move_to(self, destination: Position, context: Dict = None):
         if not self.engine:
             raise Exception("Cannot move vehicle without engine")
-
+ 
         elif self.engine.is_moving():
             # if vehicle already moving to the same destination do nothing
             if destination != self.destination:
                 # stop current trip
                 self.stop(StopReasons.change, self.context)
-
                 # change the destination
                 self.engine.start_move(destination)
             # else:

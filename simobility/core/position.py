@@ -9,7 +9,7 @@ class Position:
     lon/lat -> x/y order of coordinates
     """
 
-    def __init__(self, lon, lat, precision=5):
+    def __init__(self, lon, lat, precision=6):
         """
         Params
         ------
@@ -33,8 +33,10 @@ class Position:
         # e.g. the error of precision=5 is ~1 meter
         self.lat = round(lat, precision)
         self.lon = round(lon, precision)
+        self._threshold = 0.005
 
         self._validate()
+
 
     def _validate(self):
         if self.lat > 90 or self.lat < -90:
@@ -62,7 +64,8 @@ class Position:
         return (self.lon, self.lat)
 
     def __eq__(self, other):
-        return self.lat == other.lat and self.lon == other.lon
+        return self.distance(other) < self._threshold
+        # return self.lat == other.lat and self.lon == other.lon
 
     def __ne__(self, other):
         return not self.__eq__(other)

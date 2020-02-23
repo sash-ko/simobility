@@ -10,6 +10,7 @@ from .vehicle import Vehicle
 from .booking import Booking
 from .position import Position
 
+
 def basic_booking_itinerary(
     current_time: int,
     vehicle: Vehicle,
@@ -66,14 +67,16 @@ class ReplayDemand:
         # ])
         # self.data.datetime = self.data.datetime.dt.to_pydatetime() + time_jitter
 
-        idx = (self.data.pickup_datetime >= from_datetime) & (self.data.pickup_datetime < to_datetime)
+        idx = (self.data.pickup_datetime >= from_datetime) & (
+            self.data.pickup_datetime < to_datetime
+        )
         self.data = self.data[idx]
 
         logging.debug(f"Time filtered number of trips: {self.data.shape[0]}")
 
         # "local" randomizer, independent from the "global", simulation level
         state = np.random.RandomState(seed)
-        
+
         if sample_size is not None:
             replace = self.data.index.shape[0] < sample_size
             index = state.choice(self.data.index, sample_size, replace=replace)
@@ -83,7 +86,9 @@ class ReplayDemand:
 
         self.data.pickup_datetime = self.data.pickup_datetime.dt.round(round_to)
 
-        self.demand = {g: item for g, item in self.data.groupby(self.data.pickup_datetime)}
+        self.demand = {
+            g: item for g, item in self.data.groupby(self.data.pickup_datetime)
+        }
         self.map_matcher = map_matcher
 
         self._seq_id = 0
@@ -102,8 +107,24 @@ class ReplayDemand:
 
                 # TODO: if booking map matched too far from the original point????
                 if self.map_matcher:
+                    original_pu = pu
+                    original_du = du
                     pu = self.map_matcher.map_match(pu)
+
+                    if pu.distance(original_pu) > 0.2:
+                        logging.warning(
+                            f"Map matched pickup is {pu.distance(original_pu)} away for the original"
+                        )
+                        # skip booking
+                        continue
+
                     do = self.map_matcher.map_match(do)
+                    if du.distance(original_du) > 0.2:
+                        logging.warning(
+                            f"Map matched dropoff is {du.distance(original_du)} away for the original"
+                        )
+                        # skip booking
+                        continue
 
                 id_ = self._seq_id
                 bookings.append(Booking(self.clock, pu, do, seats, booking_id=id_))

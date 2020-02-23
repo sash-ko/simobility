@@ -62,7 +62,6 @@ class OSRMRouter(BaseRouter):
         duration_minutes = data["routes"][0]["duration"] / 60
         # duration in clock unites
         duration_clock = self.clock.time_to_clock_time(duration_minutes, "m")
-        duration_clock = round(duration_clock)
 
         # compute speed in km per clock units
         distance_km = data["routes"][0]["distance"] / 1000

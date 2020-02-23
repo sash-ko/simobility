@@ -91,8 +91,6 @@ class ReplayDemand:
         }
         self.map_matcher = map_matcher
 
-        self._seq_id = 0
-
     def next(self, key=None):
         if key is None:
             key = pd.to_datetime(self.clock.to_datetime())
@@ -105,7 +103,6 @@ class ReplayDemand:
                 pu = Position(b.pickup_lon, b.pickup_lat)
                 do = Position(b.dropoff_lon, b.dropoff_lat)
 
-                # TODO: if booking map matched too far from the original point????
                 if self.map_matcher:
                     original_pu = pu
                     original_du = du
@@ -126,9 +123,6 @@ class ReplayDemand:
                         # skip booking
                         continue
 
-                id_ = self._seq_id
-                bookings.append(Booking(self.clock, pu, do, seats, booking_id=id_))
-
-                self._seq_id += 1
+                bookings.append(Booking(self.clock, pu, do, seats))
 
         return bookings

@@ -54,7 +54,9 @@ class LinearRouter(BaseRouter):
 
         distance_km = origin.distance(destination)
 
-        return Route(self.clock.now, waypoints, trip_duration, distance_km)
+        return Route(
+            self.clock.now, waypoints, trip_duration, distance_km, origin, destination
+        )
 
     def estimate_duration(self, origin: Position, destination: Position) -> int:
         """ Duration in clock units

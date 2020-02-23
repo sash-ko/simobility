@@ -51,12 +51,12 @@ class OSRMRouter(BaseRouter):
         route : Route
         """
 
-        data = None
         data = _query_osrm(self.server, "route", [origin], [destination])
 
         geom = data["routes"][0]["geometry"]
         # convert route coordinates to Postion datatypes
-        coordinates = [origin] + [Position(*c) for c in geom["coordinates"]]
+        # coordinates = [origin] + [Position(*c) for c in geom["coordinates"]]
+        coordinates = [Position(*c) for c in geom["coordinates"]]
 
         # compute trip duration in "clock" intrinsic units
         duration_minutes = data["routes"][0]["duration"] / 60
@@ -66,7 +66,14 @@ class OSRMRouter(BaseRouter):
         # compute speed in km per clock units
         distance_km = data["routes"][0]["distance"] / 1000
 
-        return Route(self.clock.now, coordinates, duration_clock, distance_km)
+        return Route(
+            self.clock.now,
+            coordinates,
+            duration_clock,
+            distance_km,
+            origin,
+            destination,
+        )
 
     def estimate_duration(self, origin: Position, destination: Position) -> int:
         """ Duration in clock units

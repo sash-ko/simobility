@@ -17,6 +17,8 @@ class Route:
         coordinates: List[Position],
         duration: int,
         distance: float,
+        origin: Position,
+        destination: Position,
     ):
         """
         Params
@@ -30,6 +32,12 @@ class Route:
 
         distance : float
             Route distance in kilometers
+
+        origin: Position
+        destination: Postion
+            Requested origin and destination of a route. Due to
+            map matching they can be different from the first and
+            the last point in coordinates
         """
 
         self.coordinates = coordinates
@@ -37,19 +45,13 @@ class Route:
         # round to ensure that this is a clock time which is always integer
         self.duration = ceil(duration)
         self.created_at = created_at
+        self.origin = origin
+        self.destination = destination
 
         # internal variables
         segments = list(zip(self.coordinates, self.coordinates[1:]))
         seg_distance = [p1.distance(p2) for p1, p2 in segments]
         self.__segment_distance: List[float] = seg_distance
-
-    @property
-    def destination(self) -> Position:
-        return self.coordinates[-1]
-
-    @property
-    def origin(self) -> Position:
-        return self.coordinates[0]
 
     @property
     def arrival_time(self):

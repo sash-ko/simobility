@@ -1,5 +1,6 @@
 import numpy as np
 from typing import List, Dict, Tuple
+from collections import OrderedDict
 from .base_router import BaseRouter
 from ..core.position import Position
 from .route import Route
@@ -10,9 +11,9 @@ class CachingRouter:
     # TODO: add cache expiration time
     def __init__(self, router: BaseRouter):
         self.__router = router
-        self.__routes: Dict[Tuple, Route] = dict()
-        self.__durations: Dict[Tuple, int] = dict()
-        self.__map_match: Dict[Tuple, Position] = dict()
+        self.__routes: Dict[Tuple, Route] = FixedSizeCache()
+        self.__durations: Dict[Tuple, int] = FixedSizeCache()
+        self.__map_match: Dict[Tuple, Position] = FixedSizeCache()
         self.clock = router.clock
 
     def map_match(self, position: Position) -> Position:
@@ -80,3 +81,19 @@ class CachingRouter:
         matrix = np.array(calculated)
 
         return matrix
+
+
+class FixedSizeCache(OrderedDict):
+    """
+    Dictionary that stores fixed number of items. Every time
+    the size of the dictionary grows to maxsize, items removed in FIFO order
+    """
+
+    def __init__(self, maxsize=10240, *args, **kwargs):
+        self.maxsize = maxsize
+        super().__init__(*args, **kwargs)
+
+    def __setitem__(self, key, value):
+        super().__setitem__(key, value)
+        if len(self) > self.maxsize:
+            self.popitem(last=True)

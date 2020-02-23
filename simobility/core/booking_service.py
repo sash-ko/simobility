@@ -9,7 +9,6 @@ class BookingService:
     """
 
     def __init__(self, clock: Clock, max_pending_time: int):
-        self._bookings: List[Booking] = []
         self._pending_bookings: Dict[str, Booking] = {}
         self._max_pending_time = max_pending_time
         self.clock = clock
@@ -18,7 +17,6 @@ class BookingService:
         if not booking.is_pending():
             raise Exception("Booking state is not CREATED")
 
-        self._bookings.append(booking)
         self._pending_bookings[booking.id] = booking
 
     def add_bookings(self, bookings: List[Booking]):

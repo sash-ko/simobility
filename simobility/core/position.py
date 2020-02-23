@@ -68,8 +68,8 @@ class Position:
 
     def to_dict(self):
         d = {
-            "lat": round(self.lat, 5),
-            "lon": round(self.lon, 5)
+            "lat": round(self.lat, 6),
+            "lon": round(self.lon, 6)
             # 'id': self.id
         }
         return d

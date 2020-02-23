@@ -7,6 +7,8 @@ setup(
     author="Oleksandr Lysenko",
     author_email="sashkolysenko@gmail.com",
     version=__version__,
+    license="MIT",
+    url="https://github.com/sash-ko/simobility",
     packages=[
         "simobility",
         "simobility.core",

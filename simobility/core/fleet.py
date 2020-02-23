@@ -17,9 +17,6 @@ class Fleet:
         self._router = router
         self.clock = clock
 
-        # sequential ids instead of uuid
-        self._seq_id = 0
-
     def get_online_vehicles(self) -> List[Vehicle]:
         return [v for v in self._vehicles.values() if not v.is_offline()]
 
@@ -62,10 +59,8 @@ class Fleet:
         for item in state.choice(stations, fleet_size):
             lon, lat = item["coordinates"]
 
-            vehicle = Vehicle(self.clock, vehicle_id=self._seq_id)
+            vehicle = Vehicle(self.clock)
             self.infleet(vehicle, Position(lon, lat))
-
-            self._seq_id += 1
 
 
 def create_engine(pos: Position, router: Type[BaseRouter], clock: Clock):

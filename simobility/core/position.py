@@ -35,7 +35,6 @@ class Position:
 
         self._validate()
 
-
     def _validate(self):
         if self.lat > 90 or self.lat < -90:
             raise Exception(f"{self.lat} is not correct latitude")

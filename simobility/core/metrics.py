@@ -15,6 +15,10 @@ def calculate_metrics(data, clock):
     avg_waiting_time = waiting_times[~waiting_times.isna()].mean()
     avg_waiting_time = clock.clock_time_to_seconds(avg_waiting_time)
 
+    trip_times = data[booking_idx].groupby("uuid").apply(_calc_trip_time)
+    avg_trip_time = trip_times[~trip_times.isna()].mean()
+    avg_trip_time = clock.clock_time_to_seconds(avg_trip_time)
+
     created = data[booking_idx & (data.to_state == "pending")].shape[0]
     pickups = data[booking_idx & (data.to_state == "pickup")].shape[0]
     dropoffs = data[booking_idx & (data.to_state == "dropoff")].shape[0]
@@ -44,6 +48,7 @@ def calculate_metrics(data, clock):
         "pickup_rate": pickup_rate,
         # time in seconds
         "avg_waiting_time": avg_waiting_time,
+        "avg_trip_time": avg_trip_time,
         "avg_utilization": avg_utilization,
         "fleet_utilization": fleet_utilization,
         "avg_paid_utilization": paid_utilization,
@@ -59,3 +64,10 @@ def _calc_waiting_time(item):
     if "pickup" not in vals:
         return None
     return vals["pickup"] - vals["pending"]
+
+
+def _calc_trip_time(item):
+    vals = dict(item[["to_state", "clock_time"]].values)
+    if "dropoff" not in vals:
+        return None
+    return vals["dropoff"] - vals["pickup"]

@@ -9,7 +9,7 @@ class Position:
     lon/lat -> x/y order of coordinates
     """
 
-    def __init__(self, lon, lat, precision=6):
+    def __init__(self, lon, lat):
         """
         Params
         ------
@@ -19,10 +19,6 @@ class Position:
 
         lat : float
             Latitude
-
-        precision : int
-            Precision to route lat and lon coordinates to avoid comparison
-            issues
         """
 
         super().__init__()
@@ -30,10 +26,12 @@ class Position:
         self.id = uuid4().hex
 
         # https://en.wikipedia.org/wiki/Decimal_degrees
-        # e.g. the error of precision=5 is ~1 meter
-        self.lat = round(lat, precision)
-        self.lon = round(lon, precision)
-        self._threshold = 0.005
+        # e.g. the error of precision=6 is ~111 mm
+        self.lat = round(lat, 6)
+        self.lon = round(lon, 6)
+
+        # max distance between two points to consider them the same
+        self._distance_threshold = 0.005
 
         self._validate()
 
@@ -64,8 +62,7 @@ class Position:
         return (self.lon, self.lat)
 
     def __eq__(self, other):
-        return self.distance(other) < self._threshold
-        # return self.lat == other.lat and self.lon == other.lon
+        return self.id == other.id or self.distance(other) < self._distance_threshold
 
     def __ne__(self, other):
         return not self.__eq__(other)

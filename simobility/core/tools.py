@@ -105,10 +105,10 @@ class ReplayDemand:
 
                 if self.map_matcher:
                     original_pu = pu
-                    original_du = du
+                    original_do = do
                     pu = self.map_matcher.map_match(pu)
 
-                    if pu.distance(original_pu) > 0.2:
+                    if pu.distance(original_pu) > 0.05:
                         logging.warning(
                             f"Map matched pickup is {pu.distance(original_pu)} away for the original"
                         )
@@ -116,12 +116,17 @@ class ReplayDemand:
                         continue
 
                     do = self.map_matcher.map_match(do)
-                    if du.distance(original_du) > 0.2:
+                    if do.distance(original_do) > 0.05:
                         logging.warning(
-                            f"Map matched dropoff is {du.distance(original_du)} away for the original"
+                            f"Map matched dropoff is {do.distance(original_do)} away for the original"
                         )
                         # skip booking
                         continue
+
+                # TODO: move distance thresholds to config
+                if pu.distance(do) < 0.1:
+                    # logging.warning(f"Pickup and dropoff are too close to each other {pu.distance(do)}")
+                    continue
 
                 bookings.append(Booking(self.clock, pu, do, seats))
 

@@ -10,7 +10,7 @@ Some example of algorithms:
 * [Autonomous Vehicle Fleet Sizes Required to Serve Different Levels of Demand](https://www.research-collection.ethz.ch/handle/20.500.11850/104743) - fleet sizing problem
 * [On-demand high-capacity ride-sharing via dynamic trip-vehicle assignment](https://www.pnas.org/content/114/3/462)
 
-### Instalation
+### Installation
 
 `pip install simobility`
 

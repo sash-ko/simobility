@@ -1,6 +1,5 @@
 import datetime
 import math
-import threading
 from dateutil import parser
 from typing import Optional, List, Union
 

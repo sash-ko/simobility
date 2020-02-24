@@ -1,6 +1,5 @@
 from abc import ABCMeta, abstractmethod
-import numpy as np
-from typing import Callable, Dict, List
+from typing import List
 from ..core.position import Position
 from .route import Route
 

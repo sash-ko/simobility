@@ -7,7 +7,7 @@ from math import ceil
 
 def linear_approximation(
     pcnt: float, points: List[Tuple[float, float]], segment_distances: List[float]
-):
+) -> Tuple[float, float]:
     """ Approximate a coordinates of a point on a route (a sequence of points
     with known distance between them) knowing total distance to the point
 
@@ -66,7 +66,7 @@ def linear_approximation(
         # raise InvalidParameter(
         # f'distance is too long: {distance}, max: {acc_distances[-1]}')
 
-    points = points[idx: idx + 2]
+    points = points[idx : idx + 2]
 
     if len(segment_distances) == 1 or idx == 0:
         min_dist = 0

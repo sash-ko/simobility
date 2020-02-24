@@ -9,6 +9,7 @@ setup(
     version=__version__,
     license="MIT",
     url="https://github.com/sash-ko/simobility",
+    download_url="https://github.com/sash-ko/simobility/archive/v0.2.3.tar.gz",
     packages=[
         "simobility",
         "simobility.core",

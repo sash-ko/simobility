@@ -4,7 +4,9 @@
 
 **simobility** is a human-friendly Python framework that helps scientists and engineers prototype and compare fleet optimization algorithms (autonomous and human-driven vehicles).
 
-Some example of algorithms:
+<img src="./img/sim.gif" width="35%" align="right">
+
+Examples of algorithms:
 * [T-Share: A Large-Scale Dynamic Taxi Ridesharing Service](https://www.microsoft.com/en-us/research/publication/t-share-a-large-scale-dynamic-taxi-ridesharing-service/) - one of the classical ridesharing algorithms 
 * [MOVI: A Model-Free Approach to Dynamic Fleet Management](https://arxiv.org/abs/1804.04758) - Deep Q-network that directly learns the optimal vehicle dispatch policy
 * [Autonomous Vehicle Fleet Sizes Required to Serve Different Levels of Demand](https://www.research-collection.ethz.ch/handle/20.500.11850/104743) - fleet sizing problem
@@ -109,12 +111,6 @@ dispatcher.dispatch(itinerary)
     "total_distance": 1902.04,
 }
 ```
-
-## Visualization
-
-Animated visualization in Jupyter notebook with [folium](https://github.com/python-visualization/folium)
-
-<img src="./img/sim.gif" width="75%">
 
 ## Simulation logs
 

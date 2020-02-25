@@ -19,6 +19,7 @@ simulation:
   # in minutes
   duration: 120
   starting_time: '2015-02-01 12:00:00'
+  resolution: 7
   # map match pickups and dropoffs
   # map_match: True
   map_match: False

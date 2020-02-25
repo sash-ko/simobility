@@ -118,7 +118,7 @@ Animated visualization in Jupyter notebook with [folium](https://github.com/pyth
 
 ## Simulation logs
 
-Simulator outputs information about each state change - [simulation log example](./examples/simulation_log_example.csv)
+Simulator outputs information about each state change - [simulation log example](./examples/simulation_log_small.csv)
 
 ## Read simulation logs
 

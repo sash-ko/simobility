@@ -25,7 +25,7 @@ Some examples:
 
 `pip install simobility`
 
-### Contributions and Thanks
+### Contributions and thanks
 
 Thanks to all who contributed to the concept/code:
 
@@ -34,34 +34,27 @@ Thanks to all who contributed to the concept/code:
 * [Sultan Imanhodjaev](https://www.linkedin.com/in/imanhodjaev/)
 * [Yábir Benchakhtir](https://www.linkedin.com/in/yabirgb/)
 
-## Framework
-
-**simobility** provides a set of building blocks for designing simulations:
-- clock
-- dispatcher
-- demand model
-- vehicles
-- routers
-- ...
-
-
-## Pseudocode:
+### Pseudocode:
 
 ```python
+# spatial model
+clock = Clock(time_step=15, time_unit='s')
+
 dispatcher = Dispatcher()
 
-# Fleet model
+# fleet model
 fleet = Fleet()
 taxi_1 = Vehicle()
 taxi_2 = Vehicle()
 fleet.infleet([taxi_1, taxi_2])
 
-# Demand model
+# demand model
 customer_1 = Booking(pickup1, dropoff1)
 customer_2 = Booking(pickup2, dropoff2)
 
-# Spatial model
+# spatial model
 router = Router()
+# estimate/predict/calculate time of arrival
 distance_matrix = router.calculate_distance_marix(
     [customer_1, customer_2],
     [taxi_1, taxi_2]
@@ -101,7 +94,7 @@ dispatcher.dispatch(itinerary)
 # Analyze logs, calculate metrics/KPIs, create visualizations...
 ```
 
-## Metrics example
+### Metrics example
 
 ```json
 {
@@ -121,15 +114,14 @@ dispatcher.dispatch(itinerary)
 }
 ```
 
-## Simulation logs
+### Simulation logs
 
 Simulator outputs information about each state change - [simulation log example](./examples/simulation_log_small.csv)
 
-## Read simulation logs
+Read logs with pandas
 
 ```python
 import pandas as pd
-from pandas.io.json import json_normalize
 
 data = pd.read_csv(
     "simulation_output.csv",
@@ -138,11 +130,9 @@ data = pd.read_csv(
 )
 
 details = data.details.apply(pd.Series)
-# same as:
-# details = json_normalize(data.details)
 ```
 
-## Run OSRM
+### Run OSRM
 
 ```bash
 wget http://download.geofabrik.de/north-america/us/new-york-latest.osm.pbf

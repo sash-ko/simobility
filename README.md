@@ -118,25 +118,7 @@ Animated visualization in Jupyter notebook with [folium](https://github.com/pyth
 
 ## Simulation logs
 
-Simulator logs detailed information about each state change. For example:
-
-```bash
-clock_time;object_type;uuid;itinerary_id;from_state;to_state;lon;lat;details
-0;vehicle;0;;offline;idling;-73.99715;40.71196;{}
-0;vehicle;1;;offline;idling;-73.98232;40.76953;{}
-0;vehicle;2;;offline;idling;-73.98243;40.785;{}
-0;vehicle;3;;offline;idling;-74.00742;40.72601;{}
-...
-11;booking;1;;created;pending;-73.97634;40.75146;{"dropoff":{"lat":40.76076,"lon":-73.99792}}
-11;booking;2;;created;pending;-73.98123;40.78109;{"dropoff":{"lat":40.80811,"lon":-73.9665}}
-...
-23;vehicle;29;00e6fa3da6044dc09d0ee85eb81ce703;idling;moving_to;-73.97634;40.75146;{"dropoff":1,"dst":{"lat":40.76076,"lon":-73.99792},"route_duration":38,"route_distance":2.091,"trip_duration":0,"trip_distance":0.0}
-23;booking;1;00e6fa3da6044dc09d0ee85eb81ce703;pickup;waiting_dropoff;-73.97634;40.75146;{"vid":29}
-26;booking;3;;created;pending;-73.94856;40.78247;{"dropoff":{"lat":40.72625,"lon":-73.98937}}
-26;vehicle;14;50f1382193a749d2a46f240f6bb75abd;idling;moving_to;-73.95228;40.77206;{"eta":22,"pickup":3,"dst":{"lat":40.78247,"lon":-73.94856},"route_duration":22,"route_distance":1.199,"trip_duration":0,"trip_distance":0.0}
-26;booking;3;50f1382193a749d2a46f240f6bb75abd;pending;matched;-73.94856;40.78247;{"vid":14}
-26;booking;3;50f1382193a749d2a46f240f6bb75abd;matched;waiting_pickup;-73.94856;40.78247;{"vid":14}
-```
+Simulator outputs information about each state change - [simulation log example](./examples/simulation_log_example.csv)
 
 ## Read simulation logs
 

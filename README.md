@@ -8,7 +8,7 @@
 
 Create an environment for experiments with [AI techniques](https://github.com/sash-ko/ai-transportation) that can be applied to a real-life problem and compare them to *classical* solutions.
 
-<img src="./img/sim.gif" width="35%" align="right">
+<img src="./examples/moving_vehicles.gif" width="35%" align="right">
 
 Some examples:
 * [Deep Reinforcement Learning with Applications in Transportation](https://outreach.didichuxing.com/tutorial/AAAI2019/)

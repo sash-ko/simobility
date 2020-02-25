@@ -1,16 +1,25 @@
 # simobility
 
-**simobility** - light-weight mobility simulation framework. Best for quick prototyping
+**simobility** is a light-weight mobility simulation framework. Best for quick prototyping
 
-**simobility** is a human-friendly Python framework that helps scientists and engineers prototype and compare fleet optimization algorithms (autonomous and human-driven vehicles).
+**simobility** is a human-friendly Python framework that helps scientists and engineers prototype and compare fleet optimization algorithms (autonomous and human-driven vehicles). It provides a set of building blocks that can be used to design different simulation scenarious, run simulations and calculate metrics. It is easy to plug in custom demand models, customer behavior models, fleet types, spatio-temporal models (for example, use [OSRM](http://project-osrm.org/) for routing vehicles and machine learning models trained on historical data to predict [ETA](https://en.wikipedia.org/wiki/Estimated_time_of_arrival)).
+
+### Motivation
+
+Create an environment for experiments with [AI techniques](https://github.com/sash-ko/ai-transportation) that can be applied to a real-life problem and compare them to *classical* solutions.
 
 <img src="./img/sim.gif" width="35%" align="right">
 
-Examples of algorithms:
-* [T-Share: A Large-Scale Dynamic Taxi Ridesharing Service](https://www.microsoft.com/en-us/research/publication/t-share-a-large-scale-dynamic-taxi-ridesharing-service/) - one of the classical ridesharing algorithms 
-* [MOVI: A Model-Free Approach to Dynamic Fleet Management](https://arxiv.org/abs/1804.04758) - Deep Q-network that directly learns the optimal vehicle dispatch policy
-* [Autonomous Vehicle Fleet Sizes Required to Serve Different Levels of Demand](https://www.research-collection.ethz.ch/handle/20.500.11850/104743) - fleet sizing problem
-* [On-demand high-capacity ride-sharing via dynamic trip-vehicle assignment](https://www.pnas.org/content/114/3/462)
+Some examples:
+* [Deep Reinforcement Learning with Applications in Transportation](https://outreach.didichuxing.com/tutorial/AAAI2019/)
+
+* [T. Oda and C. Joe-Wong, "Movi: A model-free approach to dynamic fleet management". 2018](https://arxiv.org/pdf/1804.04758.pdf)
+
+* [A. Alabbasi, A. Ghosh, and V. Aggarwal, "DeepPool: Distributed model-free algorithm for ride-sharing using deep reinforcement learning", IEEETrans. Intelligent Transportation Systems (to appear). 2019](https://arxiv.org/pdf/1903.03882)
+
+* [C Wang,Y Hou, M Barth, "Data-Driven Multi-step Demand Prediction for Ride-hailing Services Using Convolutional Neural Network". 2019](https://arxiv.org/pdf/1911.03441.pdf)
+
+* [J. Ke, F. Xiao, H. Yang, and J. Ye. Optimizing online matching for ride-sourcing services with multi-agent deep reinforcement learning. 2019](https://arxiv.org/abs/1902.06228)
 
 ### Installation
 
@@ -20,10 +29,10 @@ Examples of algorithms:
 
 Thanks to all who contributed to the concept/code:
 
-* [Steffen Häußler](https://www.linkedin.com/in/steffenhaeussler/) - https://github.com/SteffenHaeussler
-* [Stephen Privitera](https://www.linkedin.com/in/stephen-privitera/) - https://github.com/sprivite
-* [Sultan Imanhodjaev](https://www.linkedin.com/in/imanhodjaev/) - https://github.com/imanhodjaev
-* [Yábir Benchakhtir](https://www.linkedin.com/in/yabirgb/) - https://github.com/yabirgb
+* [Steffen Häußler](https://www.linkedin.com/in/steffenhaeussler/)
+* [Stephen Privitera](https://www.linkedin.com/in/stephen-privitera/)
+* [Sultan Imanhodjaev](https://www.linkedin.com/in/imanhodjaev/)
+* [Yábir Benchakhtir](https://www.linkedin.com/in/yabirgb/)
 
 ## Framework
 

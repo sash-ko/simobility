@@ -2,7 +2,7 @@
 
 **simobility** is a light-weight mobility simulation framework. Best for quick prototyping
 
-**simobility** is a human-friendly Python framework that helps scientists and engineers prototype and compare fleet optimization algorithms (autonomous and human-driven vehicles). It provides a set of building blocks that can be used to design different simulation scenarious, run simulations and calculate metrics. It is easy to plug in custom demand models, customer behavior models, fleet types, spatio-temporal models (for example, use [OSRM](http://project-osrm.org/) for routing vehicles and machine learning models trained on historical data to predict [ETA](https://en.wikipedia.org/wiki/Estimated_time_of_arrival)).
+**simobility** is a human-friendly Python framework that helps scientists and engineers to prototype and compare fleet optimization algorithms (autonomous and human-driven vehicles). It provides a set of building blocks that can be used to design different simulation scenarious, run simulations and calculate metrics. It is easy to plug in custom demand models, customer behavior models, fleet types, spatio-temporal models (for example, use [OSRM](http://project-osrm.org/) for routing vehicles and machine learning models trained on historical data to predict [ETA](https://en.wikipedia.org/wiki/Estimated_time_of_arrival)).
 
 ### Motivation
 

@@ -114,7 +114,7 @@ dispatcher.dispatch(itinerary)
 
 Animated visualization in Jupyter notebook with [folium](https://github.com/python-visualization/folium)
 
-<img src="./img/example.png" width="75%">
+<img src="./img/sim.gif" width="75%">
 
 ## Simulation logs
 

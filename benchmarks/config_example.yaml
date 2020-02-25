@@ -36,12 +36,6 @@ solvers:
     search_radius: 5
     router: 'linear'
     # router: 'osrm'
-  tshare_matcher:
-    # minutes
-    max_time_radius: 10
-    # meters
-    max_dist_radius: 5000
-    hex_resolution: 7
 
 routers:
   osrm:

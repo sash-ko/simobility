@@ -1,25 +1,14 @@
 from typing import List, Tuple, Dict
 import numpy as np
 import logging
-import yaml
-import argparse
 
 import simobility.routers as routers
 from simobility.core.tools import basic_booking_itinerary
-from simobility.simulator.simulator import Simulator, Context
+from simobility.simulator.simulator import Context
 from simobility.core import Itinerary
 from simobility.core import Booking
 from simobility.core import Vehicle
 from simobility.routers.base_router import BaseRouter
-from simobility.core.loggers import configure_root, config_state_changes
-from scenario import create_scenario
-from metrics import print_metrics
-
-
-configure_root(level=logging.DEBUG, format="%(asctime)s %(levelname)s: %(message)s")
-
-log = logging.getLogger("urllib3.connectionpool")
-log.setLevel(logging.CRITICAL)
 
 
 class GreedyMatcher:
@@ -34,6 +23,7 @@ class GreedyMatcher:
         self.booking_service = context.booking_service
         self.dispatcher = context.dispatcher
 
+        # cache routes
         router = routers.CachingRouter(router)
         self.router = router
 
@@ -84,37 +74,3 @@ class GreedyMatcher:
         idx = np.argmin(distances)
         return vehicles[idx], distances[idx]
 
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Preprocess data")
-    parser.add_argument("--config", help="YAML config")
-    args = parser.parse_args()
-
-    with open(args.config) as cfg:
-        config = yaml.load(cfg, Loader=yaml.FullLoader)
-
-    config_state_changes(config["simulation"]["output"])
-
-    context, demand = create_scenario(config)
-
-    if config["solvers"]["greedy_matcher"]["router"] == "linear":
-        router = routers.LinearRouter(
-            context.clock, config["routers"]["linear"]["speed"]
-        )
-    elif config["solvers"]["greedy_matcher"]["router"] == "osrm":
-        router = routers.OSRMRouter(
-            context.clock, server=config["routers"]["osrm"]["server"]
-        )
-    else:
-        raise Exception("Unknown router")
-
-    logging.info(f"Matcher router {router}")
-
-    router = routers.CachingRouter(router)
-
-    matcher = GreedyMatcher(context, router, config)
-
-    simulator = Simulator(matcher, context)
-    simulator.simulate(demand, config["simulation"]["duration"])
-
-    print_metrics(config["simulation"]["output"], context.clock)

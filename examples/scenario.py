@@ -1,5 +1,3 @@
-import json
-from shapely.geometry import shape
 import logging
 import math
 from datetime import timedelta
@@ -10,7 +8,6 @@ from simobility.core import Fleet
 from simobility.core import BookingService
 from simobility.core import Dispatcher
 
-# import simobility.models as models
 from simobility.core.tools import ReplayDemand
 from simobility.simulator.simulator import Context
 
@@ -41,12 +38,6 @@ def create_demand_model(config, clock, map_matcher):
         seed=config["simulation"].get("demand_seed"),
     )
     return demand
-
-
-def get_geofence(file_name):
-    if file_name:
-        with open(file_name) as f:
-            return shape(json.load(f)["features"][0]["geometry"])
 
 
 def create_scenario(config):

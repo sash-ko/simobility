@@ -12,7 +12,7 @@ class Dispatcher:
     def __init__(self):
         self.itineraries: Dict[Vehicle, Itinerary] = {}
 
-    def set_itinerary(self, itinerary: Itinerary):
+    def dispatch(self, itinerary: Itinerary):
         # TODO: itinerary consistency is a "business logic" level
 
         self.itineraries[itinerary.vehicle] = itinerary
@@ -31,7 +31,7 @@ class Dispatcher:
 
         if itineraries:
             for s in itineraries:
-                self.set_itinerary(s)
+                self.dispatch(s)
 
         # finish current job and start next one
 

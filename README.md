@@ -6,7 +6,7 @@
 
 ### Motivation
 
-Create an environment for experiments with [AI techniques](https://github.com/sash-ko/ai-transportation) that can be applied to a real-life problem and compare them to *classical* solutions.
+Create an environment for experiments with machine learning algorithms for decision-making problems in mobility services and compare them to classical solutions.
 
 <img src="./examples/moving_vehicles.gif" width="35%" align="right">
 

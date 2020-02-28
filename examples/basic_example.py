@@ -14,10 +14,11 @@ if __name__ == "__main__":
         time_step=10, time_unit="s", starting_time="2020-02-05 12:35:01", initial_time=5
     )
     print(f'Current time {clock.to_datetime()} ({clock.now} clock time)')
-    router = routers.LinearRouter(clock=clock)
 
     dispatcher = Dispatcher()
 
+    # use LinearRouter router to move vehicles
+    router = routers.LinearRouter(clock=clock)
     fleet = Fleet(clock, router)
     vehicle = Vehicle(clock)
     fleet.infleet(vehicle, Position(13.4014, 52.5478))
@@ -35,6 +36,7 @@ if __name__ == "__main__":
     print(f'Booking state is "{booking.state.value}"')
     print(f'Vehicle state is "{vehicle.state.value}"')
 
+    # explain vehicle what to do
     itinerary = Itinerary(clock.now, vehicle)
     itinerary.move_to(pickup)
     itinerary.pickup(booking)
@@ -44,6 +46,7 @@ if __name__ == "__main__":
     dispatcher.dispatch(itinerary)
 
     print(f"Start simulation at {clock.to_datetime()} ({clock.now} clock time)")
+    # run simulation - all state changes and movements will happen here
     while not itinerary.is_completed():
         fleet.step()
         dispatcher.step([])

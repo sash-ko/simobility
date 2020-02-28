@@ -1,6 +1,10 @@
 import logging
 
 
+def get_sim_logger():
+    return logging.getLogger("state_changes")
+
+
 def configure_main_logger(file_name):
 
     disable_loggers()
@@ -8,18 +12,20 @@ def configure_main_logger(file_name):
     logger = logging.getLogger("state_changes")
 
     ch = logging.FileHandler(file_name, "w")
-    ch.setLevel(logging.DEBUG)
+    ch.setLevel(logging.INFO)
 
     formatter = logging.Formatter("%(message)s")
     ch.setFormatter(formatter)
 
     logger.addHandler(ch)
 
-    logs_schema = 'clock_time;object_type;uuid;itinerary_id;from_state;to_state;lon;lat;details'
-    # add header to log file 
+    logs_schema = (
+        "clock_time;object_type;uuid;itinerary_id;from_state;to_state;lon;lat;details"
+    )
+    # add header to log file
     logger.info(logs_schema)
 
-    logging.info(f'Store logs in {file_name}')
+    logging.info(f"Store logs in {file_name}")
     logging.info(f'Logs schema: {logs_schema.split(";")}')
 
 

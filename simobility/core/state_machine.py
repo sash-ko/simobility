@@ -5,11 +5,8 @@ from collections import OrderedDict
 from transitions import Machine
 from transitions.core import EventData
 from uuid import uuid4
-import logging
 from .clock import Clock
-
-# WARNING: do not change is line otherwise simulation logs can disappear
-simulation_logs = logging.getLogger("state_changes")
+from .loggers import get_sim_logger
 
 
 class StateMachine:
@@ -45,6 +42,8 @@ class StateMachine:
             after_state_change="on_state_changed",
         )
 
+        self.logger = get_sim_logger()
+
     def on_state_changed(self, event: EventData) -> Dict:
         """Called on each state transition"""
 
@@ -54,7 +53,7 @@ class StateMachine:
         msg = self.format_message(state_info)
 
         # Log state changes - results of simulations
-        simulation_logs.debug(msg)
+        self.logger.info(msg)
 
         return state_info
 

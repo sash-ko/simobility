@@ -1,32 +1,29 @@
 import logging
 
 
-_log = logging.getLogger("transitions.core")
-_log.setLevel(logging.CRITICAL)
+def configure_main_logger(file_name):
 
-_log = logging.getLogger("urllib3.connectionpool")
-_log.setLevel(logging.CRITICAL)
-
-
-def config_state_changes(file_name):
+    disable_loggers()
 
     logger = logging.getLogger("state_changes")
 
     ch = logging.FileHandler(file_name, "w")
     ch.setLevel(logging.DEBUG)
-    # formatter = logging.Formatter("%(asctime)s;%(message)s", datefmt='%Y-%m-%d %H:%M:%S')
+
     formatter = logging.Formatter("%(message)s")
     ch.setFormatter(formatter)
 
     logger.addHandler(ch)
 
     logs_schema = 'clock_time;object_type;uuid;itinerary_id;from_state;to_state;lon;lat;details'
+    # add header to log file 
     logger.info(logs_schema)
 
+    logging.info(f'Store logs in {file_name}')
     logging.info(f'Logs schema: {logs_schema.split(";")}')
 
 
-def configure_root(
+def configure_root_logger(
     level=logging.DEBUG, format="%(name)s %(asctime)s %(levelname)s: %(message)s"
 ):
     class RootFilter(logging.Filter):
@@ -41,3 +38,12 @@ def configure_root(
     ch.setFormatter(formatter)
     ch.addFilter(RootFilter())
     logger.addHandler(ch)
+
+
+def disable_loggers():
+
+    log = logging.getLogger("urllib3.connectionpool")
+    log.setLevel(logging.CRITICAL)
+
+    log = logging.getLogger("transitions.core")
+    log.setLevel(logging.CRITICAL)

@@ -26,15 +26,16 @@ def create_fleet(clock):
     return fleet
 
 
-def print_trip_time(vehicle, booking, clock):
+def print_estimates(vehicle, booking, clock):
     router = routers.LinearRouter(clock=clock)
 
-    eta = router.estimate_duration(booking.pickup, vehicle.position)
+    route = router.calculate_route(booking.pickup, vehicle.position)
+    eta = clock.now + route.duration
     print(f"Pickup in around {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
+    print(f'Distance to pickup {route.distance:.2f} km')
 
     eta = eta + router.estimate_duration(booking.pickup, booking.dropoff)
     print(f"Dropoff in around {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
-
 
 if __name__ == "__main__":
 
@@ -48,7 +49,7 @@ if __name__ == "__main__":
 
     booking = create_booking(clock)
 
-    print_trip_time(vehicle, booking, clock)
+    print_estimates(vehicle, booking, clock)
 
     print(f'Booking state is "{booking.state.value}"')
     print(f'Vehicle state is "{vehicle.state.value}"')

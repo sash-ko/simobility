@@ -49,7 +49,7 @@ if __name__ == "__main__":
     # run simulation - all state changes and movements will happen here
     while not itinerary.is_completed():
         fleet.step()
-        dispatcher.step([])
+        dispatcher.step()
         clock.tick()
 
     print(f"Stop simulation at {clock.to_datetime()} ({clock.now} clock time)")

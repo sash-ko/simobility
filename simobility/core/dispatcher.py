@@ -26,13 +26,7 @@ class Dispatcher:
         vehicle.stop()
         del self.itineraries[vehicle]
 
-    def step(self, itineraries: List[Itinerary]):
-        # TODO: pooling and rebalancing?????
-
-        if itineraries:
-            for s in itineraries:
-                self.dispatch(s)
-
+    def step(self):
         # finish current job and start next one
 
         for vehicle, itinerary in self.itineraries.items():

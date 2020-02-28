@@ -13,17 +13,27 @@ if __name__ == "__main__":
     clock = Clock(
         time_step=10, time_unit="s", starting_time="2020-02-05 12:35:01", initial_time=5
     )
+    print(f'Current time {clock.to_datetime()} ({clock.now} clock time)')
     router = routers.LinearRouter(clock=clock)
 
     dispatcher = Dispatcher()
-    fleet = Fleet(clock, router)
 
+    fleet = Fleet(clock, router)
     vehicle = Vehicle(clock)
     fleet.infleet(vehicle, Position(13.4014, 52.5478))
 
     pickup = Position(13.3764, 52.5461)
     dropoff = Position(13.4014, 52.5478)
     booking = Booking(clock, pickup=pickup, dropoff=dropoff)
+
+    eta = router.estimate_duration(pickup, vehicle.position)
+    print(f'Pickup in around {round(clock.clock_time_to_seconds(eta) / 60)} minutes')
+
+    eta = eta + router.estimate_duration(pickup, dropoff)
+    print(f'Dropoff in around {round(clock.clock_time_to_seconds(eta) / 60)} minutes')
+
+    print(f'Booking state is "{booking.state.value}"')
+    print(f'Vehicle state is "{vehicle.state.value}"')
 
     itinerary = Itinerary(clock.now, vehicle)
     itinerary.move_to(pickup)
@@ -40,5 +50,8 @@ if __name__ == "__main__":
         clock.tick()
 
     print(f"Stop simulation at {clock.to_datetime()} ({clock.now} clock time)")
+
+    print(f'Booking state is "{booking.state.value}"')
+    print(f'Vehicle state is "{vehicle.state.value}"')
 
     fleet.stop_vehicles()

@@ -46,8 +46,6 @@ def move_vehicle(vehicle: Vehicle, itinerary: Itinerary) -> bool:
         raise Exception("Current job cant be None")
 
     context = itinerary_info(itinerary)
-    if current_job.eta is not None:
-        context["eta"] = current_job.eta
 
     if itinerary.next_jobs:
         job = itinerary.next_jobs[0]

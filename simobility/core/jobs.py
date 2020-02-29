@@ -1,4 +1,4 @@
-from typing import List, Optional, Callable, Dict
+from typing import List, Callable, Dict
 from uuid import uuid4
 import logging
 from .position import Position

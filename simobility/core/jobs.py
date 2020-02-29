@@ -16,7 +16,7 @@ class BaseJob:
         self.itinerary_id = itinerary_id
 
     def to_dict(self) -> Dict:
-        return {"itinerary_id": self.itinerary_id}
+        return {"itinerary_id": self.itinerary_id, "job_name": self.name()}
 
     @classmethod
     def name(cls):
@@ -50,7 +50,7 @@ class BaseJob:
         return lambda: False
 
     def __str__(self):
-        return f'Job "{self._name}"(id={self.id}): '
+        return f'Job {self.name()} (id={self.id})'
 
 
 class MoveTo(BaseJob):

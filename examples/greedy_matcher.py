@@ -42,15 +42,13 @@ class GreedyMatcher:
         # FIFO
         for booking in bookings:
             if vehicles:
-                vehicle, distance = self.closest_vehicle(booking, vehicles)
-                if distance > self.search_radius:
+                vehicle, eta = self.closest_vehicle(booking, vehicles)
+                if eta > self.search_radius:
                     continue
 
                 vehicles.remove(vehicle)
 
-                itinerary = basic_booking_itinerary(
-                    self.clock.now, vehicle, booking, pickup_eta=distance
-                )
+                itinerary = basic_booking_itinerary(self.clock.now, vehicle, booking)
                 itineraries.append(itinerary)
 
         return itineraries

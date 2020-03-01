@@ -28,10 +28,11 @@ def test_create_vehicle():
     engine.route.duration = 23
     engine.route.distance = 2.34
     engine.route.traveled_distance = MagicMock(return_value=43)
+    engine.route.traveled_time = MagicMock(return_value=21.11)
 
     engine.position = MagicMock()
     engine.position.to_dict = MagicMock(return_value={111: 22})
-    
+
     v.install_engine(engine)
     assert v.state == States.idling
 
@@ -73,6 +74,7 @@ def test_dont_move_vehicle():
     assert v.engine.current_position == init_pos
     assert not v.is_moving
 
+
 def test_move_vehicle():
     init_pos = Position(13.3764, 52.5461)
     dest1 = Position(13.4014, 52.5478)
@@ -85,8 +87,7 @@ def test_move_vehicle():
     v = Vehicle(clock)
     v.install_engine(engine)
 
-    context = {}
-    v.move_to(dest1, context)
+    v.move_to(dest1)
     assert v.engine.is_moving()
     assert v.state == States.moving_to
 

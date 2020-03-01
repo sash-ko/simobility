@@ -37,6 +37,8 @@ Thanks to all who contributed to the concept/code:
 ### Simulation example
 
 [Simple simulation example](./examples/simple_simulation.py)
+[Log example](./examples/simulation_output_example.csv)
+
 
 ### Metrics example
 
@@ -59,8 +61,6 @@ Thanks to all who contributed to the concept/code:
 ```
 
 ### Simulation logs
-
-Simulator outputs information about each state change - [simulation log example](./simulation_output_example.csv)
 
 Read logs with pandas
 

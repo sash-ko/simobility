@@ -14,19 +14,22 @@ def do_job(itinerary: Itinerary):
     if current_job.is_pickup():
         booking = current_job.booking
 
-        if pickup_booking(booking, itinerary_info(itinerary)):
+        if pickup_booking(booking, itinerary):
             itinerary.job_complete(current_job)
             do_job(itinerary)
 
     elif current_job.is_dropoff():
         booking = current_job.booking
 
-        if dropoff_booking(current_job.booking, itinerary_info(itinerary)):
+        if dropoff_booking(booking, itinerary):
             itinerary.job_complete(current_job)
             do_job(itinerary)
 
     elif current_job.is_move_to():
-        if not move_vehicle(itinerary.vehicle, itinerary):
+        # if current job is move_to but after but vehicle is not 
+        # moving after the move_vehicle call, this mean that vehicle
+        # has arrived and the job can be considered done
+        if not move_vehicle(itinerary):
             itinerary.job_complete(current_job)
             do_job(itinerary)
 
@@ -39,43 +42,43 @@ def do_job(itinerary: Itinerary):
         raise Exception(f"Unknown job: {current_job._name}")
 
 
-def move_vehicle(vehicle: Vehicle, itinerary: Itinerary) -> bool:
+def move_vehicle(itinerary: Itinerary) -> bool:
     """"""
     current_job = itinerary.current_job
     if not current_job:
         raise Exception("Current job cant be None")
 
-    context = itinerary_info(itinerary)
+    vehicle = itinerary.vehicle
 
-    if itinerary.next_jobs:
-        job = itinerary.next_jobs[0]
+    # if itinerary.next_jobs:
+    #     job = itinerary.next_jobs[0]
 
-        if job.is_pickup():
-            context["pickup"] = job.booking.id
+    #     if job.is_pickup():
+    #         context["pickup"] = job.booking.id
 
-        elif job.is_dropoff():
-            context["dropoff"] = job.booking.id
+    #     elif job.is_dropoff():
+    #         context["dropoff"] = job.booking.id
 
-    vehicle.move_to(current_job.destination, context)
+    vehicle.move_to(current_job.destination, itinerary=itinerary)
 
     return vehicle.is_moving
 
 
-def pickup_booking(booking: Booking, context: Dict) -> bool:
+def pickup_booking(booking: Booking, itinerary: Itinerary) -> bool:
     if booking.is_pending():
         # when pickup is the first step in the itinerary
         # otherwise update_bookings_states changes booking state
         # to matched
-        booking.set_matched(**context)
+        booking.set_matched(itinerary=itinerary)
 
     if booking.is_matched():
         # TODO: how to test 2 state changes in one function?
         # pickup immediately
-        booking.set_waiting_pickup(**context)
-        booking.set_pickup(**context)
+        booking.set_waiting_pickup(itinerary=itinerary)
+        booking.set_pickup(itinerary=itinerary)
 
     elif booking.is_waiting_pickup():
-        booking.set_pickup(**context)
+        booking.set_pickup(itinerary=itinerary)
 
     elif booking.is_customer_canceled():
         # TODO: what to do??
@@ -90,18 +93,18 @@ def pickup_booking(booking: Booking, context: Dict) -> bool:
     return booking.is_pickup()
 
 
-def dropoff_booking(booking: Booking, context: Dict) -> bool:
+def dropoff_booking(booking: Booking, itinerary: Itinerary) -> bool:
     # if booking.is_matched() or booking.is_waiting_pickup():
     # raise Exception('Cannot dropoff booking without pickup')
     if booking.is_waiting_dropoff():
         # TODO: how to test 2 state changes in one function?
-        booking.set_dropoff(**context)
-        booking.set_complete(**context)
+        booking.set_dropoff(itinerary=itinerary)
+        booking.set_complete(itinerary=itinerary)
 
     elif booking.is_pickup():
-        booking.set_waiting_dropoff(**context)
-        booking.set_dropoff(**context)
-        booking.set_complete(**context)
+        booking.set_waiting_dropoff(itinerary=itinerary)
+        booking.set_dropoff(itinerary=itinerary)
+        booking.set_complete(itinerary=itinerary)
     else:
         raise Exception(f"Invalid state for dropoff: {booking.state}")
 
@@ -113,26 +116,25 @@ def update_next_bookings(itinerary: Itinerary) -> None:
     states
     """
 
-    context = itinerary_info(itinerary)
+    # context = itinerary_info(itinerary)
     # TODO: expired or canceled bookings
     jobs = itinerary.next_jobs
     for job in jobs:
         if job.is_pickup():
             booking = job.booking
             if booking.is_pending():
-                booking.set_matched(**context)
-                booking.set_waiting_pickup(**context)
+                booking.set_matched(itinerary=itinerary)
+                booking.set_waiting_pickup(itinerary=itinerary)
 
         elif job.is_dropoff():
             booking = job.booking
             if booking.is_pickup():
-                booking.set_waiting_dropoff(**context)
+                booking.set_waiting_dropoff(itinerary=itinerary)
 
 
-
-def itinerary_info(itinerary: Itinerary) -> Dict:
-    return {
-        "vid": itinerary.vehicle.id,
-        "it_id": itinerary.id,
-        # "it_time": itinerary.created_at,
-    }
+# def itinerary_info(itinerary: Itinerary) -> Dict:
+#     return {
+#         "vid": itinerary.vehicle.id,
+#         "it_id": itinerary.id,
+#         # "it_time": itinerary.created_at,
+#     }

@@ -1,4 +1,50 @@
 import logging
+import json
+from collections import OrderedDict
+
+
+class CSVFileHandler(logging.FileHandler):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.columns = [
+            "clock_time",
+            "object_type",
+            "uuid",
+            "itinerary_id",
+            "from_state",
+            "to_state",
+            "lon",
+            "lat",
+            "details",
+        ]
+
+        self.header = ';'.join(self.columns)
+
+    def emit(self, record):
+        if not isinstance(record.msg, str):
+            record.msg = self.format_message(record.msg)
+        super().emit(record)
+
+    def format_message(self, state_info: OrderedDict) -> str:
+        strings = []
+        for column in self.columns:
+            item = state_info.get(column)
+            try:
+                if item is None:
+                    item = ""
+                elif isinstance(item, dict):
+                    item = json.dumps(item, separators=(",", ":"))
+                else:
+                    item = str(item)
+            # catche error json.encoder.JSONEncoder
+            except TypeError:
+                item = str(item)
+
+            strings.append(item)
+
+        msg = ";".join(strings)
+        return msg
 
 
 def get_sim_logger():
@@ -11,7 +57,8 @@ def configure_main_logger(file_name):
 
     logger = logging.getLogger("state_changes")
 
-    ch = logging.FileHandler(file_name, "w")
+    ch = CSVFileHandler(file_name, "w")
+
     ch.setLevel(logging.INFO)
 
     formatter = logging.Formatter("%(message)s")
@@ -19,14 +66,7 @@ def configure_main_logger(file_name):
 
     logger.addHandler(ch)
 
-    logs_schema = (
-        "clock_time;object_type;uuid;itinerary_id;from_state;to_state;lon;lat;details"
-    )
-    # add header to log file
-    logger.info(logs_schema)
-
-    logging.info(f"Store logs in {file_name}")
-    logging.info(f'Logs schema: {logs_schema.split(";")}')
+    logger.info(ch.header)
 
 
 def configure_root_logger(

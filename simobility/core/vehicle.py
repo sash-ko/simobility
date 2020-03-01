@@ -151,8 +151,22 @@ class Vehicle(StateMachine):
             event.kwargs["destination"] = route.destination.to_dict()
 
             # distance in km
-            event.kwargs["traveled_distance"] = round(
+            event.kwargs["trip_distance"] = round(
                 route.traveled_distance(self.engine.now), 3
             )
+
+            # duration in clock steps
+            event.kwargs["trip_duration"] = round(
+                route.traveled_time(self.engine.now), 3
+            )
+
+        itinerary = event.kwargs.get("itinerary")
+        if itinerary and itinerary.next_jobs:
+            next_job = itinerary.next_jobs[0]
+
+            if next_job.is_pickup():
+                event.kwargs['pickup'] = next_job.booking.id
+            elif next_job.is_dropoff():
+                event.kwargs['dropoff'] = next_job.booking.id
 
         super().on_state_changed(event)

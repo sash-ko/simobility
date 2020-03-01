@@ -47,4 +47,4 @@ if __name__ == "__main__":
     simulator = Simulator(matcher, context)
     simulator.simulate(demand, config["simulation"]["duration"])
 
-    # print_metrics(config["simulation"]["output"], context.clock)
+    print_metrics(config["simulation"]["output"], context.clock)

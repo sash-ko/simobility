@@ -19,7 +19,7 @@ class CSVFileHandler(logging.FileHandler):
             "details",
         ]
 
-        self.header = ';'.join(self.columns)
+        self.header = ";".join(self.columns)
 
     def emit(self, record):
         if not isinstance(record.msg, str):
@@ -47,26 +47,39 @@ class CSVFileHandler(logging.FileHandler):
         return msg
 
 
-def get_sim_logger():
-    return logging.getLogger("state_changes")
+class InMemoryLogHandler(logging.NullHandler):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.logs = []
+
+    def handle(self, record):
+        self.logs.append(dict(record.msg))
+        super().handle(record)
 
 
-def configure_main_logger(file_name):
+def get_simobility_logger(handler=None):
+    logger = logging.getLogger("simobility.state_changes")
+
+    if handler:
+        handler.setLevel(logging.INFO)
+
+        formatter = logging.Formatter("%(message)s")
+        handler.setFormatter(formatter)
+
+        logger.addHandler(handler)
+
+    return logger
+
+
+def configure_csv_logger(file_name):
 
     disable_loggers()
 
-    logger = logging.getLogger("state_changes")
+    handler = CSVFileHandler(file_name, "w")
+    logger = get_simobility_logger(handler)
+    logger.info(handler.header)
 
-    ch = CSVFileHandler(file_name, "w")
-
-    ch.setLevel(logging.INFO)
-
-    formatter = logging.Formatter("%(message)s")
-    ch.setFormatter(formatter)
-
-    logger.addHandler(ch)
-
-    logger.info(ch.header)
+    return logger
 
 
 def configure_root_logger(

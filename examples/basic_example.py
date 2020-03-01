@@ -6,6 +6,7 @@ from simobility.core import Position
 from simobility.core import Booking
 from simobility.core import Dispatcher
 from simobility.core import Itinerary
+from simobility.core import loggers
 
 
 def create_booking(clock):
@@ -21,7 +22,7 @@ def create_fleet(clock):
     fleet = Fleet(clock, router)
 
     vehicle = Vehicle(clock)
-    fleet.infleet(vehicle, Position(13.4014, 52.5478))
+    fleet.infleet(vehicle, Position(13.4021, 52.5471))
 
     return fleet
 
@@ -29,16 +30,27 @@ def create_fleet(clock):
 def print_estimates(vehicle, booking, clock):
     router = routers.LinearRouter(clock=clock)
 
-    route = router.calculate_route(booking.pickup, vehicle.position)
+    route = router.calculate_route(vehicle.position, booking.pickup)
     eta = clock.now + route.duration
-    print(f"Pickup in around {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
+    print(f"Pickup in {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
     print(f"Distance to pickup {route.distance:.2f} km")
 
-    eta = eta + router.estimate_duration(booking.pickup, booking.dropoff)
-    print(f"Dropoff in around {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
+    distance = route.distance
+    route = router.calculate_route(booking.pickup, booking.dropoff)
+
+    eta += route.duration
+    distance += route.distance
+
+    print(f"Dropoff in {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
+    print(f"Distance to dropoff {route.distance:.2f} km")
 
 
 if __name__ == "__main__":
+
+    loggers.configure_root_logger()
+
+    simulation_logs = loggers.InMemoryLogHandler()
+    _ = loggers.get_simobility_logger(simulation_logs)
 
     clock = Clock(
         time_step=10, time_unit="s", starting_time="2020-02-05 12:35:01", initial_time=5
@@ -78,3 +90,6 @@ if __name__ == "__main__":
     print(f'Vehicle state is "{vehicle.state.value}"')
 
     fleet.stop_vehicles()
+
+    print('\nSimulation state changes log:')
+    print(simulation_logs.logs)

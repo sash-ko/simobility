@@ -5,7 +5,7 @@ from transitions import Machine
 from transitions.core import EventData
 from uuid import uuid4
 from .clock import Clock
-from .loggers import get_sim_logger
+from .loggers import get_simobility_logger
 
 
 class StateMachine:
@@ -41,7 +41,7 @@ class StateMachine:
             after_state_change="on_state_changed",
         )
 
-        self.logger = get_sim_logger()
+        self.logger = get_simobility_logger()
 
     def on_state_changed(self, event: EventData) -> Dict:
         """Called on each state transition"""

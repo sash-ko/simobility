@@ -4,7 +4,7 @@ import logging
 
 import simobility.routers as routers
 from simobility.simulator.simulator import Simulator
-from simobility.core.loggers import configure_root_logger, configure_main_logger
+from simobility.core.loggers import configure_root_logger, configure_csv_logger
 from metrics import print_metrics
 from scenario import create_scenario
 from greedy_matcher import GreedyMatcher
@@ -24,8 +24,8 @@ if __name__ == "__main__":
     with open(args.config) as cfg:
         config = yaml.load(cfg, Loader=yaml.FullLoader)
 
-    configure_root_logger(level=logging.DEBUG, format="%(asctime)s %(levelname)s: %(message)s")
-    configure_main_logger(config["simulation"]["output"])
+    configure_root_logger()
+    configure_csv_logger(config["simulation"]["output"])
 
     context, demand = create_scenario(config)
 

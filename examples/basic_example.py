@@ -28,10 +28,13 @@ def create_fleet(clock):
 
 
 def print_estimates(vehicle, booking, clock):
+    """Print pickup and dropoff ETAs and travel distance"""
+
     router = routers.LinearRouter(clock=clock)
 
     route = router.calculate_route(vehicle.position, booking.pickup)
     eta = clock.now + route.duration
+    print("\fETAs:")
     print(f"Pickup in {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
     print(f"Distance to pickup {route.distance:.2f} km")
 
@@ -49,6 +52,8 @@ if __name__ == "__main__":
 
     loggers.configure_root_logger()
 
+    # create in-memory log handler to be able to access to all
+    # state changes after the simulation is over
     simulation_logs = loggers.InMemoryLogHandler()
     _ = loggers.get_simobility_logger(simulation_logs)
 
@@ -64,6 +69,7 @@ if __name__ == "__main__":
 
     print_estimates(vehicle, booking, clock)
 
+    print("\nObject states before simulation:")
     print(f'Booking state is "{booking.state.value}"')
     print(f'Vehicle state is "{vehicle.state.value}"')
 
@@ -77,8 +83,10 @@ if __name__ == "__main__":
     dispatcher = Dispatcher()
     dispatcher.dispatch(itinerary)
 
-    print(f"Start simulation at {clock.to_datetime()} ({clock.now} clock time)")
+    print(f"\nStart simulation at {clock.to_datetime()} ({clock.now} clock time)")
+
     # run simulation - all state changes and movements will happen here
+    # the order of steps in important: fleet -> dispatcher -> clock
     while not itinerary.is_completed():
         fleet.step()
         dispatcher.step()
@@ -86,10 +94,11 @@ if __name__ == "__main__":
 
     print(f"Stop simulation at {clock.to_datetime()} ({clock.now} clock time)")
 
+    print("\nObject states after simulation:")
     print(f'Booking state is "{booking.state.value}"')
     print(f'Vehicle state is "{vehicle.state.value}"')
 
     fleet.stop_vehicles()
 
-    print('\nSimulation state changes log:')
+    print("\nSimulation state changes log:")
     print(simulation_logs.logs)

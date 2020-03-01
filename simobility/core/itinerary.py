@@ -1,6 +1,5 @@
 from typing import List, Optional
 from uuid import uuid4
-import logging
 from .vehicle import Vehicle
 from .booking import Booking
 from .position import Position
@@ -31,20 +30,20 @@ class Itinerary:
 
         self.created_at: int = created_at
 
-    def move_to(self, destination: Position, eta: int = None) -> BaseJob:
+    def move_to(self, destination: Position) -> BaseJob:
         """Create a move job - move vehicle to a specific position defined by 
-        `destination`. `eta` is just an estimate used only for logging
+        `destination`.
         """
-        return self.add_job(MoveTo(self.id, destination, eta))
+        return self.add_job(MoveTo(self.id, destination))
 
-    def pickup(self, booking: Booking, eta: int = None) -> BaseJob:
-        return self.add_job(Pickup(self.id, booking, eta))
+    def pickup(self, booking: Booking) -> BaseJob:
+        return self.add_job(Pickup(self.id, booking))
 
-    def dropoff(self, booking: Booking, eta: int = None) -> BaseJob:
-        return self.add_job(Dropoff(self.id, booking, eta))
+    def dropoff(self, booking: Booking) -> BaseJob:
+        return self.add_job(Dropoff(self.id, booking))
 
-    def wait(self, duration: int, eta: int = None) -> BaseJob:
-        return self.add_job(Wait(self.id, duration, eta))
+    def wait(self, duration: int) -> BaseJob:
+        return self.add_job(Wait(self.id, duration))
 
     def add_job(self, job: BaseJob) -> BaseJob:
         """Add job that was already created"""

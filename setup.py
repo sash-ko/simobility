@@ -4,7 +4,7 @@ from simobility import __version__
 setup(
     name="simobility",
     description="Lightweight mobility simulation for quick algorithm prototyping",
-    long_description="Lightweight mobility simulation for quick algorithm prototyping",
+    long_description=open('README.md').read(),
     author="Oleksandr Lysenko",
     author_email="sashkolysenko@gmail.com",
     version=__version__,

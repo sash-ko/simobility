@@ -39,10 +39,7 @@ class RandomMatcher:
             vehicle = np.random.choice(vehicles)
             vehicles.remove(vehicle)
 
-            eta = self.router.estimate_duration(vehicle.position, booking.pickup)
-            itinerary = basic_booking_itinerary(
-                self.clock.now, vehicle, booking, pickup_eta=eta
-            )
+            itinerary = basic_booking_itinerary(self.clock.now, vehicle, booking)
             itineraries.append(itinerary)
 
         return itineraries

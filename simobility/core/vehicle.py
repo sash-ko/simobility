@@ -60,7 +60,7 @@ class Vehicle(StateMachine):
 
         self.engine: Optional[VehicleEngine] = None
 
-        self.context: Dict = {"vid": self.id}
+        self.context: Dict = {}
 
     @property
     def position(self) -> Optional[Position]:
@@ -79,15 +79,15 @@ class Vehicle(StateMachine):
         if self.engine:
             return self.engine.destination
 
-    def move_to(self, destination: Position, context: Dict = None):
+    def move_to(self, destination: Position, **context):
         if not self.engine:
             raise Exception("Cannot move vehicle without engine")
- 
+
         elif self.engine.is_moving():
             # if vehicle already moving to the same destination do nothing
             if destination != self.destination:
                 # stop current trip
-                self.stop(StopReasons.change, self.context)
+                self.stop(StopReasons.change, context)
                 # change the destination
                 self.engine.start_move(destination)
             # else:
@@ -99,7 +99,7 @@ class Vehicle(StateMachine):
             self.context = context
             self.set_moving_to(**context)
 
-    def stop(self, stop_reason: Enum = None, context: Dict = None):
+    def stop(self, stop_reason: Enum = None, **context):
         if not self.engine:
             raise Exception("Cannot stop vehicle without engine")
 
@@ -111,7 +111,7 @@ class Vehicle(StateMachine):
 
             context = context or self.context
             self.set_idling(stop=stop_reason.value, **context)
-            self.context = {"vid": self.id}
+            self.context = {}
 
             self.engine.end_move()
 
@@ -121,7 +121,7 @@ class Vehicle(StateMachine):
 
         elif self.is_moving_to() and not self.engine.is_moving():
             # vehicle has arrived to the destination
-            self.stop(StopReasons.arrived, self.context)
+            self.stop(StopReasons.arrived, **self.context)
 
         elif self.is_idling() and self.engine.is_moving():
             logging.warning(
@@ -147,15 +147,26 @@ class Vehicle(StateMachine):
 
         route = self.engine.route
         if route:
-            event.kwargs["dst"] = route.destination.to_dict()
-            # duration and distance planned by engine, "real" trip parameters
-            event.kwargs["route_duration"] = route.duration
-            event.kwargs["route_distance"] = round(route.distance, 3)
+            event.kwargs["origin"] = route.origin.to_dict()
+            event.kwargs["destination"] = route.destination.to_dict()
 
-            # actual traveled distance and trip duration
-            event.kwargs["trip_duration"] = route.traveled_time(self.engine.now)
+            # distance in km
             event.kwargs["trip_distance"] = round(
                 route.traveled_distance(self.engine.now), 3
             )
+
+            # duration in clock steps
+            event.kwargs["trip_duration"] = round(
+                route.traveled_time(self.engine.now), 3
+            )
+
+        itinerary = event.kwargs.get("itinerary")
+        if itinerary and itinerary.next_jobs:
+            next_job = itinerary.next_jobs[0]
+
+            if next_job.is_pickup():
+                event.kwargs["pickup"] = next_job.booking.id
+            elif next_job.is_dropoff():
+                event.kwargs["dropoff"] = next_job.booking.id
 
         super().on_state_changed(event)

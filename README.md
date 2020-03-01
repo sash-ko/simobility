@@ -34,65 +34,9 @@ Thanks to all who contributed to the concept/code:
 * [Sultan Imanhodjaev](https://www.linkedin.com/in/imanhodjaev/)
 * [Yábir Benchakhtir](https://www.linkedin.com/in/yabirgb/)
 
-### Pseudocode:
+### Simulation example
 
-```python
-# spatial model
-clock = Clock(time_step=15, time_unit='s')
-
-dispatcher = Dispatcher()
-
-# fleet model
-fleet = Fleet()
-taxi_1 = Vehicle()
-taxi_2 = Vehicle()
-fleet.infleet([taxi_1, taxi_2])
-
-# demand model
-customer_1 = Booking(pickup1, dropoff1)
-customer_2 = Booking(pickup2, dropoff2)
-
-# spatial model
-router = Router()
-# estimate/predict/calculate time of arrival
-distance_matrix = router.calculate_distance_marix(
-    [customer_1, customer_2],
-    [taxi_1, taxi_2]
-)
-
-#
-# ... Find best match between customers and taxies ...
-# Prototype and compare different supply-demand matching algorithms
-#
-
-# Create a ride sharing order for taxi_1
-itinerary = Itinerary(taxi_1)
-
-# Pickup customer #1
-itinerary.move_to(customer_1.pickup)
-itinerary.pickup(customer_1)
-
-# Pickup customer #2
-itinerary.move_to(customer_2.pickup)
-itinerary.pickup(customer_2)
-
-# Dropoff customer #2
-itinerary.move_to(customer_2.dropoff)
-itinerary.dropoff(customer_2)
-
-# Dropoff customer #1
-itinerary.move_to(customer_1.dropoff)
-itinerary.dropoff(customer_1)
-
-# Go to parking and wait there
-itinerary.move_to(parking)
-itinerary.wait(10)
-
-# Dispatch taxies
-dispatcher.dispatch(itinerary)
-
-# Analyze logs, calculate metrics/KPIs, create visualizations...
-```
+[Simple simulation example](./examples/simple_simulation.py)
 
 ### Metrics example
 
@@ -116,7 +60,7 @@ dispatcher.dispatch(itinerary)
 
 ### Simulation logs
 
-Simulator outputs information about each state change - [simulation log example](./examples/simulation_log_small.csv)
+Simulator outputs information about each state change - [simulation log example](./simulation_output_example.csv)
 
 Read logs with pandas
 

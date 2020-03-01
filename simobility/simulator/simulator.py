@@ -40,10 +40,12 @@ class Simulator:
             # match pending bookings and create itineraries
             itineraries = self.matcher.step()
             # itineraries = customer.filter(itineraries)
+            for it in itineraries:
+                self.dispatcher.dispatch(it)
 
             # change booking state to matched and waiting for pickup or dropoff
             # ask vehicles to move
-            self.dispatcher.step(itineraries)
+            self.dispatcher.step()
 
             self.clock.tick()
 

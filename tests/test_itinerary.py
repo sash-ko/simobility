@@ -104,12 +104,11 @@ def test_job_types():
     assert not job.is_pickup()
     assert job.itinerary_id == itinerary.id
 
-    job = itinerary.move_to('33', 10)
+    job = itinerary.move_to('33')
     assert job.name() == 'move_to'
     assert job.is_move_to()
     assert not job.is_dropoff()
     assert not job.is_pickup()
-    assert job.eta == 10
     assert job.itinerary_id == itinerary.id
 
     job = itinerary.wait('33')

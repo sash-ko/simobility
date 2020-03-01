@@ -1,4 +1,4 @@
-from typing import List, Optional, Callable, Dict
+from typing import List, Callable, Dict
 from uuid import uuid4
 import logging
 from .position import Position
@@ -11,22 +11,12 @@ class BaseJob:
     # The elements will be added at the bottom of the file
     supported_jobs: List[str] = []
 
-    def __init__(self, itinerary_id, eta: Optional[int] = None):
-        """
-        NOTE: `eta` is not an time the job will run, this is just an
-        estimation, e.g. dispatcher uses LinearRouter and vehicles
-        OSRMRouter - the `eta` will be not precise at all
-        """
+    def __init__(self, itinerary_id):
         self.id = uuid4().hex
         self.itinerary_id = itinerary_id
 
-        if eta is not None:
-            eta = int(eta)
-
-        self.eta = eta
-
     def to_dict(self) -> Dict:
-        return {"eta": self.eta, "itinerary_id": self.itinerary_id}
+        return {"itinerary_id": self.itinerary_id, "job_name": self.name()}
 
     @classmethod
     def name(cls):
@@ -60,14 +50,12 @@ class BaseJob:
         return lambda: False
 
     def __str__(self):
-        return f'Job "{self._name}"(id={self.id}): '
+        return f'Job {self.name()} (id={self.id})'
 
 
 class MoveTo(BaseJob):
-    def __init__(
-        self, itinerary_id: str, destination: Position, eta: Optional[int] = None
-    ):
-        super().__init__(itinerary_id, eta)
+    def __init__(self, itinerary_id: str, destination: Position):
+        super().__init__(itinerary_id)
         self.destination = destination
 
     def is_move_to(self) -> bool:
@@ -84,9 +72,8 @@ class MoveTo(BaseJob):
 
 
 class Pickup(BaseJob):
-    def __init__(self, itinerary_id: str, booking: Booking, eta: Optional[int] = None):
-        # eta is always 0 since pickup should happend during one step
-        super().__init__(itinerary_id, eta)
+    def __init__(self, itinerary_id: str, booking: Booking):
+        super().__init__(itinerary_id)
         self.booking = booking
 
     @classmethod
@@ -98,9 +85,8 @@ class Pickup(BaseJob):
 
 
 class Dropoff(BaseJob):
-    def __init__(self, itinerary_id: str, booking: Booking, eta: Optional[int] = None):
-        # eta is always 0 since dropoff should happend during one step
-        super().__init__(itinerary_id, eta)
+    def __init__(self, itinerary_id: str, booking: Booking):
+        super().__init__(itinerary_id)
         self.booking = booking
 
     def is_dropoff(self) -> bool:
@@ -112,8 +98,8 @@ class Dropoff(BaseJob):
 
 
 class Wait(BaseJob):
-    def __init__(self, itinerary_id: str, duration: int, eta: Optional[int] = None):
-        super().__init__(itinerary_id, eta)
+    def __init__(self, itinerary_id: str, duration: int):
+        super().__init__(itinerary_id)
         self.duration = duration
 
     def is_wait(self) -> bool:

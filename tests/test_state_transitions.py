@@ -22,7 +22,7 @@ def create_vehicle():
     vehicle = MagicMock()
     vehicle.is_moving = MagicMock(return_value=True)
     vehicle.move_to = MagicMock()
-    vehicle.destination = 'go there'
+    vehicle.destination = "go there"
     return vehicle
 
 
@@ -39,77 +39,65 @@ def create_pickup_dropoff(is_pickup):
 # # Test vehicle_moving
 # ######################################################
 
+
 def test_move_vehicle_moving():
     """Test move_vehicle for Vehicle that is moving"""
     itinerary = create_itinenary()
     vehicle = create_vehicle()
+    itinerary.vehicle = vehicle
 
     # job to move to the same location - nothing should happend
     vehicle.destination = itinerary.current_job.destination
-    move_vehicle(vehicle, itinerary)
+    move_vehicle(itinerary)
     vehicle.move_to.assert_called()
 
     vehicle.move_to = MagicMock()
-    
+
     # vehicle moving to a different location - move_to function
     # should be called with new destination
     vehicle.destination = "somewhere else"
-    move_vehicle(vehicle, itinerary)
+    move_vehicle(itinerary)
 
-    details = {
-        'vid': itinerary.vehicle.id,
-        'it_id': itinerary.id,
-        'eta': 11
-    }
     vehicle.move_to.assert_called_once_with(
-        itinerary.current_job.destination, details)
+        itinerary.current_job.destination, itinerary=itinerary
+    )
 
 
 def test_vehicle_not_moving():
     itinerary = create_itinenary()
-
     vehicle = create_vehicle()
     vehicle.is_moving = False
+    itinerary.vehicle = vehicle
 
     # if vehicle is already at the destination location
     vehicle.position = itinerary.current_job.destination
-    move_vehicle(vehicle, itinerary)
+    move_vehicle(itinerary)
     vehicle.move_to.assert_called()
 
     vehicle.move_to = MagicMock()
     vehicle.position = "somehwere else"
-    move_vehicle(vehicle, itinerary)
+    move_vehicle(itinerary)
 
-    details = {
-        'vid': itinerary.vehicle.id,
-        'it_id': itinerary.id,
-        'eta': itinerary.current_job.eta
-    }
-    
     vehicle.move_to.assert_called_once_with(
-        itinerary.current_job.destination, details)
+        itinerary.current_job.destination, itinerary=itinerary
+    )
 
 
 def test_move_vehicle_moving_pickup():
-    itinerary = create_itinenary()
     vehicle = create_vehicle()
+    itinerary = create_itinenary()
+    itinerary.vehicle = vehicle
 
     # move to pickup
     pickup = create_pickup_dropoff(True)
     itinerary.next_jobs = [pickup]
 
-    vehicle.destination = 'destination'
-    move_vehicle(vehicle, itinerary)
+    vehicle.destination = "destination"
+    move_vehicle(itinerary)
 
-    details = {
-        'vid': itinerary.vehicle.id,
-        'it_id': itinerary.id,
-        'eta': itinerary.current_job.eta,
-        'pickup': pickup.booking.id
-    }
-    
     vehicle.move_to.assert_called_once_with(
-        itinerary.current_job.destination, details)
+        itinerary.current_job.destination, itinerary=itinerary
+    )
 
 
 def test_move_vehicle_moving2dropoff():
@@ -123,17 +111,12 @@ def test_move_vehicle_moving2dropoff():
     itinerary.next_jobs = [dropoff]
 
     vehicle.destination = "somewhere else"
-    move_vehicle(vehicle, itinerary)
-    
-    details = {
-        'vid': itinerary.vehicle.id,
-        'it_id': itinerary.id,
-        'eta': itinerary.current_job.eta,
-        'dropoff': dropoff.booking.id
-    }
-    
+    itinerary.vehicle = vehicle
+    move_vehicle(itinerary)
+
     vehicle.move_to.assert_called_once_with(
-        itinerary.current_job.destination, details)
+        itinerary.current_job.destination, itinerary=itinerary
+    )
 
 
 def test_real_vehicle():
@@ -153,7 +136,7 @@ def test_real_vehicle():
 
     assert not v.is_moving
 
-    move_vehicle(v, itinerary)
+    move_vehicle(itinerary)
 
     assert v.is_moving
 
@@ -162,33 +145,35 @@ def test_real_vehicle():
 # # Test pickup_booking
 # ######################################################
 
+
 def test_pickup_booking():
     vehicle = create_vehicle()
+    itinerary = Itinerary(Clock(), vehicle)
 
     booking = MagicMock()
     booking.is_pending = MagicMock(return_value=True)
     booking.is_matched = MagicMock(return_value=True)
 
-    context = {'vehicle_id': vehicle.id}
-    pickup_booking(booking, context)
-    
-    booking.set_matched.assert_called_once_with(vehicle_id=vehicle.id)
-    booking.set_waiting_pickup.assert_called_once_with(vehicle_id=vehicle.id)
-    booking.set_pickup.assert_called_once_with(vehicle_id=vehicle.id)
+    context = {"vehicle_id": vehicle.id}
+    pickup_booking(booking, itinerary)
+
+    booking.set_matched.assert_called_once_with(itinerary=itinerary)
+    booking.set_waiting_pickup.assert_called_once_with(itinerary=itinerary)
+    booking.set_pickup.assert_called_once_with(itinerary=itinerary)
 
     booking = MagicMock()
     booking.is_pending = MagicMock(return_value=False)
     booking.is_matched = MagicMock(return_value=True)
-    pickup_booking(booking, context)
-    booking.set_waiting_pickup.assert_called_once_with(vehicle_id=vehicle.id)
-    booking.set_pickup.assert_called_once_with(vehicle_id=vehicle.id)
+    pickup_booking(booking, itinerary)
+    booking.set_waiting_pickup.assert_called_once_with(itinerary=itinerary)
+    booking.set_pickup.assert_called_once_with(itinerary=itinerary)
 
     booking = MagicMock()
     booking.is_pending = MagicMock(return_value=False)
     booking.is_matched = MagicMock(return_value=False)
     booking.is_waiting_pickup = MagicMock(return_value=True)
-    pickup_booking(booking, context)
-    booking.set_pickup.assert_called_once_with(vehicle_id=vehicle.id)
+    pickup_booking(booking, itinerary)
+    booking.set_pickup.assert_called_once_with(itinerary=itinerary)
 
     booking = MagicMock()
     booking.is_pending = MagicMock(return_value=False)
@@ -196,8 +181,8 @@ def test_pickup_booking():
     booking.is_waiting_pickup = MagicMock(return_value=False)
 
     with pytest.raises(NotImplementedError):
-        pickup_booking(booking, context)
-    
+        pickup_booking(booking, itinerary)
+
 
 # ######################################################
 # # Test dropoff_booking
@@ -206,28 +191,28 @@ def test_pickup_booking():
 
 def test_dropoff_booking():
     vehicle = create_vehicle()
-    context = {'vehicle_id': vehicle.id}
+    itinerary = Itinerary(Clock(), vehicle)
 
     booking = MagicMock()
     booking.is_waiting_dropoff = MagicMock(return_value=True)
-    dropoff_booking(booking, context)
-    booking.set_dropoff.assert_called_once_with(vehicle_id=vehicle.id)
-    booking.set_complete.assert_called_once_with(vehicle_id=vehicle.id)
+    dropoff_booking(booking, itinerary)
+    booking.set_dropoff.assert_called_once_with(itinerary=itinerary)
+    booking.set_complete.assert_called_once_with(itinerary=itinerary)
 
     booking = MagicMock()
     booking.is_waiting_dropoff = MagicMock(return_value=False)
     booking.is_pickup = MagicMock(return_value=True)
-    dropoff_booking(booking, context)
-    booking.set_waiting_dropoff.assert_called_once_with(vehicle_id=vehicle.id)
-    booking.set_dropoff.assert_called_once_with(vehicle_id=vehicle.id)
-    booking.set_complete.assert_called_once_with(vehicle_id=vehicle.id)
+    dropoff_booking(booking, itinerary)
+    booking.set_waiting_dropoff.assert_called_once_with(itinerary=itinerary)
+    booking.set_dropoff.assert_called_once_with(itinerary=itinerary)
+    booking.set_complete.assert_called_once_with(itinerary=itinerary)
 
     booking = MagicMock()
     booking.is_waiting_dropoff = MagicMock(return_value=False)
     booking.is_pickup = MagicMock(return_value=False)
 
     with pytest.raises(Exception):
-        dropoff_booking(booking, context)
+        dropoff_booking(booking, itinerary)
 
 
 # ######################################################
@@ -235,7 +220,7 @@ def test_dropoff_booking():
 # ######################################################
 
 
-def test_do_job():    
+def test_do_job():
     vehicle = MagicMock()
     itinerary = Itinerary(Clock(), vehicle)
 
@@ -253,39 +238,30 @@ def test_do_job():
 
     do_job(itinerary)
 
-    booking.set_waiting_pickup.assert_called_once_with(
-        vid=vehicle.id,
-        it_id=itinerary.id)
+    booking.set_waiting_pickup.assert_called_once_with(itinerary=itinerary)
     vehicle.move_to.assert_not_called()
 
     job.is_pickup = MagicMock(return_value=False)
     job.is_dropoff = MagicMock(return_value=True)
     itinerary.current_job = job
-    
+
     booking.is_waiting_dropoff = MagicMock(return_value=True)
     do_job(itinerary)
-    booking.set_dropoff.assert_called_once_with(
-        vid=vehicle.id,
-        it_id=itinerary.id)
+    booking.set_dropoff.assert_called_once_with(itinerary=itinerary)
     vehicle.move_to.assert_not_called()
 
     job.is_pickup = MagicMock(return_value=False)
     job.is_dropoff = MagicMock(return_value=False)
     job.is_move_to = MagicMock(return_value=True)
-    job.destination = 'aaa'
+    job.destination = "aaa"
 
     vehicle.is_moving = False
-    vehicle.position = 'bb'
+    vehicle.position = "bb"
     itinerary.current_job = job
 
     do_job(itinerary)
 
-    vehicle.move_to.assert_called_once_with(
-        job.destination, {
-            'eta': job.eta,
-            'vid': vehicle.id,
-            'it_id': itinerary.id,
-        })
+    vehicle.move_to.assert_called_once_with(job.destination, itinerary=itinerary)
 
 
 def test_do_current_job_2():
@@ -306,41 +282,37 @@ def test_do_current_job_2():
 
     assert v.is_moving
 
+
 def test_do_current_job_3():
     v = create_vehicle()
 
     itinerary = Itinerary(12, v)
     job = itinerary.move_to(2323)
 
-    with patch('simobility.core.state_transitions.move_vehicle') as fn:
+    with patch("simobility.core.state_transitions.move_vehicle") as fn:
         do_job(itinerary)
-        fn.assert_called_once_with(v, itinerary)
+        fn.assert_called_once_with(itinerary)
 
     booking = 34
     itinerary = Itinerary(23, v)
     itinerary.pickup(booking)
 
-    with patch('simobility.core.state_transitions.pickup_booking') as fn:
+    with patch("simobility.core.state_transitions.pickup_booking") as fn:
         do_job(itinerary)
-        fn.assert_called_once_with(booking, {
-            'vid': v.id,
-            'it_id': itinerary.id,
-        })
+        fn.assert_called_once_with(booking, itinerary)
 
     itinerary = Itinerary(4545, v)
     itinerary.dropoff(booking)
 
-    with patch('simobility.core.state_transitions.dropoff_booking') as fn:
+    with patch("simobility.core.state_transitions.dropoff_booking") as fn:
         do_job(itinerary)
-        fn.assert_called_once_with(booking, {
-            'vid': v.id,
-            'it_id': itinerary.id,
-        })
+        fn.assert_called_once_with(booking, itinerary)
 
 
 # ######################################################
 # # Test update_next_bookings
 # ######################################################
+
 
 def test_update_next_bookings():
     v = create_vehicle()

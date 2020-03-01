@@ -50,15 +50,6 @@ def move_vehicle(itinerary: Itinerary) -> bool:
 
     vehicle = itinerary.vehicle
 
-    # if itinerary.next_jobs:
-    #     job = itinerary.next_jobs[0]
-
-    #     if job.is_pickup():
-    #         context["pickup"] = job.booking.id
-
-    #     elif job.is_dropoff():
-    #         context["dropoff"] = job.booking.id
-
     vehicle.move_to(current_job.destination, itinerary=itinerary)
 
     return vehicle.is_moving

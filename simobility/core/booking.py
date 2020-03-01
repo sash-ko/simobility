@@ -114,4 +114,8 @@ class Booking(StateMachine):
             # NOTE: pickup
             event.kwargs["position"] = self.dropoff.to_dict()
 
+        itinerary = event.kwargs.get("itinerary")
+        if itinerary:
+            event.kwargs["vid"] = itinerary.vehicle.id
+
         super().on_state_changed(event)

@@ -6,7 +6,7 @@ demand:
 
 fleet:
   stations: '../data/nyc_bus_stops.geojson'
-  vehicles: 50
+  vehicles: 10
   router: 'linear'
   # router: 'osrm'
 

@@ -35,7 +35,7 @@ def print_estimates(vehicle, booking, clock):
 
     route = router.calculate_route(vehicle.position, booking.pickup)
     eta = clock.now + route.duration
-    print("\fETAs:")
+    print("\nETAs:")
     print(f"Pickup in {round(clock.clock_time_to_seconds(eta) / 60)} minutes")
     print(f"Distance to pickup {route.distance:.2f} km")
 

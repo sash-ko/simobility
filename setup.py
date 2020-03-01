@@ -5,6 +5,7 @@ setup(
     name="simobility",
     description="Lightweight mobility simulation for quick algorithm prototyping",
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     author="Oleksandr Lysenko",
     author_email="sashkolysenko@gmail.com",
     version=__version__,

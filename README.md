@@ -61,6 +61,8 @@ Simulated time | Simulation step | Vehicles | Bookings per hour | Execution time
 |24 hours | 1 min | 1000 | 1000 | 5 min 1 sec | 262384 |
 |24 hours | 10 sec | 1000 | 1000 | 6 min 20 sec | 262524 |
 
+A heuristic that allows estimating a maximum number of booking a fleet of N vehicles can handle: assume that an avarage trip duration is 15 minute, than 1 vehicle can not more then handle 4 booking per hour and the upper limit for 1000 vehicles is 4000 bookings per hour.
+
 ### Metrics example
 
 ```json

@@ -30,6 +30,7 @@ def create_fleet(clock):
 def print_estimates(vehicle, booking, clock):
     """Print pickup and dropoff ETAs and travel distance"""
 
+    # Use linear router to calculate ETAs
     router = routers.LinearRouter(clock=clock)
 
     route = router.calculate_route(vehicle.position, booking.pickup)

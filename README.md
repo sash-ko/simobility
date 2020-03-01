@@ -47,11 +47,14 @@ Benchmark simulations with `LinearRouter`. Simulations will run slower with `OSR
 
 _Processor: 2,3 GHz Dual-Core Intel Core i5; Memory: 8 GB 2133 MHz LPDDR3_
 
-Simulated time | Simulation step | Number of vehicles | Bookings per hour | Execution time | Generated events
+Simulated time | Simulation step | Vehicles | Bookings per hour | Execution time | Generated events
 --- | --- | --- | --- | --- | ---
 |1 hour | 10 sec | 50 | 100 | 4 sec | 1082
 |24 hours | 1 min | 50 | 100 | 12 sec | 23745
 |24 hours | 10 sec | 50 | 100 | 20 sec | 23880
+|12 hours | 10 sec | 200 | 100 | 18 sec | 13337
+|12 hours | 10 sec | 200 | 500 | 46 sec | 65444
+|12 hours | 10 sec | 1000 | 500 | 1 min 48 sec | 66605
 |1 hour | 1 min | 1000 | 1000 | 14 sec | 11486
 |1 hour | 10 sec | 1000 | 1000 | 18 sec | 11631
 |24 hours | 1 min | 1000 | 1000 | 5 min 1 sec | 262384 

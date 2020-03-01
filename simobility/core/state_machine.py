@@ -56,7 +56,6 @@ class StateMachine:
 
         return state_info
 
-
     def process_state_change(self, event: EventData) -> OrderedDict:
         # Arguments specific to each class and state change
         # They defined in derived classes

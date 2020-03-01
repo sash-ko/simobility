@@ -82,7 +82,7 @@ class Vehicle(StateMachine):
     def move_to(self, destination: Position, **context):
         if not self.engine:
             raise Exception("Cannot move vehicle without engine")
- 
+
         elif self.engine.is_moving():
             # if vehicle already moving to the same destination do nothing
             if destination != self.destination:
@@ -165,8 +165,8 @@ class Vehicle(StateMachine):
             next_job = itinerary.next_jobs[0]
 
             if next_job.is_pickup():
-                event.kwargs['pickup'] = next_job.booking.id
+                event.kwargs["pickup"] = next_job.booking.id
             elif next_job.is_dropoff():
-                event.kwargs['dropoff'] = next_job.booking.id
+                event.kwargs["dropoff"] = next_job.booking.id
 
         super().on_state_changed(event)

@@ -26,7 +26,7 @@ def do_job(itinerary: Itinerary):
             do_job(itinerary)
 
     elif current_job.is_move_to():
-        # if current job is move_to but after but vehicle is not 
+        # if current job is move_to but after but vehicle is not
         # moving after the move_vehicle call, this mean that vehicle
         # has arrived and the job can be considered done
         if not move_vehicle(itinerary):

@@ -1,6 +1,5 @@
 from typing import List, Optional
 from uuid import uuid4
-import logging
 from .vehicle import Vehicle
 from .booking import Booking
 from .position import Position

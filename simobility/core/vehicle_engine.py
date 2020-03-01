@@ -1,4 +1,3 @@
-import logging
 from typing import Type, Optional
 from .position import Position
 from .clock import Clock

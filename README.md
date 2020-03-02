@@ -87,7 +87,10 @@ A heuristic that allows estimating a maximum number of booking a fleet of N vehi
 
 ### Simulation logs
 
-Read logs with pandas
+The are multiple ways to collect simulation log - use CSV or InMemory log handler or implement your own handler: [loggers](https://github.com/sash-ko/simobility/blob/master/simobility/core/loggers.py)
+
+
+Read CSV logs with pandas:
 
 ```python
 import pandas as pd

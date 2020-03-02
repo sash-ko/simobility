@@ -7,6 +7,7 @@ class CSVFileHandler(logging.FileHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        # column names are defined in StateMachine class
         self.columns = [
             "clock_time",
             "object_type",

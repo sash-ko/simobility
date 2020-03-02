@@ -38,6 +38,8 @@ Thanks to all who contributed to the concept/code:
 
 [Simple simulation example](./examples/simple_simulation.py)
 
+[Taxi service example](./examples/taxi_service.py)
+
 [Log example](./examples/simulation_output_example.csv)
 
 

@@ -34,7 +34,7 @@ Thanks to all who contributed to the concept/code:
 * [Sultan Imanhodjaev](https://www.linkedin.com/in/imanhodjaev/)
 * [Yábir Benchakhtir](https://www.linkedin.com/in/yabirgb/)
 
-### Simulation example
+### Examples
 
 [Simple simulation example](./examples/simple_simulation.py)
 

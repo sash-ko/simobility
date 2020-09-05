@@ -26,6 +26,27 @@ class StateMachine:
         initial_state: Enum,
         object_id: str = None,
     ):
+        """
+
+        Parameters
+        ----------
+
+        clock : Clock
+            Simulated clock
+
+        transitions : list
+            List of state transitions, e.g. "idling" to "moving_to"
+
+        states : List[Enum]
+            List of state names, e.g. "idling", "moving_to"
+
+        initial_state : Enum
+            Initial state
+
+        object_id : str
+            A unique id of an object
+            
+        """
         self.id = object_id
         if self.id is None:
             self.id = uuid4().hex

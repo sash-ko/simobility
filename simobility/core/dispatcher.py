@@ -6,7 +6,7 @@ from .vehicle import Vehicle
 
 
 class Dispatcher:
-    """ Simulation controller
+    """ Simulation controller - controlls execution of itineraries
     """
 
     def __init__(self):

@@ -30,7 +30,7 @@ class Fleet:
     def infleet(self, vehicle: Vehicle, position: Position):
         """Add a new vehicle to the fleet and put it at a particular location
         in the simulater world."""
-        
+
         engine = create_engine(position, self._router, self.clock)
         vehicle.install_engine(engine)
 

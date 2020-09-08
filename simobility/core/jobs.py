@@ -50,7 +50,7 @@ class BaseJob:
         return lambda: False
 
     def __str__(self):
-        return f'Job {self.name()} (id={self.id})'
+        return f"Job {self.name()} (id={self.id})"
 
 
 class MoveTo(BaseJob):

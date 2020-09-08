@@ -69,6 +69,5 @@ class Dispatcher:
             update_next_bookings(itinerary)
 
         self.itineraries = {
-            v: it for v, it in self.itineraries.items()
-            if not it.is_completed()
+            v: it for v, it in self.itineraries.items() if not it.is_completed()
         }

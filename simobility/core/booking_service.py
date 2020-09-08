@@ -53,7 +53,7 @@ class BookingService:
                 created = booking.created_at
 
                 # check bookings expiration time
-                if (created is not None and (created + self._max_pending_time) < now):
+                if created is not None and (created + self._max_pending_time) < now:
                     booking.set_expired()
                     non_pending.append(booking.id)
 

@@ -4,11 +4,24 @@ from .clock import Clock
 
 
 class BookingService:
-    """
-    Stores pending bookings. Bookings will be expired after `max_pending_time`
+    """ BookingService manages all booking requests that enter a simulation
+    from a demand model. Each new booking must be in pending state. After
+    a booking changes its state to any other state it will be removed from the 
+    booking service
     """
 
     def __init__(self, clock: Clock, max_pending_time: int):
+        """
+        Parameters
+        ----------
+
+        clock : Clock
+            Simulated time tracker
+
+        max_pending_time : int
+            Maximum time a booking can spend in the queue before the service changes
+            booking's state to expired and removes from the queue
+        """
         self._pending_bookings: Dict[str, Booking] = {}
         self._max_pending_time = max_pending_time
         self.clock = clock
@@ -27,7 +40,8 @@ class BookingService:
         return list(self._pending_bookings.values())
 
     def step(self):
-        # TODO: should this be part of the dispatcher????
+        # collected booking that are not in pending state and will be
+        # removed from the queue
         non_pending = []
 
         now = self.clock.clock_time
@@ -38,9 +52,11 @@ class BookingService:
             else:
                 created = booking.created_at
 
+                # check bookings expiration time
                 if (created is not None and (created + self._max_pending_time) < now):
                     booking.set_expired()
                     non_pending.append(booking.id)
 
+        # delete non pending bookings
         for id_ in non_pending:
             del self._pending_bookings[id_]

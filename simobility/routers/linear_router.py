@@ -9,13 +9,10 @@ from .base_router import BaseRouter
 
 
 class LinearRouter(BaseRouter):
-    r""" Calculates routes as straight lines and haversine distances,
+    """ Calculates routes as straight lines and haversine distances,
     kind of "bee line" distance
 
     Usage sample::
-
-    ..highlight:: python
-    ..code-block::python
 
         >>> from simobility.routers.linear_router import LinearRouter
         >>> my_router = LinearRouter(clock=clock, speed=speed_kmph)

@@ -7,6 +7,12 @@ from .route import Route
 
 
 class CachingRouter:
+    """ A wrapper around routers for caching routing requests:
+    - map matching
+    - routes calculate
+    - ETAs
+    - distance matrix
+    """
 
     # TODO: add cache expiration time
     def __init__(self, router: BaseRouter):

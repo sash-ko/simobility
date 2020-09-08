@@ -11,8 +11,8 @@ def linear_approximation(
     """ Approximate a coordinates of a point on a route (a sequence of points
     with known distance between them) knowing total distance to the point
 
-    Params
-    ------
+    Parameters
+    ----------
 
     distance : float
         Distance to the "approximation" point
@@ -90,8 +90,8 @@ def linear_approximation(
 def mins_to_clock_time(time_array, clock):
     """ Convert an array of numbers (time is minutes) to clock time
 
-    Params
-    ------
+    Parameters
+    ----------
 
     time_array : np.array
         Array where each item is time in minutes, e.g. duration

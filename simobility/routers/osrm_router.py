@@ -10,15 +10,12 @@ from .base_router import BaseRouter
 
 
 class OSRMRouter(BaseRouter):
-    r"""
+    """
     Router that will query the provided OSRM server for routes. See
     https://github.com/Project-OSRM/osrm-backend for instructions on
     how to set up an OSRM server.
 
     Usage sample::
-
-    ..highlight:: python
-    ..code-block::python
 
         >>> from .routers.osrm_router import OSRMRouter
         >>> my_router = OSRMRouter(clock=clock, server=server)
@@ -39,8 +36,8 @@ class OSRMRouter(BaseRouter):
         """
         Calculate route between 2 points
 
-        Params
-        ------
+        Parameters
+        ----------
 
         origin : Position
         destination : Position
@@ -78,8 +75,8 @@ class OSRMRouter(BaseRouter):
     def estimate_duration(self, origin: Position, destination: Position) -> int:
         """ Duration in clock units
 
-        Params
-        ------
+        Parameters
+        ----------
 
         origin : Position
         destination : Position
@@ -110,8 +107,8 @@ class OSRMRouter(BaseRouter):
         """ Calculate all-to-all travel time - all source to all destinations.
         Here distance means "distance in time"
 
-        Params
-        ------
+        Parameters
+        ----------
 
         sources : list
             List of Positions

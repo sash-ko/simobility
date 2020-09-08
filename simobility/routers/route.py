@@ -20,8 +20,8 @@ class Route:
         destination: Position,
     ):
         """
-        Params
-        ------
+        Parameters
+        ----------
 
         coordinates : list
             List of points that represent the route

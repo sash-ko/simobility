@@ -1,7 +1,24 @@
+from typing import Dict
 from pandas.io.json import json_normalize
+from .state_machine import StateMachine
+from .clock import Clock
 
 
-def calculate_metrics(data, clock):
+def calculate_metrics(data: StateMachine, clock: Clock) -> Dict:
+    """A helper function for basic metrics calculation. It can be used
+    as an example for creating custom metrics
+
+    Parameters
+    ----------
+
+    data : StateMachine
+        Any object derived the state machine class. The function supports
+        only vehicles and bookings
+
+    clock : Clock
+        Simulated time tracker
+    """
+
     details = json_normalize(data.details)
 
     idx = ~details.stop.isna()

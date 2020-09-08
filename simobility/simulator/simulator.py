@@ -8,6 +8,8 @@ from simobility.core.clock import Clock
 
 @dataclass
 class Context:
+    """Required simulation entities"""
+
     clock: Clock
     fleet: Fleet
     booking_service: BookingService
@@ -15,6 +17,15 @@ class Context:
 
 
 class Simulator:
+    """ Simulator connects all simulation building blocks. It runs
+    a simulation step-by-step by calling step() function of each of the
+    entities in a specific order.
+
+    NOTE: It is importance to call step() functions in a specific order and the
+    main and only role of this class is to demontrate how to do it. So the class
+    on itself is not required for running simulations. For more details, see examples
+    """
+
     def __init__(self, matcher, context: Context):
         self.clock = context.clock
         self.matcher = matcher
@@ -22,7 +33,20 @@ class Simulator:
         self.booking_service = context.booking_service
         self.dispatcher = context.dispatcher
 
-    def simulate(self, demand, duration_mins):
+    def simulate(self, demand, duration_mins: int):
+        """
+        Parameters
+        ----------
+
+        demand : object
+            Any object that implements next() method. The method should return a list
+            of Booking instances
+
+        duration_mins : int
+            Real world time of a simulation. The time will be converted into the internal
+            simulated time which is used as the number of simulation steps
+            
+        """
         num_steps = self.clock.time_to_clock_time(duration_mins, "m")
         logging.info(f"Number of simulation steps: {num_steps}")
 

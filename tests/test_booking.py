@@ -8,7 +8,7 @@ def test_create():
     pickup = Position(13.3393, 52.5053)
     dropoff = Position(13.4014, 52.5478)
     seats = 30
-    preferences = {'cat': 'AV'}
+    preferences = {"cat": "AV"}
 
     clock = Clock()
     booking = Booking(clock, pickup, dropoff, seats, preferences)
@@ -52,7 +52,7 @@ def test_change_flow():
     assert booking.is_waiting_dropoff() is True
     with pytest.raises(Exception):
         booking.set_pickup()
-    
+
     booking.set_dropoff()
     assert booking.is_dropoff() is True
     with pytest.raises(Exception):
@@ -100,60 +100,62 @@ def test_expire():
 def test_on_state_changed_pending():
     pickup = Position(13.4014, 52.5478)
     dropoff = Position(13.3393, 52.5053)
-    
+
     clock = Clock()
     booking = Booking(clock, pickup, dropoff, 3)
 
     event_data = MagicMock()
     event_data.transition = MagicMock()
-    
+
     # test to pending
     event_data.transition.dest = States.pending.value
     event_data.kwargs = {}
-    
+
     booking.on_state_changed(event_data)
-    assert event_data.kwargs['position'] == pickup.to_dict()
-    assert event_data.kwargs['dropoff'] == dropoff.to_dict()
-    
-    
+    assert event_data.kwargs["position"] == pickup.to_dict()
+    assert event_data.kwargs["dropoff"] == dropoff.to_dict()
+
+
 def test_on_state_changed_pickup_position():
     pickup = Position(13.4014, 52.5478)
     dropoff = Position(13.3393, 52.5053)
-    
+
     clock = Clock()
     booking = Booking(clock, pickup, dropoff, 3)
 
     event_data = MagicMock()
     event_data.transition = MagicMock()
-    
-    for state in (States.pending.value, 
-                  States.matched.value,
-                  States.pickup.value,
-                  States.expired.value,
-                  States.waiting_dropoff.value,
-                  States.waiting_pickup.value,
-                  States.expired.value):
-        
+
+    for state in (
+        States.pending.value,
+        States.matched.value,
+        States.pickup.value,
+        States.expired.value,
+        States.waiting_dropoff.value,
+        States.waiting_pickup.value,
+        States.expired.value,
+    ):
+
         event_data.transition.dest = state
         event_data.kwargs = {}
         booking.on_state_changed(event_data)
-        assert event_data.kwargs['position'] == pickup.to_dict()
-    
-    
+        assert event_data.kwargs["position"] == pickup.to_dict()
+
+
 def test_on_state_changed_pickup_position():
     pickup = Position(13.4014, 52.5478)
     dropoff = Position(13.3393, 52.5053)
-    
+
     clock = Clock()
     booking = Booking(clock, pickup, dropoff, 3)
 
     event_data = MagicMock()
     event_data.transition = MagicMock()
-    
+
     for state in (States.dropoff.value, States.complete.value):
-        
+
         event_data.transition.dest = state
         event_data.kwargs = {}
         booking.on_state_changed(event_data)
 
-        assert event_data.kwargs['position'] == dropoff.to_dict()
+        assert event_data.kwargs["position"] == dropoff.to_dict()

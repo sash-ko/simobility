@@ -3,7 +3,7 @@ DOWNLOADURL := http://download.geofabrik.de/north-america/us
 
 .PHONY: test
 test:
-	python -m pytest
+	python -m pytest --cov=simobility tests
 
 .PHONY: run-example
 run-example:

@@ -8,4 +8,4 @@ scipy
 requests
 geopandas
 pyarrow
-coverage
+pytest-cov

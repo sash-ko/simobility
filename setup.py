@@ -42,6 +42,7 @@ setup(
             "coverage",
             "pytest",
             "pip-tools",
+            "coverage"
         ]
     },
     zip_safe=False,

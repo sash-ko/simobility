@@ -8,3 +8,4 @@ scipy
 requests
 geopandas
 pyarrow
+coverage

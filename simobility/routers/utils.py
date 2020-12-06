@@ -66,13 +66,13 @@ def linear_approximation(
         # raise InvalidParameter(
         # f'distance is too long: {distance}, max: {acc_distances[-1]}')
 
-    points = points[idx : idx + 2]
+    points = points[idx: idx + 2]
 
     if len(segment_distances) == 1 or idx == 0:
         min_dist = 0
         max_dist = segment_distances[0]
     else:
-        min_dist, max_dist = acc_distances[idx - 1 : idx + 1]
+        min_dist, max_dist = acc_distances[idx - 1: idx + 1]
 
     diff = max_dist - min_dist
     if diff:
@@ -113,4 +113,3 @@ def mins_to_clock_time(time_array, clock):
     to_clock_time_vec = np.vectorize(__to_clock_time)
     time_array = to_clock_time_vec(time_array)
     return time_array
-

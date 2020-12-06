@@ -102,8 +102,7 @@ class StateMachine:
         state_info["from_state"] = event.transition.source
         # to state
         state_info["to_state"] = event.transition.dest
-        state_info["lon"] = position["lon"]
-        state_info["lat"] = position["lat"]
+        state_info["position"] = position
         state_info["details"] = arguments
 
         return state_info

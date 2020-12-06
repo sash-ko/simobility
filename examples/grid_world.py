@@ -84,25 +84,6 @@ class CityBlockRouter(BaseRouter):
         # speed = 1
         return origin.distance(destination)
 
-    def calculate_distance_matrix(
-        self, sources: List[Cell], destinations: List[Cell], travel_time: bool = True,
-    ) -> List[List[float]]:
-
-        n_sources = len(sources)
-        n_dest = len(destinations)
-
-        matrix = np.zeros([n_sources, n_dest])
-
-        for ind1, src in enumerate(sources):
-            for ind2, dest in enumerate(destinations):
-
-                if travel_time:
-                    matrix[ind1, ind2] = self.estimate_duration(src, dest)
-                else:
-                    matrix[ind1, ind2] = src.distance(dest)
-
-        return matrix
-
 
 def find_path(
     from_cell: List[int], to_cell: List[int]

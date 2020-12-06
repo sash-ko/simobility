@@ -1,10 +1,33 @@
+from abc import ABC, abstractmethod
 from haversine import haversine
 import json
 from typing import Tuple
 from uuid import uuid4
 
 
-class Position:
+class BasePosition(ABC):
+
+    def __init__(self):
+        self.id = uuid4().hex
+
+    @abstractmethod
+    def distance(self, pos) -> float:
+        pass
+
+    @property
+    @abstractmethod
+    def coords(self) -> Tuple:
+        pass
+
+    @abstractmethod
+    def __eq__(self, other) -> bool:
+        pass
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+
+class Position(BasePosition):
     """
     lon/lat -> x/y order of coordinates
     """
@@ -22,8 +45,6 @@ class Position:
         """
 
         super().__init__()
-
-        self.id = uuid4().hex
 
         # https://en.wikipedia.org/wiki/Decimal_degrees
         # e.g. the error of precision=6 is ~111 mm

@@ -4,5 +4,5 @@ from .dispatcher import Dispatcher
 from .fleet import Fleet
 from .vehicle import Vehicle
 from .itinerary import Itinerary
-from .position import Position
+from .position import Position, BasePosition
 from .booking import Booking

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from haversine import haversine
 import json
-from typing import Tuple
+from typing import Tuple, Dict
 from uuid import uuid4
 
 
@@ -23,8 +23,15 @@ class BasePosition(ABC):
     def __eq__(self, other) -> bool:
         pass
 
+    @abstractmethod
+    def to_dict(self) -> Dict:
+        pass
+
     def __ne__(self, other):
         return not self.__eq__(other)
+
+    def __str__(self):
+        return json.dumps(self.to_dict())
 
 
 class Position(BasePosition):
@@ -84,9 +91,6 @@ class Position(BasePosition):
     def __eq__(self, other):
         return self.id == other.id or self.distance(other) < self._distance_threshold
 
-    def __ne__(self, other):
-        return not self.__eq__(other)
-
     def to_dict(self):
         d = {
             "lat": round(self.lat, 6),
@@ -98,5 +102,3 @@ class Position(BasePosition):
     def __repr__(self):
         return f"Position({self.lon}, {self.lat})"
 
-    def __str__(self):
-        return json.dumps(self.to_dict())

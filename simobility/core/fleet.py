@@ -19,7 +19,7 @@ class Fleet:
     def __init__(self, clock: Clock, router: Type[BaseRouter]):
         # {vehicle_id: Vehicle}
         self._vehicles: Dict[str, Vehicle] = {}
-        self._router = router
+        self.router = router
         self.clock = clock
 
     def get_online_vehicles(self) -> List[Vehicle]:
@@ -31,7 +31,7 @@ class Fleet:
         """Add a new vehicle to the fleet and put it at a particular location
         in the simulater world."""
 
-        engine = create_engine(position, self._router, self.clock)
+        engine = create_engine(position, self.router, self.clock)
         vehicle.install_engine(engine)
 
         self._vehicles[vehicle.id] = vehicle

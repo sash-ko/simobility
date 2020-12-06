@@ -17,7 +17,7 @@ class GreedyMatcher:
     Each booking is matched with closest vehicle
     """
 
-    def __init__(self, context: Context, router: BaseRouter, config: Dict):
+    def __init__(self, context: Context, router: BaseRouter, search_radius: int):
         self.clock = context.clock
         self.fleet = context.fleet
         self.booking_service = context.booking_service
@@ -28,7 +28,6 @@ class GreedyMatcher:
         self.router = router
 
         # Search time radius in minutes (max ETA)
-        search_radius = config["solvers"]["greedy_matcher"]["search_radius"]
         self.search_radius = self.clock.time_to_clock_time(search_radius, "m")
 
         logging.info(f"Search radius: {self.search_radius}")

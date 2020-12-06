@@ -1,5 +1,6 @@
 from typing import Tuple, Dict, List
 import numpy as np
+import random
 from scipy.spatial.distance import cityblock
 from simobility.routers.base_router import BaseRouter
 from simobility.core import BasePosition
@@ -7,14 +8,13 @@ from simobility.routers import BaseRoute
 
 
 class Cell(BasePosition):
-
     def __init__(self, x, y):
         super().__init__()
 
         self.x = x
         self.y = y
 
-    def distance(self, pos: 'Cell') -> int:
+    def distance(self, pos: "Cell") -> int:
         return cityblock(self.coods, pos.coords)
 
     @property
@@ -25,14 +25,10 @@ class Cell(BasePosition):
         return self.id == other.id or self.coords == other.coords
 
     def to_dict(self) -> Dict:
-        return {
-            'x': self.x,
-            'y': self.y
-        }
+        return {"x": self.x, "y": self.y}
 
 
 class CellRoute(BaseRoute):
-
     def __init__(
         self,
         created_at: int,
@@ -42,7 +38,9 @@ class CellRoute(BaseRoute):
         origin: Cell,
         destination: Cell,
     ):
-        super().__init__(created_at, coordinates, duration, distance, origin, destination)
+        super().__init__(
+            created_at, coordinates, duration, distance, origin, destination
+        )
 
     def approximate_position(self, at_time: int) -> Cell:
         if at_time > len(self.coordinates):
@@ -56,7 +54,6 @@ class CellRoute(BaseRoute):
 
 
 class CityBlockRouter(BaseRouter):
-
     def __init__(self, clock):
         super().__init__()
         self.clock = clock
@@ -72,16 +69,13 @@ class CityBlockRouter(BaseRouter):
 
         route = CellRoute(self.clock.now, path, distance, distance, origin, destination)
         return route
-    
+
     def estimate_duration(self, origin: Cell, destination: Cell) -> int:
         # speed = 1
         return origin.distance(destination)
 
     def calculate_distance_matrix(
-        self,
-        sources: List[Cell],
-        destinations: List[Cell],
-        travel_time: bool = True,
+        self, sources: List[Cell], destinations: List[Cell], travel_time: bool = True,
     ) -> List[List[float]]:
 
         n_sources = len(sources)
@@ -100,7 +94,11 @@ class CityBlockRouter(BaseRouter):
         return matrix
 
 
-def find_path(from_cell, to_cell, dimentions=2):
+def find_path(
+    from_cell: Tuple[int, int], to_cell: Tuple[int, int]
+) -> List[Tuple[int, int]]:
+    dimentions = 2
+
     grads = []
     for dim in range(dimentions):
         dv = gradient(to_cell[dim], from_cell[dim])
@@ -116,9 +114,14 @@ def find_path(from_cell, to_cell, dimentions=2):
     return path
 
 
-def gradient(x1, x2):
+def gradient(x1: int, x2: int) -> int:
+    """Calculate value and direction of change of x1 to
+    get closer to x2. It can be one: -1, 0, 1
+    """
+
     if x1 == x2:
         return 0
+
     dx = x1 - x2
     return int(dx / abs(dx))
 
@@ -129,7 +132,7 @@ class GridWorldDispatcher:
 
 
 def random_cell(width: int, height: int) -> Cell:
-    pass
+    return (random.randint(0, width), random.randint(0, height))
 
 
 if __name__ == "__main__":

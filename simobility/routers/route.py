@@ -7,6 +7,9 @@ from ..core.position import Position, BasePosition
 
 
 class BaseRoute(ABC):
+    """
+    Contains information about a route - duration, distace, coordinates
+    """
 
     def __init__(
         self,
@@ -17,6 +20,26 @@ class BaseRoute(ABC):
         origin: BasePosition,
         destination: BasePosition,
     ):
+        """
+        Parameters
+        ----------
+
+        coordinates : list
+            List of points that represent the route
+
+        duration : int
+            Travel time between origin and destination of the route
+
+        distance : float
+            Route distance in kilometers
+
+        origin: Position
+        destination: Postion
+            Requested origin and destination of a route. Due to
+            map matching they can be different from the first and
+            the last point in coordinates
+        """
+
         self.coordinates = coordinates
         self.distance = distance
         # round to ensure that this is a clock time which is always integer
@@ -42,9 +65,6 @@ class BaseRoute(ABC):
 
 
 class Route(BaseRoute):
-    """
-    Contains information about a route - duration, distace, coordinates
-    """
 
     def __init__(
         self,
@@ -55,26 +75,10 @@ class Route(BaseRoute):
         origin: Position,
         destination: Position,
     ):
-        """
-        Parameters
-        ----------
 
-        coordinates : list
-            List of points that represent the route
-
-        duration : int
-            Travel time between origin and destination of the route
-
-        distance : float
-            Route distance in kilometers
-
-        origin: Position
-        destination: Postion
-            Requested origin and destination of a route. Due to
-            map matching they can be different from the first and
-            the last point in coordinates
-        """
-        super().__init__(created_at, coordinates, duration, distance, origin, destination)
+        super().__init__(
+            created_at, coordinates, duration, distance, origin, destination
+        )
 
         # internal variables
         segments = list(zip(self.coordinates, self.coordinates[1:]))

@@ -1,22 +1,23 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from typing import List
-from ..core.position import Position
-from .route import Route
+from ..core.position import BasePosition
+from .route import BaseRoute
 
 
-class BaseRouter(metaclass=ABCMeta):
+class BaseRouter(ABC):
+
     @abstractmethod
-    def map_match(self, position: Position) -> Position:
+    def map_match(self, position: BasePosition) -> BasePosition:
         return NotImplemented
 
     @abstractmethod
-    def calculate_route(self, origin: Position, destination: Position) -> Route:
+    def calculate_route(self, origin: BasePosition, destination: BasePosition) -> BaseRoute:
         """Calculate route between 2 points"""
 
         return NotImplemented
 
     @abstractmethod
-    def estimate_duration(self, origin: Position, destination: Position) -> int:
+    def estimate_duration(self, origin: BasePosition, destination: BasePosition) -> int:
         """Duration in clock units"""
 
         return NotImplemented
@@ -24,8 +25,8 @@ class BaseRouter(metaclass=ABCMeta):
     @abstractmethod
     def calculate_distance_matrix(
         self,
-        sources: List[Position],
-        destinations: List[Position],
+        sources: List[BasePosition],
+        destinations: List[BasePosition],
         travel_time: bool = True,
     ) -> List[List[float]]:
         """Calculate all-to-all travel time - all source to all destinations.
@@ -34,8 +35,8 @@ class BaseRouter(metaclass=ABCMeta):
         Parameters
         ----------
 
-        sources: List[Position]
-        destinatiobs: List[Position]
+        sources: List[BasePosition]
+        destinatiobs: List[BasePosition]
 
         Returns
         -------

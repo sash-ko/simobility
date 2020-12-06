@@ -1,11 +1,47 @@
+from abc import ABC, abstractmethod
 from math import ceil
 from typing import List
 
 from .utils import linear_approximation
-from ..core.position import Position
+from ..core.position import Position, BasePosition
 
 
-class Route:
+class BaseRoute(ABC):
+
+    def __init__(
+        self,
+        created_at: int,
+        coordinates: List[BasePosition],
+        duration: int,
+        distance: float,
+        origin: BasePosition,
+        destination: BasePosition,
+    ):
+        self.coordinates = coordinates
+        self.distance = distance
+        # round to ensure that this is a clock time which is always integer
+        self.duration = ceil(duration)
+        self.created_at = created_at
+        self.origin = origin
+        self.destination = destination
+
+    @property
+    def arrival_time(self) -> int:
+        return self.created_at + self.duration
+
+    def traveled_time(self, at_time: int) -> int:
+        return at_time - self.created_at
+
+    @abstractmethod
+    def approximate_position(self, at_time: int) -> BasePosition:
+        pass
+
+    @abstractmethod
+    def traveled_distance(self, at_time: int) -> float:
+        pass
+
+
+class Route(BaseRoute):
     """
     Contains information about a route - duration, distace, coordinates
     """
@@ -38,23 +74,12 @@ class Route:
             map matching they can be different from the first and
             the last point in coordinates
         """
-
-        self.coordinates = coordinates
-        self.distance = distance
-        # round to ensure that this is a clock time which is always integer
-        self.duration = ceil(duration)
-        self.created_at = created_at
-        self.origin = origin
-        self.destination = destination
+        super().__init__(created_at, coordinates, duration, distance, origin, destination)
 
         # internal variables
         segments = list(zip(self.coordinates, self.coordinates[1:]))
         seg_distance = [p1.distance(p2) for p1, p2 in segments]
         self.__segment_distance: List[float] = seg_distance
-
-    @property
-    def arrival_time(self):
-        return self.created_at + self.duration
 
     def approximate_position(self, at_time: int) -> Position:
         """Approximate position on the route at specific time"""
@@ -85,6 +110,3 @@ class Route:
             duration = self.distance * pcnt
 
         return duration
-
-    def traveled_time(self, at_time: int) -> int:
-        return at_time - self.created_at

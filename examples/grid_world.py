@@ -1,5 +1,7 @@
 from typing import Tuple, Dict, List
 import numpy as np
+import pandas as pd
+import json
 from functools import partial
 import random
 from scipy.spatial.distance import cityblock
@@ -15,6 +17,7 @@ from simobility.core import Booking
 from simobility.simulator.simulator import Simulator, Context
 from simobility.core import BookingService
 from greedy_matcher import GreedyMatcher
+from simobility.core.metrics import calculate_metrics
 
 
 class Cell(BasePosition):
@@ -187,4 +190,7 @@ if __name__ == "__main__":
     simulator.simulate(requests, 10)
 
     print("\nSimulation state changes log:")
-    print(simulation_logs.logs)
+    # print(simulation_logs.logs)
+
+    metrics = calculate_metrics(pd.DataFrame(simulation_logs.logs), clock)
+    print(json.dumps(metrics, indent=1))

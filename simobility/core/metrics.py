@@ -1,5 +1,5 @@
 from typing import Dict
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 from .state_machine import StateMachine
 from .clock import Clock
 

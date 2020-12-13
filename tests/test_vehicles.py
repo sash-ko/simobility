@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import MagicMock
 from simobility.core.vehicle_engine import VehicleEngine
 from simobility.core.vehicle import Vehicle, States, StopReasons
-from simobility.core import Clock, Position
+from simobility.core import Clock, GeographicPosition
 from simobility.routers import LinearRouter
 
 
@@ -41,8 +41,8 @@ def test_create_vehicle():
 
 
 def test_dont_move_vehicle():
-    init_pos = Position(13.3764, 52.5461)
-    dest1 = Position(13.4014, 52.5478)
+    init_pos = GeographicPosition(13.3764, 52.5461)
+    dest1 = GeographicPosition(13.4014, 52.5478)
 
     clock = Clock()
     router = LinearRouter(clock)
@@ -76,8 +76,8 @@ def test_dont_move_vehicle():
 
 
 def test_move_vehicle():
-    init_pos = Position(13.3764, 52.5461)
-    dest1 = Position(13.4014, 52.5478)
+    init_pos = GeographicPosition(13.3764, 52.5461)
+    dest1 = GeographicPosition(13.4014, 52.5478)
 
     clock = Clock()
     router = LinearRouter(clock)

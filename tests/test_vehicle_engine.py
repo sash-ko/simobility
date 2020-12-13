@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock
 from simobility.core.vehicle_engine import VehicleEngine
-from simobility.core import Position
+from simobility.core import GeographicPosition
 from simobility.core.clock import Clock
 from simobility.routers import LinearRouter
 
@@ -170,9 +170,8 @@ def test_future_move():
 
 def test_end_to_end():
 
-    init_pos = Position(13.3764, 52.5461)
-    dest1 = Position(13.4014, 52.5478)
-    dest2 = Position(13.3393, 52.5053)
+    init_pos = GeographicPosition(13.3764, 52.5461)
+    dest = GeographicPosition(13.4014, 52.5478)
 
     clock = Clock()
     # to start not from the beginning
@@ -182,7 +181,7 @@ def test_end_to_end():
     router = LinearRouter(clock)
 
     engine = VehicleEngine(init_pos, router, clock)
-    engine.start_move(dest1)
+    engine.start_move(dest)
 
     assert engine.eta == 8
     assert engine.current_position == init_pos
@@ -195,7 +194,7 @@ def test_end_to_end():
     for _ in range(engine.eta - clock.clock_time):
         clock.tick()
 
-    assert engine.current_position == dest1
+    assert engine.current_position == dest
     assert not engine.is_moving()
     assert engine.eta == clock.clock_time
 

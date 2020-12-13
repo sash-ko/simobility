@@ -1,13 +1,13 @@
 import pytest
 from simobility.routers import LinearRouter
-from simobility.core import Position
+from simobility.core import GeographicPosition
 from simobility.core.clock import Clock
 
 
 def test_router2d():
     speed_kmph = 25
-    nyc_pos = Position(-73.935242, 40.730610)
-    nyc_pos_shift = Position(-73.935, 40.7306)
+    nyc_pos = GeographicPosition(-73.935242, 40.730610)
+    nyc_pos_shift = GeographicPosition(-73.935, 40.7306)
 
     # monutes
     clock = Clock(time_step=1, time_unit="m")
@@ -51,8 +51,8 @@ def test_router2d():
 def test_router2d_2():
     speed_kmph = 17
 
-    nyc_pos = Position(-73.935242, 40.730610)
-    nyc_pos_shift = Position(-73.935, 40.730610)
+    nyc_pos = GeographicPosition(-73.935242, 40.730610)
+    nyc_pos_shift = GeographicPosition(-73.935, 40.730610)
 
     clock = Clock(time_step=1, time_unit="s")
     router = LinearRouter(speed=speed_kmph, clock=clock)
@@ -70,8 +70,8 @@ def test_map_match():
     clock = Clock(time_step=1, time_unit="m")
     router = LinearRouter(speed=12, clock=clock)
 
-    pos1 = Position(-0.39376, 39.5145)
-    pos2 = Position(-0.38874, 39.503)
+    pos1 = GeographicPosition(-0.39376, 39.5145)
+    pos2 = GeographicPosition(-0.38874, 39.503)
 
     for pos in [pos1, pos2]:
         pos_m = router.map_match(pos)
@@ -80,8 +80,8 @@ def test_map_match():
 
 
 def test_route_destination():
-    origin = Position(-73.99780, 40.71205)
-    destination = Position(-73.99567, 40.71689)
+    origin = GeographicPosition(-73.99780, 40.71205)
+    destination = GeographicPosition(-73.99567, 40.71689)
 
     clock = Clock(time_step=10, time_unit="s")
     router = LinearRouter(clock=clock)

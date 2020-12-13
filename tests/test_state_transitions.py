@@ -3,7 +3,7 @@ from unittest.mock import patch
 from unittest.mock import MagicMock
 from simobility.core import Vehicle, Booking, Itinerary
 from simobility.core.vehicle_engine import VehicleEngine
-from simobility.core import Clock, Position
+from simobility.core import Clock, GeographicPosition
 from simobility.routers import LinearRouter
 from simobility.core.state_transitions import *
 
@@ -120,8 +120,8 @@ def test_move_vehicle_moving2dropoff():
 
 
 def test_real_vehicle():
-    init_pos = Position(13.3764, 52.5461)
-    dest = Position(13.4014, 52.5478)
+    init_pos = GeographicPosition(13.3764, 52.5461)
+    dest = GeographicPosition(13.4014, 52.5478)
 
     clock = Clock()
     router = LinearRouter(clock)
@@ -265,8 +265,8 @@ def test_do_job():
 
 
 def test_do_current_job_2():
-    init_pos = Position(13.3764, 52.5461)
-    dest = Position(13.4014, 52.5478)
+    init_pos = GeographicPosition(13.3764, 52.5461)
+    dest = GeographicPosition(13.4014, 52.5478)
 
     clock = Clock()
     router = LinearRouter(clock)
@@ -318,8 +318,16 @@ def test_update_next_bookings():
     v = create_vehicle()
 
     clock = Clock()
-    b1 = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053))
-    b2 = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053))
+    b1 = Booking(
+        clock,
+        GeographicPosition(13.4014, 52.5478),
+        GeographicPosition(13.3393, 52.5053),
+    )
+    b2 = Booking(
+        clock,
+        GeographicPosition(13.4014, 52.5478),
+        GeographicPosition(13.3393, 52.5053),
+    )
 
     itinerary = Itinerary(3434, v)
     itinerary.move_to(111)

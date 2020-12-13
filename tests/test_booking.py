@@ -1,12 +1,12 @@
 import pytest
 from unittest.mock import MagicMock
 from simobility.core.booking import Booking, States
-from simobility.core import Position, Clock
+from simobility.core import GeographicPosition, Clock
 
 
 def test_create():
-    pickup = Position(13.3393, 52.5053)
-    dropoff = Position(13.4014, 52.5478)
+    pickup = GeographicPosition(13.3393, 52.5053)
+    dropoff = GeographicPosition(13.4014, 52.5478)
     seats = 30
     preferences = {"cat": "AV"}
 
@@ -21,7 +21,7 @@ def test_create():
 
 def test_pending_state():
     clock = Clock()
-    booking = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053), 3)
+    booking = Booking(clock, GeographicPosition(13.4014, 52.5478), GeographicPosition(13.3393, 52.5053), 3)
 
     assert booking.is_pending() is True
 
@@ -31,7 +31,7 @@ def test_pending_state():
 
 def test_change_flow():
     clock = Clock()
-    booking = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053), 3)
+    booking = Booking(clock, GeographicPosition(13.4014, 52.5478), GeographicPosition(13.3393, 52.5053), 3)
 
     booking.set_matched()
     assert booking.is_matched() is True
@@ -61,7 +61,7 @@ def test_change_flow():
 
 def test_expire():
     clock = Clock()
-    booking = Booking(clock, Position(13.4014, 52.5478), Position(13.3393, 52.5053), 3)
+    booking = Booking(clock, GeographicPosition(13.4014, 52.5478), GeographicPosition(13.3393, 52.5053), 3)
 
     booking.set_expired()
 
@@ -98,8 +98,8 @@ def test_expire():
 
 
 def test_on_state_changed_pending():
-    pickup = Position(13.4014, 52.5478)
-    dropoff = Position(13.3393, 52.5053)
+    pickup = GeographicPosition(13.4014, 52.5478)
+    dropoff = GeographicPosition(13.3393, 52.5053)
 
     clock = Clock()
     booking = Booking(clock, pickup, dropoff, 3)
@@ -117,8 +117,8 @@ def test_on_state_changed_pending():
 
 
 def test_on_state_changed_pickup_position():
-    pickup = Position(13.4014, 52.5478)
-    dropoff = Position(13.3393, 52.5053)
+    pickup = GeographicPosition(13.4014, 52.5478)
+    dropoff = GeographicPosition(13.3393, 52.5053)
 
     clock = Clock()
     booking = Booking(clock, pickup, dropoff, 3)
@@ -143,8 +143,8 @@ def test_on_state_changed_pickup_position():
 
 
 def test_on_state_changed_pickup_position():
-    pickup = Position(13.4014, 52.5478)
-    dropoff = Position(13.3393, 52.5053)
+    pickup = GeographicPosition(13.4014, 52.5478)
+    dropoff = GeographicPosition(13.3393, 52.5053)
 
     clock = Clock()
     booking = Booking(clock, pickup, dropoff, 3)

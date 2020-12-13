@@ -66,7 +66,7 @@ class TaxiDrivers:
     def add_request(self, taxi: Vehicle, booking: Booking):
         self.requests_per_booking[booking].append(taxi)
 
-    def get_accepted_requests(self) -> List[Tuple(Vehicle, Booking)]:
+    def get_accepted_requests(self) -> List[Tuple[Vehicle, Booking]]:
         return self.accepted
 
     def find_idling_taxies(self) -> List[Vehicle]:

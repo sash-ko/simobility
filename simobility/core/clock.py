@@ -33,8 +33,8 @@ class Clock:
         initial_time: int = 0,
     ):
         """
-        Params
-        ------
+        Parameters
+        ----------
 
         time_step (int)
             number of time_unit's to step with each clock tick
@@ -64,7 +64,23 @@ class Clock:
         starting_time: Union[str, datetime.datetime] = DEFAULT_DATETIME,
         initial_time: int = 0,
     ):
+        """Set initial time and parameters of a clock instance
 
+        Parameters
+        ----------
+
+        time_step (int)
+            number of time_unit's to step with each clock tick
+
+        time_unit (str)
+            second(s), minute (m), or hour (h)
+
+        starting_time (str)
+            real time corresponding to zero clock time
+
+        initial_time (int)
+            initial clock time in clock units
+        """
         if time_unit not in self.units:
             raise Exception("Invalid time unit")
 
@@ -79,6 +95,7 @@ class Clock:
 
     @property
     def now(self) -> int:
+        """Current time is "simulation" units"""
         return self.clock_time
 
     def to_pandas_units(self) -> str:

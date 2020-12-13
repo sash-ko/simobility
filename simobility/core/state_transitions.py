@@ -5,7 +5,9 @@ from .itinerary import Itinerary
 
 
 def do_job(itinerary: Itinerary):
-    """ The core of the simulation"""
+    """ The core of each simulation - executes a sequence of steps grouped
+    in itineraries.
+    """
 
     current_job = itinerary.current_job
     if not current_job:

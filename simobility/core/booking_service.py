@@ -37,6 +37,8 @@ class BookingService:
             self.add_booking(booking)
 
     def get_pending_bookings(self) -> List[Booking]:
+        """Get a list of bookings that are still waiting for being processed
+        """
         return list(self._pending_bookings.values())
 
     def step(self):

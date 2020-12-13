@@ -6,9 +6,28 @@ from .route import BaseRoute
 
 
 class BaseRouter(ABC):
+    """Router define how vehicles move. There are several advantages of using routers:
+
+    - routers can define how vehocles move in different coordinates systems, for example,
+        latitude and longitues, grid cells, e.g. And it does not require any additional
+        changes a simulation - just replace a router and vehicles can move in a different way
+
+    - routers help to avoind unnecessary and expencive recalculation of vehicle positions on
+        each step of a simulation. They implement a "lazy" calculations - based on
+        a coordinate system, origin and destination they calculate an approximate position
+        an arrival time on demand. So a vehicle movement can be scheduled in advance:
+        a vehicle V1 will arrive at point A in 20 minutes and currently this vehicle is
+        at position B.
+
+    - traffic
+
+    """
 
     @abstractmethod
     def map_match(self, position: BasePosition) -> BasePosition:
+        """Correct positiona according to a corrdinate system. For example, position
+        can be a noisy GPS coordinate and it needs to be corrected by map matching
+        to a road network"""
         pass
 
     @abstractmethod

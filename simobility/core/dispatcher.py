@@ -6,7 +6,9 @@ from .vehicle import Vehicle
 
 
 class Dispatcher:
-    """ Simulation controller - controlls execution of itineraries
+    """Simulation controller connects vehicles, itineraries and bookings.
+    Each of the entities is updated on each steps of a simulation. The main
+    goal of Dispatcher is to process itineraries
     """
 
     def __init__(self):

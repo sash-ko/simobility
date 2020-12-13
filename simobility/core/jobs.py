@@ -6,6 +6,10 @@ from .booking import Booking
 
 
 class BaseJob:
+    """Each vehicle can execute several type of jobs - move, pickup, dropoff and wait
+
+    Each job must have a name, iteneraty id and a list of other job names
+    """
 
     # A list of job names derived from the base class
     # The elements will be added at the bottom of the file
@@ -21,7 +25,6 @@ class BaseJob:
     @classmethod
     def name(cls):
         logging.error('Property "_name" is not implemented')
-
         raise NotImplementedError
 
     def __getattr__(self, key: str) -> Callable:

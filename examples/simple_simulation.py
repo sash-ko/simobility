@@ -2,7 +2,7 @@ import simobility.routers as routers
 from simobility.core import Clock
 from simobility.core import Fleet
 from simobility.core import Vehicle
-from simobility.core import Position
+from simobility.core import GeographicPosition as Position
 from simobility.core import Booking
 from simobility.core import Dispatcher
 from simobility.core import Itinerary

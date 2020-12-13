@@ -1,7 +1,7 @@
 from typing import List, Callable, Dict
 from uuid import uuid4
 import logging
-from .position import Position
+from .base_position import BasePosition
 from .booking import Booking
 
 
@@ -54,7 +54,7 @@ class BaseJob:
 
 
 class MoveTo(BaseJob):
-    def __init__(self, itinerary_id: str, destination: Position):
+    def __init__(self, itinerary_id: str, destination: BasePosition):
         super().__init__(itinerary_id)
         self.destination = destination
 

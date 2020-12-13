@@ -1,7 +1,7 @@
 from enum import Enum
 from transitions.core import EventData
 from .state_machine import StateMachine
-from .position import Position
+from .base_position import BasePosition
 from .clock import Clock
 
 
@@ -77,8 +77,8 @@ class Booking(StateMachine):
     def __init__(
         self,
         clock,
-        pickup: Position,
-        dropoff: Position,
+        pickup: BasePosition,
+        dropoff: BasePosition,
         seats: int = 4,
         preferences: dict = None,
         booking_id: str = None,

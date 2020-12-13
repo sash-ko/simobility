@@ -2,7 +2,7 @@ import numpy as np
 from math import ceil
 from typing import List, Tuple
 
-from ..core.position import Position
+from ..core.geo_position import GeographicPosition
 from .route import Route
 from .base_router import BaseRouter
 
@@ -21,10 +21,12 @@ class LinearRouter(BaseRouter):
         self.clock = clock
         self.speed = speed
 
-    def map_match(self, position: Position) -> Position:
-        return Position(*position.coords)
+    def map_match(self, position: GeographicPosition) -> GeographicPosition:
+        return GeographicPosition(*position.coords)
 
-    def calculate_route(self, origin: Position, destination: Position) -> Route:
+    def calculate_route(
+        self, origin: GeographicPosition, destination: GeographicPosition
+    ) -> Route:
         """
         Calculate route between 2 points
 
@@ -46,7 +48,7 @@ class LinearRouter(BaseRouter):
         x = np.linspace(origin.lon, destination.lon, trip_duration + 1)
 
         path = np.array([x, y]).T.tolist()
-        waypoints = [Position(x_, y_) for x_, y_ in path]
+        waypoints = [GeographicPosition(x_, y_) for x_, y_ in path]
 
         distance_km = origin.distance(destination)
 
@@ -54,7 +56,9 @@ class LinearRouter(BaseRouter):
             self.clock.now, waypoints, trip_duration, distance_km, origin, destination
         )
 
-    def estimate_duration(self, origin: Position, destination: Position) -> int:
+    def estimate_duration(
+        self, origin: GeographicPosition, destination: GeographicPosition
+    ) -> int:
         """ Duration in clock units
 
         Params

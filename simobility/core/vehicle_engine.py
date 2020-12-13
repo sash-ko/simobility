@@ -1,5 +1,5 @@
 from typing import Type, Optional
-from .position import Position
+from .base_position import BasePosition
 from .clock import Clock
 from ..routers.route import Route
 from ..routers.base_router import BaseRouter
@@ -14,7 +14,7 @@ class VehicleEngine:
     from historical data or include real time traffic information.
     """
 
-    def __init__(self, position: Position, router: Type[BaseRouter], clock: Clock):
+    def __init__(self, position: BasePosition, router: Type[BaseRouter], clock: Clock):
         self.router = router
         self.clock = clock
         # The value of the position is valid only when
@@ -28,7 +28,7 @@ class VehicleEngine:
         # destination
         self.route: Optional[Route] = None
 
-    def start_move(self, destination: Position):
+    def start_move(self, destination: BasePosition):
         """Sent engine to a specific destination or change the current destination
         of the current move"""
 
@@ -54,7 +54,7 @@ class VehicleEngine:
         self.route = None
 
     @property
-    def destination(self) -> Optional[Position]:
+    def destination(self) -> Optional[BasePosition]:
         if self.route:
             return self.route.destination
         return None
@@ -70,7 +70,7 @@ class VehicleEngine:
         return self.eta > self.now
 
     @property
-    def current_position(self) -> Optional[Position]:
+    def current_position(self) -> Optional[BasePosition]:
         """Current position of the engine. If engine is moving position
         will be approximated knowing current route and time
         """

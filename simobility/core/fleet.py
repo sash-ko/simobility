@@ -5,7 +5,7 @@ from shapely.geometry import shape
 from .vehicle_engine import VehicleEngine
 from .vehicle import StopReasons, Vehicle
 from .clock import Clock
-from .position import Position
+from .base_position import BasePosition
 from ..routers.base_router import BaseRouter
 from ..utils import read_polygon
 
@@ -27,7 +27,7 @@ class Fleet:
 
         return [v for v in self._vehicles.values() if not v.is_offline()]
 
-    def infleet(self, vehicle: Vehicle, position: Position):
+    def infleet(self, vehicle: Vehicle, position: BasePosition):
         """Add a new vehicle to the fleet and put it at a particular location
         in the simulater world."""
 
@@ -88,13 +88,11 @@ class Fleet:
         state = np.random.RandomState(seed)
 
         for item in state.choice(stations, fleet_size):
-            lon, lat = item["coordinates"]
-
             vehicle = Vehicle(self.clock)
-            self.infleet(vehicle, Position(lon, lat))
+            self.infleet(vehicle, BasePosition(*item["coordinates"]))
 
 
 def create_engine(
-    pos: Position, router: Type[BaseRouter], clock: Clock
+    pos: BasePosition, router: Type[BaseRouter], clock: Clock
 ) -> VehicleEngine:
     return VehicleEngine(pos, router, clock)

@@ -2,7 +2,7 @@ import numpy as np
 from typing import List, Dict, Tuple
 from collections import OrderedDict
 from .base_router import BaseRouter
-from ..core.position import Position
+from ..core.base_position import BasePosition
 from .route import Route
 
 
@@ -19,10 +19,10 @@ class CachingRouter:
         self.__router = router
         self.__routes: Dict[Tuple, Route] = FixedSizeCache()
         self.__durations: Dict[Tuple, int] = FixedSizeCache()
-        self.__map_match: Dict[Tuple, Position] = FixedSizeCache()
+        self.__map_match: Dict[Tuple, BasePosition] = FixedSizeCache()
         self.clock = router.clock
 
-    def map_match(self, position: Position) -> Position:
+    def map_match(self, position: BasePosition) -> BasePosition:
         key = position.coords
         if key in self.__map_match:
             return self.__map_match[key]
@@ -31,7 +31,7 @@ class CachingRouter:
         self.__map_match[key] = pos
         return pos
 
-    def calculate_route(self, origin: Position, destination: Position) -> Route:
+    def calculate_route(self, origin: BasePosition, destination: BasePosition) -> Route:
         key = (origin.coords, destination.coords)
         route = self.__routes.get(key)
         if route is None:
@@ -40,7 +40,7 @@ class CachingRouter:
         route.created_at = self.clock.now
         return route
 
-    def estimate_duration(self, origin: Position, destination: Position) -> int:
+    def estimate_duration(self, origin: BasePosition, destination: BasePosition) -> int:
         key = (origin.coords, destination.coords)
         duration = self.__durations.get(key)
 
@@ -51,7 +51,7 @@ class CachingRouter:
         return duration
 
     def calculate_distance_matrix(
-        self, sources: List[Position], destinations: List[Position]
+        self, sources: List[BasePosition], destinations: List[BasePosition]
     ) -> np.array:
 
         sources = sources[:]

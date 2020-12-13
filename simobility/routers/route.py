@@ -1,7 +1,7 @@
 from typing import List
 
 from .utils import linear_approximation
-from ..core.position import Position
+from ..core.geo_position import GeographicPosition
 from .base_route import BaseRoute
 
 
@@ -9,11 +9,11 @@ class Route(BaseRoute):
     def __init__(
         self,
         created_at: int,
-        coordinates: List[Position],
+        coordinates: List[GeographicPosition],
         duration: int,
         distance: float,
-        origin: Position,
-        destination: Position,
+        origin: GeographicPosition,
+        destination: GeographicPosition,
     ):
 
         super().__init__(
@@ -25,12 +25,12 @@ class Route(BaseRoute):
         seg_distance = [p1.distance(p2) for p1, p2 in segments]
         self.__segment_distance: List[float] = seg_distance
 
-    def approximate_position(self, at_time: int) -> Position:
+    def approximate_position(self, at_time: int) -> GeographicPosition:
         """Approximate position on the route at specific time"""
 
         points = [p.coords for p in self.coordinates]
 
-        pos = Position(*points[-1])
+        pos = GeographicPosition(*points[-1])
 
         if self.duration > 0:
 
@@ -40,7 +40,7 @@ class Route(BaseRoute):
             pcnt = min(1, pcnt)
 
             coords = linear_approximation(pcnt, points, self.__segment_distance)
-            pos = Position(*coords)
+            pos = GeographicPosition(*coords)
 
         return pos
 

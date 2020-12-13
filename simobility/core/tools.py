@@ -8,7 +8,7 @@ import random
 from .itinerary import Itinerary
 from .vehicle import Vehicle
 from .booking import Booking
-from .position import Position
+from .geo_position import GeographicPosition
 
 
 def basic_booking_itinerary(
@@ -96,8 +96,8 @@ class ReplayDemand:
 
         if key in self.demand:
             for b in self.demand[key].itertuples():
-                pu = Position(b.pickup_lon, b.pickup_lat)
-                do = Position(b.dropoff_lon, b.dropoff_lat)
+                pu = GeographicPosition(b.pickup_lon, b.pickup_lat)
+                do = GeographicPosition(b.dropoff_lon, b.dropoff_lat)
 
                 if self.map_matcher:
                     original_pu = pu

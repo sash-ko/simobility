@@ -3,7 +3,7 @@ from typing import Dict, List
 import numpy as np
 import logging
 import requests
-from ..core.position import Position
+from ..core.geo_position import GeographicPosition
 from .route import Route
 from .utils import mins_to_clock_time
 from .base_router import BaseRouter
@@ -25,14 +25,14 @@ class OSRMRouter(BaseRouter):
         self.clock = clock
         self.server = server
 
-    def map_match(self, position: Position) -> Position:
+    def map_match(self, position: GeographicPosition) -> GeographicPosition:
         coords = "{},{}".format(*position.coords)
         query = f"{self.server}/nearest/v1/driving/{coords}"
         data = self.request(query, None)
         location = data["waypoints"][0]["location"]
-        return Position(*location)
+        return GeographicPosition(*location)
 
-    def calculate_route(self, origin: Position, destination: Position) -> Route:
+    def calculate_route(self, origin: GeographicPosition, destination: GeographicPosition) -> Route:
         """
         Calculate route between 2 points
 
@@ -53,7 +53,7 @@ class OSRMRouter(BaseRouter):
         geom = data["routes"][0]["geometry"]
         # convert route coordinates to Postion datatypes
         # coordinates = [origin] + [Position(*c) for c in geom["coordinates"]]
-        coordinates = [Position(*c) for c in geom["coordinates"]]
+        coordinates = [GeographicPosition(*c) for c in geom["coordinates"]]
 
         # compute trip duration in "clock" intrinsic units
         duration_minutes = data["routes"][0]["duration"] / 60
@@ -72,7 +72,7 @@ class OSRMRouter(BaseRouter):
             destination,
         )
 
-    def estimate_duration(self, origin: Position, destination: Position) -> int:
+    def estimate_duration(self, origin: GeographicPosition, destination: GeographicPosition) -> int:
         """ Duration in clock units
 
         Parameters
@@ -100,8 +100,8 @@ class OSRMRouter(BaseRouter):
 
     def calculate_distance_matrix(
         self,
-        sources: List[Position],
-        destinations: List[Position],
+        sources: List[GeographicPosition],
+        destinations: List[GeographicPosition],
         travel_time: bool = True,
     ) -> np.array:
         """ Calculate all-to-all travel time - all source to all destinations.

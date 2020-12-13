@@ -2,7 +2,7 @@ from typing import List, Optional
 from uuid import uuid4
 from .vehicle import Vehicle
 from .booking import Booking
-from .position import Position
+from .base_position import BasePosition
 from .jobs import BaseJob, Pickup, MoveTo, Dropoff, Wait
 
 # TODO: implement wait job using created_at and duration
@@ -30,7 +30,7 @@ class Itinerary:
 
         self.created_at: int = created_at
 
-    def move_to(self, destination: Position) -> BaseJob:
+    def move_to(self, destination: BasePosition) -> BaseJob:
         """Create a move job - move vehicle to a specific position defined by 
         `destination`.
         """

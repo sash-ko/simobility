@@ -3,7 +3,7 @@ from typing import Dict, Optional
 import logging
 from transitions.core import EventData
 from .state_machine import StateMachine
-from .position import Position
+from .base_position import BasePosition
 from .vehicle_engine import VehicleEngine
 
 
@@ -63,7 +63,7 @@ class Vehicle(StateMachine):
         self.context: Dict = {}
 
     @property
-    def position(self) -> Optional[Position]:
+    def position(self) -> Optional[BasePosition]:
         """Current position of the vehicle. Returns None if engine is not installed
         """
         if self.engine is not None:
@@ -74,12 +74,12 @@ class Vehicle(StateMachine):
         return self.engine is not None and self.engine.is_moving()
 
     @property
-    def destination(self) -> Optional[Position]:
+    def destination(self) -> Optional[BasePosition]:
         """If vehicle is moving return the destination"""
         if self.engine:
             return self.engine.destination
 
-    def move_to(self, destination: Position, **context):
+    def move_to(self, destination: BasePosition, **context):
         if not self.engine:
             raise Exception("Cannot move vehicle without engine")
 

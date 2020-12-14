@@ -5,90 +5,76 @@ import pytest
 from simobility.core.clock import Clock
 
 
-def test_tick():
-    clock = Clock()
+@pytest.mark.parametrize(
+    "time_unit,time_step,target_unit,target_time,expected",
+    [
+        ("h", 1, "h", 1, 1),
+        ("h", 1, "m", 60, 1),
+        ("h", 1, "m", 23, ceil(23 / 60)),
+        ("m", 1, "h", 1, 60),
+        ("m", 1, "h", 1, 60),
+        ("m", 5, "h", 1, 12),
+        ("m", 3, "m", 15, 5),
+        ("m", 4, "m", 15, ceil(15 / 4)),
+    ],
+)
+def test_time_to_clock_time(time_unit, time_step, target_unit, target_time, expected):
+    assert (
+        Clock(time_step=time_step, time_unit=time_unit).time_to_clock_time(
+            target_time, target_unit
+        )
+        == expected
+    )
 
-    for i in range(10):
-        assert clock.clock_time == i
+
+@pytest.mark.parametrize(
+    "time_unit,time_step,ticks,expected_hours,expected_minutes", [
+        ('h', 0, 0, 0, 0),
+        ('h', 1, 1, 1, 0),
+        ('h', 3, 3, 9, 0),
+        ('h', 1, 25, 1, 0),
+        ('m', 10, 1, 0, 10),
+        ('m', 10, 2, 0, 20),
+        ('m', 10, 9, 1, 30)
+        ]
+)
+def test_to_time_hour(time_unit, time_step, ticks, expected_hours, expected_minutes):
+    clock = Clock(time_unit=time_unit, time_step=time_step)
+    assert isinstance(clock.clock_time_to_time(), datetime.time)
+
+    for _ in range(ticks):
         clock.tick()
 
-
-def test_starting_time():
-    clock = Clock()
-    assert isinstance(clock.to_datetime(), datetime.datetime)
-    assert clock.clock_time_to_time().hour == 0
-    assert clock.clock_time_to_time().minute == 0
-    assert clock.clock_time_to_time().second == 1
+    assert clock.clock_time_to_time().hour == expected_hours
+    assert clock.clock_time_to_time().minute == expected_minutes
 
 
-def test_timeunits():
+@pytest.mark.parametrize(
+    "time_unit,time_step", [("m", 1), ("h", 1), ("m", 3), ("s", 50)]
+)
+def test_timeunits(time_unit, time_step):
     with pytest.raises(Exception):
         Clock(10, "sdsd")
 
-    clock = Clock()
-    assert clock.time_unit == "m"
-    assert clock.time_step == 1
-
-    clock = Clock(time_unit="h")
-    assert clock.time_unit == "h"
-    assert clock.time_step == 1
-
-    clock = Clock(time_step=3, time_unit="m")
-    assert clock.time_unit == "m"
-    assert clock.time_step == 3
-
-
-def test_time_to_clock_time():
-    assert Clock(time_unit="h").time_to_clock_time(1, "h") == 1
-    assert Clock(time_unit="h").time_to_clock_time(60, "m") == 1
-    assert Clock(time_unit="h").time_to_clock_time(23, "m") == ceil(23 / 60)
-
-    assert Clock(time_unit="m").time_to_clock_time(1, "h") == 60
-    assert Clock(time_step=5, time_unit="m").time_to_clock_time(1, "h") == 12
-
-    assert Clock(time_step=3, time_unit="m").time_to_clock_time(15, "m") == 5
-
-    assert pytest.approx(
-        Clock(time_step=4, time_unit="m").time_to_clock_time(15, "m")
-    ) == ceil(15 / 4)
-
-
-def test_to_time_hour():
-    clock = Clock(time_unit="h")
-
-    clock.tick()
-    assert isinstance(clock.clock_time_to_time(), datetime.time)
-    assert clock.clock_time_to_time().hour == 1
+    clock = Clock(time_step=time_step, time_unit=time_unit)
+    assert clock.time_unit == time_unit
+    assert clock.time_step == time_step
     assert clock.clock_time_to_time().minute == 0
+    assert clock.clock_time_to_time().second == 1
 
-    clock.tick()
-    assert clock.clock_time_to_time().hour == 2
-    assert clock.clock_time_to_time().minute == 0
-
-    for i in range(24):
-        clock.tick()
-
-    assert clock.clock_time_to_time().hour == 2
-    assert clock.clock_time_to_time().minute == 0
-
-    for i in range(5):
-        clock.tick()
-
-    assert clock.clock_time_to_time().hour == 7
-
-
-def test_to_time_hour_2():
-    clock = Clock(time_step=2, time_unit="h")
-
-    clock.tick()
-    assert clock.clock_time_to_time().hour == 2
-    assert clock.clock_time_to_time().minute == 0
-
-    for i in range(24):
-        clock.tick()
-
-    assert clock.clock_time_to_time().hour == 2
-    assert clock.clock_time_to_time().minute == 0
+@pytest.mark.parametrize(
+    "time_unit,time_step,seconds,expected",
+    [
+        ("m", 1, 60, 60 * 60),
+        ("m", 1, 65, 65 * 60),
+        ("h", 1, 1, 60 * 60),
+        ("s", 15, 1, 15),
+        ("s", 45, 45, 45 * 45),
+    ],
+)
+def test_time_to_seconds(time_unit, time_step, seconds, expected):
+    clock = Clock(time_unit=time_unit, time_step=time_step)
+    assert clock.clock_time_to_seconds(seconds) == expected
 
 
 def test_to_time():
@@ -97,30 +83,6 @@ def test_to_time():
 
     assert clock.clock_time_to_time().hour == 6
     assert clock.clock_time_to_time().minute == 55
-
-
-def test_to_time_minutes():
-    clock = Clock(time_step=10, time_unit="m")
-    clock.tick()
-
-    assert clock.clock_time_to_time().hour == 0
-    assert clock.clock_time_to_time().minute == 10
-
-    clock.tick()
-    assert clock.clock_time_to_time().hour == 0
-    assert clock.clock_time_to_time().minute == 20
-
-    for i in range(5):
-        clock.tick()
-
-    assert clock.clock_time_to_time().hour == 1
-    assert clock.clock_time_to_time().minute == 10
-
-    for i in range(24 * 60):
-        clock.tick()
-
-    assert clock.clock_time_to_time().hour == 1
-    assert clock.clock_time_to_time().minute == 10
 
 
 def test_to_time_starting_time():
@@ -175,18 +137,3 @@ def test_to_datetime2():
 def test_seconds_conversion():
     clock = Clock(time_step=43, time_unit="s")
     pytest.approx(clock.time_to_clock_time(67, "s")) == ceil(67 / 43)
-
-
-def test_time_to_seconds():
-    clock = Clock(time_unit="m", time_step=1)
-    assert clock.clock_time_to_seconds(60) == 60 * 60
-    assert clock.clock_time_to_seconds(65) == 65 * 60
-
-    clock = Clock(time_unit="h", time_step=1)
-    assert clock.clock_time_to_seconds(1) == 60 * 60
-
-    clock = Clock(time_unit="s", time_step=15)
-    assert clock.clock_time_to_seconds(1) == 15
-
-    clock = Clock(time_unit="s", time_step=45)
-    assert clock.clock_time_to_seconds(45) == 45 * 45

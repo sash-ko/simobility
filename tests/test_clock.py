@@ -28,15 +28,16 @@ def test_time_to_clock_time(time_unit, time_step, target_unit, target_time, expe
 
 
 @pytest.mark.parametrize(
-    "time_unit,time_step,ticks,expected_hours,expected_minutes", [
-        ('h', 0, 0, 0, 0),
-        ('h', 1, 1, 1, 0),
-        ('h', 3, 3, 9, 0),
-        ('h', 1, 25, 1, 0),
-        ('m', 10, 1, 0, 10),
-        ('m', 10, 2, 0, 20),
-        ('m', 10, 9, 1, 30)
-        ]
+    "time_unit,time_step,ticks,expected_hours,expected_minutes",
+    [
+        ("h", 0, 0, 0, 0),
+        ("h", 1, 1, 1, 0),
+        ("h", 3, 3, 9, 0),
+        ("h", 1, 25, 1, 0),
+        ("m", 10, 1, 0, 10),
+        ("m", 10, 2, 0, 20),
+        ("m", 10, 9, 1, 30),
+    ],
 )
 def test_to_time_hour(time_unit, time_step, ticks, expected_hours, expected_minutes):
     clock = Clock(time_unit=time_unit, time_step=time_step)
@@ -61,6 +62,7 @@ def test_timeunits(time_unit, time_step):
     assert clock.time_step == time_step
     assert clock.clock_time_to_time().minute == 0
     assert clock.clock_time_to_time().second == 1
+
 
 @pytest.mark.parametrize(
     "time_unit,time_step,seconds,expected",

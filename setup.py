@@ -42,7 +42,8 @@ setup(
             "coverage",
             "pytest",
             "pip-tools",
-            "pytest-cov"
+            "pytest-cov",
+            "pre-commit"
         ]
     },
     zip_safe=False,

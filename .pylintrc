@@ -139,7 +139,10 @@ disable=print-statement,
         deprecated-sys-function,
         exception-escape,
         comprehension-escape,
-        missing-module-docstring
+        missing-module-docstring,
+        wrong-import-order,
+        logging-fstring-interpolation,
+        no-member
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -328,7 +331,7 @@ indent-after-paren=4
 indent-string='    '
 
 # Maximum number of characters on a single line.
-max-line-length=100
+max-line-length=119
 
 # Maximum number of lines in a module.
 max-module-lines=1000
@@ -424,7 +427,9 @@ good-names=i,
            ex,
            Run,
            _,
-           f
+           f,
+           x,
+           y
 
 # Good variable names regexes, separated by a comma. If names match any regex,
 # they will always be accepted
@@ -552,7 +557,7 @@ valid-metaclass-classmethod-first-arg=cls
 [DESIGN]
 
 # Maximum number of arguments for function / method.
-max-args=5
+max-args=10
 
 # Maximum number of attributes for a class (see R0902).
 max-attributes=7

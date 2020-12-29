@@ -5,13 +5,13 @@ from shapely.geometry import shape
 from .vehicle_engine import VehicleEngine
 from .vehicle import StopReasons, Vehicle
 from .clock import Clock
-from .base_position import BasePosition
+from .geo_position import GeographicPosition
 from ..routers.base_router import BaseRouter
 from ..utils import read_polygon
 
 
 class Fleet:
-    """ Keeps all online and offline vehicles in one place. Creates 
+    """ Keeps all online and offline vehicles in one place. Creates
     an engine for each vehicle using a router. This router tells vehicles
     how to move in a simulated world.
     """
@@ -27,7 +27,7 @@ class Fleet:
 
         return [v for v in self._vehicles.values() if not v.is_offline()]
 
-    def infleet(self, vehicle: Vehicle, position: BasePosition):
+    def infleet(self, vehicle: Vehicle, position: GeographicPosition):
         """Add a new vehicle to the fleet and put it at a particular location
         in the simulater world."""
 
@@ -37,16 +37,19 @@ class Fleet:
         self._vehicles[vehicle.id] = vehicle
 
     def get_vehicle(self, vehicle_id: str) -> Vehicle:
+        """Returns a vehicle by vehicle id"""
         return self._vehicles[vehicle_id]
 
     def step(self):
-        for v in self._vehicles.values():
-            v.step()
+        """Implements fleet updates on each simulation iteration"""
+        for vehicle in self._vehicles.values():
+            vehicle.step()
 
     def stop_vehicles(self):
-        for v in self._vehicles.values():
-            if not v.is_idling():
-                v.stop(StopReasons.stop)
+        """Stop all non idling vehicles"""
+        for vehicle in self._vehicles.values():
+            if not vehicle.is_idling():
+                vehicle.stop(StopReasons.stop)
 
     def infleet_from_geojson(
         self,
@@ -89,10 +92,11 @@ class Fleet:
 
         for item in state.choice(stations, fleet_size):
             vehicle = Vehicle(self.clock)
-            self.infleet(vehicle, BasePosition(*item["coordinates"]))
+            self.infleet(vehicle, GeographicPosition(*item["coordinates"]))
 
 
 def create_engine(
-    pos: BasePosition, router: Type[BaseRouter], clock: Clock
+    pos: GeographicPosition, router: Type[BaseRouter], clock: Clock
 ) -> VehicleEngine:
+    """Return an instance of VehicleEngine"""
     return VehicleEngine(pos, router, clock)

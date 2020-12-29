@@ -142,7 +142,8 @@ disable=print-statement,
         missing-module-docstring,
         wrong-import-order,
         logging-fstring-interpolation,
-        no-member
+        no-member,
+        fixme
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

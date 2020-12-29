@@ -109,9 +109,7 @@ def dropoff_booking(booking: Booking, itinerary: Itinerary) -> bool:
 
 
 def update_next_bookings(itinerary: Itinerary) -> None:
-    """Change jobs after the current one and change booking
-    states
-    """
+    """Change jobs after the current one and change booking states"""
 
     # context = itinerary_info(itinerary)
     # TODO: expired or canceled bookings

@@ -1,5 +1,3 @@
-from typing import Dict
-from .vehicle import Vehicle
 from .booking import Booking
 from .itinerary import Itinerary
 
@@ -41,14 +39,16 @@ def do_job(itinerary: Itinerary):
 
         raise NotImplementedError()
     else:
-        raise Exception(f"Unknown job: {current_job._name}")
+        raise Exception(f"Unknown job: {current_job}")
 
 
 def move_vehicle(itinerary: Itinerary) -> bool:
-    """"""
+    """Assumes that the current job of the itinerary is MoveTo and move vehicle to the
+    destination specified in the job description"""
+
     current_job = itinerary.current_job
-    if not current_job:
-        raise Exception("Current job cant be None")
+    if current_job is None:
+        raise Exception("Current job cannot be None")
 
     vehicle = itinerary.vehicle
 
@@ -58,6 +58,8 @@ def move_vehicle(itinerary: Itinerary) -> bool:
 
 
 def pickup_booking(booking: Booking, itinerary: Itinerary) -> bool:
+    """Assumes that the current job is Pickup and updates the booking state"""
+
     if booking.is_pending():
         # when pickup is the first step in the itinerary
         # otherwise update_bookings_states changes booking state
@@ -87,6 +89,8 @@ def pickup_booking(booking: Booking, itinerary: Itinerary) -> bool:
 
 
 def dropoff_booking(booking: Booking, itinerary: Itinerary) -> bool:
+    """Assumes that the current job is Pickup and updates the booking state"""
+
     # if booking.is_matched() or booking.is_waiting_pickup():
     # raise Exception('Cannot dropoff booking without pickup')
     if booking.is_waiting_dropoff():
@@ -105,9 +109,7 @@ def dropoff_booking(booking: Booking, itinerary: Itinerary) -> bool:
 
 
 def update_next_bookings(itinerary: Itinerary) -> None:
-    """Change jobs after the current one and change booking
-    states
-    """
+    """Change jobs after the current one and change booking states"""
 
     # context = itinerary_info(itinerary)
     # TODO: expired or canceled bookings
